@@ -134,8 +134,27 @@ public class StatisticsRetriever
         return maxKey;
     }
 
-//    double getMidRange(int attributeIndex)
-//    {
-//        return 0;
-//    }
+
+    /**
+     * Didn't know how to name that shit
+     * @return
+     */
+    public  boolean isAttributeSymetric(int attribute_index)
+    {
+        double mean = this.getMean(attribute_index);
+        double mode = this.getMode(attribute_index);
+        double median = this.getMedian(attribute_index);
+        double error = 1e-2;
+        return (((mean-mode>=3*(mode-median)-error) && (mean-mode<=3*(mode-median)+error)) && data.attribute(attribute_index).isNumeric());
+    }
+
+
+
+
+    public double getMidRange(int attributeIndex)
+    {
+        if(!data.attribute(attributeIndex).isNumeric())
+            return -1;
+        return (getMax(attributeIndex)+getMin(attributeIndex))/2;
+    }
 }

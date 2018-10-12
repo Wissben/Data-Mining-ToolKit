@@ -1,6 +1,7 @@
 package Front;
 
 import Processing.DataCleaner;
+import Processing.StatisticsRetriever;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -56,9 +57,10 @@ public class Main extends Application {
 //        Instances data = arff.getData();
 //        data.setClassIndex(data.numAttributes() - 1);
 //        DataCleaner dc = new DataCleaner(data);
-////        dc.normalizeAllAttributes();
-////        dc.fillInMissingValues();
+//        dc.normalizeAllAttributes();
+//        dc.fillInMissingValues();
 //        System.out.println(data);
+//        System.out.println("new StatisticsRetriever(data).isAttributeSymetric(0) = " + new StatisticsRetriever(data).isAttributeSymetric(0));
 
     }
 }

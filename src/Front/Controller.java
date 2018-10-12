@@ -139,7 +139,7 @@ public class Controller implements Initializable
         valuesTable.getColumns().clear();
         valuesTable.setItems(generateDataValuesInMap());
         Callback<TableColumn<Map, String>, TableCell<Map, String>> factory = getCellFactoryMap();
-        String columns[] = {"nom","type","min","max","mediane","Q1","Q3","mode","moyenne"};
+        String columns[] = {"nom","type","min","max","mediane","Q1","Q3","mode","moyenne","midrange","Symetrique"};
         for (int i = 0; i < columns.length; i++)
         {
             TableColumn<Map,String> col = new TableColumn<>(columns[i]);
@@ -203,23 +203,28 @@ public class Controller implements Initializable
             String type = (a.isNumeric())?"Numerique":"Nominale";
             dataRow.put("type",type);
             StatisticsRetriever retriever = new StatisticsRetriever(activeData);
+            String isSymetric = retriever.isAttributeSymetric(i)?"Oui":"Non";
             if(a.isNumeric())
             {
-                dataRow.put("min", retriever.getMin(i) + "");
-                dataRow.put("max", retriever.getMax(i) + "");
-                dataRow.put("mediane", retriever.getMedian(i) + "");
-                dataRow.put("Q1", retriever.getQ1(i) + "");
-                dataRow.put("Q3", retriever.getQ3(i) + "");
-                dataRow.put("moyenne", retriever.getMean(i) + "");
+                dataRow.put("min", String.format("%.2f", retriever.getMin(i)));
+                dataRow.put("max", String.format("%.2f", retriever.getMax(i)));
+                dataRow.put("mediane", String.format("%.2f", retriever.getMedian(i)));
+                dataRow.put("Q1", String.format("%.2f", retriever.getQ1(i)));
+                dataRow.put("Q3", String.format("%.2f", retriever.getQ3(i)));
+                dataRow.put("moyenne", String.format("%.2f", retriever.getMean(i)));
+                dataRow.put("midrange",String.format("%.2f", retriever.getMidRange(i)));
+                dataRow.put("Symetrique",isSymetric);
             }
             else
             {
-                dataRow.put("min",  "None");
-                dataRow.put("max", "None");
-                dataRow.put("mediane", "None");
-                dataRow.put("Q1", "None");
-                dataRow.put("Q3", "None");
-                dataRow.put("moyenne", "None");
+                dataRow.put("min",  "-");
+                dataRow.put("max", "-");
+                dataRow.put("mediane", "-");
+                dataRow.put("Q1", "-");
+                dataRow.put("Q3", "-");
+                dataRow.put("moyenne", "-");
+                dataRow.put("midrange","-");
+                dataRow.put("Symetrique","-");
             }
             dataRow.put("mode",retriever.getMode(i)+"");
             allData.add(dataRow);
