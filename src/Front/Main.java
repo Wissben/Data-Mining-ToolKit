@@ -1,5 +1,6 @@
 package Front;
 
+import Processing.DataCleaner;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -10,7 +11,9 @@ import weka.core.Instances;
 import weka.core.converters.ArffLoader.ArffReader;
 
 import java.io.BufferedReader;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.IOException;
 
 public class Main extends Application {
 
@@ -44,7 +47,18 @@ public class Main extends Application {
     }
 
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         launch(args);
+//
+//        BufferedReader reader =
+//                new BufferedReader(new FileReader("/home/weiss/CODES/TP-DM/weka-3-8-3/data/iris.arff"));
+//        ArffReader arff = new ArffReader(reader);
+//        Instances data = arff.getData();
+//        data.setClassIndex(data.numAttributes() - 1);
+//        DataCleaner dc = new DataCleaner(data);
+////        dc.normalizeAllAttributes();
+////        dc.fillInMissingValues();
+//        System.out.println(data);
+
     }
 }

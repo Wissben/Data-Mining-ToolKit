@@ -3,6 +3,7 @@ package Processing;
 import weka.core.Instances;
 
 import java.util.HashMap;
+import java.util.TreeMap;
 
 /**
  * Created by ressay on 10/10/18.
@@ -54,6 +55,25 @@ public class StatisticsRetriever
         return sum/data.numInstances();
     }
 
+    public double getMeanSameClass(int attributeIndex,String classification)
+    {
+        if(data.attribute(attributeIndex).isNominal())
+            return -1;
+        double sum = 0;
+        int count = 0;
+        for (int i = 1; i < data.numInstances(); i++)
+        {
+            if(data.instance(i).stringValue(data.classIndex()).equals(classification) && !data.instance(i).isMissing(attributeIndex))
+            {
+                sum += data.instance(i).value(attributeIndex);
+                count++;
+            }
+        }
+        if(count == 0)
+            return 0;
+        return sum/count;
+    }
+
     public double getMedian(int attributeIndex)
     {
         if(data.numInstances() % 2 == 1)
@@ -95,7 +115,7 @@ public class StatisticsRetriever
 
     public double getMode(int attributeIndex)
     {
-        HashMap<Double,Integer> freq = new HashMap<>();
+        TreeMap<Double,Integer> freq = new TreeMap<>();
         for (int i = 0; i < data.numInstances(); i++)
         {
             Double val = data.instance(i).value(attributeIndex);

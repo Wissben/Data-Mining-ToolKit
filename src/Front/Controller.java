@@ -1,5 +1,6 @@
 package Front;
 
+import Processing.DataCleaner;
 import Processing.Plotter;
 import Processing.StatisticsRetriever;
 import com.jfoenix.controls.JFXButton;
@@ -68,6 +69,7 @@ public class Controller implements Initializable
                     ArffLoader.ArffReader arff = new ArffLoader.ArffReader(reader);
                     setActiveData(arff.getData());
 
+
                 } catch (Exception e)
                 {
                     e.printStackTrace();
@@ -89,6 +91,17 @@ public class Controller implements Initializable
     {
         activeData = instances;
         activeData.setClassIndex(activeData.numAttributes() - 1);
+
+
+        /**
+        @Ressaye Uncomment these two lines if you want to normalize then fill in missing values
+         **/
+
+//        DataCleaner dc = new DataCleaner(activeData);
+//        dc.normalizeAllAttributes();
+//        dc.fillInMissingValues();
+//
+
         refreshTables();
         refreshLabels();
     }
