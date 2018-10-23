@@ -45,13 +45,16 @@ public class Controller implements Initializable
 
     LinkedList<TableColumn<Map,String>> columns = new LinkedList<>();
 
-    Instances activeData;
+    Instances activeData,activeCleanData;
 
     @FXML
     private Label nbInstances;
 
     @FXML
     private Label nbAttribut;
+
+    @FXML
+    private TableView<Map> cleanedTable;
 
 
     @Override
@@ -68,7 +71,8 @@ public class Controller implements Initializable
                     reader = new BufferedReader(new FileReader(chosen));
                     ArffLoader.ArffReader arff = new ArffLoader.ArffReader(reader);
                     setActiveData(arff.getData());
-
+                    reader = new BufferedReader(new FileReader(chosen));
+                    setActiveCleanData(new ArffLoader.ArffReader(reader).getData());
 
                 } catch (Exception e)
                 {
@@ -80,28 +84,31 @@ public class Controller implements Initializable
         showBox.setOnAction(actionEvent -> {
             if(activeData!=null)
             {
-                Plotter plotter = new Plotter(activeData);
+                Plotter plotter = new Plotter(activeCleanData);
                 plotter.plotBox();
             }
         });
 
     }
 
+    void setActiveCleanData(Instances instances)
+    {
+        activeCleanData = instances;
+        activeCleanData.setClassIndex(activeCleanData.numAttributes()-1);
+        /**
+         @Ressaye Uncomment these two lines if you want to normalize then fill in missing values
+         **/
+
+        DataCleaner dc = new DataCleaner(activeCleanData);
+        dc.normalizeAllAttributes();
+        dc.fillInMissingValues();
+        refreshCleanTable();
+    }
+
     void setActiveData(Instances instances)
     {
         activeData = instances;
         activeData.setClassIndex(activeData.numAttributes() - 1);
-
-
-        /**
-        @Ressaye Uncomment these two lines if you want to normalize then fill in missing values
-         **/
-
-//        DataCleaner dc = new DataCleaner(activeData);
-//        dc.normalizeAllAttributes();
-//        dc.fillInMissingValues();
-//
-
         refreshTables();
         refreshLabels();
     }
@@ -118,10 +125,24 @@ public class Controller implements Initializable
         refreshValuesTable();
     }
 
+    void refreshCleanTable()
+    {
+        cleanedTable.getColumns().clear();
+        cleanedTable.setItems(generateDataInMap(activeCleanData));
+        Callback<TableColumn<Map, String>, TableCell<Map, String>> factory = getCellFactoryMap();
+        for (int i = 0; i < activeCleanData.numAttributes(); i++)
+        {
+            TableColumn<Map,String> col = new TableColumn<>(activeCleanData.attribute(i).name());
+            col.setCellValueFactory(new MapValueFactory<>(activeCleanData.attribute(i).name()));
+            col.setCellFactory(factory);
+            cleanedTable.getColumns().addAll(col);
+        }
+    }
+
     void refreshTable()
     {
         table.getColumns().clear();
-        table.setItems(generateDataInMap());
+        table.setItems(generateDataInMap(activeData));
         Callback<TableColumn<Map, String>, TableCell<Map, String>> factory = getCellFactoryMap();
         for (int i = 0; i < activeData.numAttributes(); i++)
         {
@@ -233,7 +254,7 @@ public class Controller implements Initializable
         return allData;
     }
 
-    private ObservableList<Map> generateDataInMap() {
+    private ObservableList<Map> generateDataInMap(Instances activeData) {
         ObservableList<Map> allData = FXCollections.observableArrayList();
         for (int i = 1; i < activeData.numInstances(); i++) {
             Map<String, String> dataRow = new HashMap<>();
