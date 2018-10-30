@@ -136,17 +136,19 @@ public class Plotter
 
     public void plotHisto(int attributeIndex)
     {
-        if(!data.attribute(attributeIndex).isNominal())
-            return;
+//        if(!data.attribute(attributeIndex).isNominal())
+//            return;
         final DefaultCategoryDataset dataset =
                 new DefaultCategoryDataset( );
         HashMap<String,Integer> frequencies = new HashMap<>();
         for (int i = 0; i < data.numInstances(); i++)
         {
-            if(!frequencies.containsKey(data.instance(i).stringValue(attributeIndex)))
-                frequencies.put(data.instance(i).stringValue(attributeIndex),0);
-            frequencies.put(data.instance(i).stringValue(attributeIndex),
-                    frequencies.get(data.instance(i).stringValue(attributeIndex))+1);
+            String value = data.attribute(attributeIndex).isNominal()?
+                    data.instance(i).stringValue(attributeIndex):data.instance(i).value(attributeIndex)+"";
+            if(!frequencies.containsKey(value))
+                frequencies.put(value,0);
+            frequencies.put(value,
+                    frequencies.get(value)+1);
         }
         for(String key : frequencies.keySet())
             dataset.addValue(frequencies.get(key),key,"frequency");

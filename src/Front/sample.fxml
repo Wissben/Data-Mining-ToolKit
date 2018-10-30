@@ -11,42 +11,49 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="514.0" prefWidth="887.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Front.Controller">
-   <children>
-      <HBox prefHeight="514.0" prefWidth="894.0">
+<HBox fx:id="containerHBox" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="614.0" prefWidth="1207.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Front.Controller">
          <children>
-            <TabPane prefHeight="514.0" prefWidth="581.0" tabClosingPolicy="UNAVAILABLE">
+            <TabPane fx:id="tabPane" prefHeight="614.0" prefWidth="1000.0" tabClosingPolicy="UNAVAILABLE">
               <tabs>
-                <Tab text="Untitled Tab 1">
-                  <content>
-                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                           <children>
-                              <TableView fx:id="table" prefHeight="482.0" prefWidth="581.0" />
-                           </children>
-                        </AnchorPane>
-                  </content>
-                </Tab>
-                <Tab text="Untitled Tab 2">
-                  <content>
-                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                           <children>
-                              <TableView fx:id="valuesTable" prefHeight="482.0" prefWidth="581.0" />
-                           </children>
-                        </AnchorPane>
-                  </content>
-                </Tab>
-                  <Tab text="Untitled Tab 2">
+                  <Tab text="Original data">
                      <content>
                         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                            <children>
-                              <TableView fx:id="cleanedTable" prefHeight="482.0" prefWidth="581.0" />
+                              <TableView fx:id="tableOrigin"  prefHeight="580.0" prefWidth="1083.0" />
                            </children>
                         </AnchorPane>
                      </content>
                   </Tab>
+                <Tab text="Filled data">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <TableView fx:id="table"  prefHeight="580.0" prefWidth="1083.0" />
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+                  <Tab text="Cleaned data">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <TableView fx:id="cleanedTable"  prefHeight="580.0" prefWidth="1083.0" />
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </Tab>
+                <Tab text="Information">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <TableView fx:id="valuesTable"  prefHeight="580.0" prefWidth="1083.0" />
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
               </tabs>
             </TabPane>
-            <VBox prefHeight="514.0" prefWidth="183.0">
+            <VBox prefHeight="614.0" prefWidth="75.0">
                <children>
                   <HBox prefHeight="44.0" prefWidth="220.0" />
                   <Label fx:id="nbInstances" prefHeight="21.0" prefWidth="238.0">
@@ -71,6 +78,7 @@
                </children>
             </VBox>
          </children>
+    <!--<padding>-->
+        <!--<Insets bottom="50.0" left="50.0" right="50.0" top="50.0" />-->
+    <!--</padding>-->
       </HBox>
-   </children>
-</AnchorPane>

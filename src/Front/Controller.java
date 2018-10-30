@@ -11,6 +11,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.scene.input.MouseButton;
+import javafx.scene.layout.HBox;
 import javafx.stage.FileChooser;
 import javafx.util.StringConverter;
 import weka.core.Attribute;
@@ -36,6 +37,9 @@ public class Controller implements Initializable
     private TableView<Map> table;
 
     @FXML
+    private TableView<Map> tableOrigin;
+
+    @FXML
     private TableView<Map> valuesTable;
 
     @FXML
@@ -45,7 +49,7 @@ public class Controller implements Initializable
 
     LinkedList<TableColumn<Map,String>> columns = new LinkedList<>();
 
-    Instances activeData,activeCleanData;
+    Instances originalData,activeData,activeCleanData;
 
     @FXML
     private Label nbInstances;
@@ -55,6 +59,12 @@ public class Controller implements Initializable
 
     @FXML
     private TableView<Map> cleanedTable;
+
+    @FXML
+    private HBox containerHBox;
+
+    @FXML
+    private TabPane tabPane;
 
 
     @Override
@@ -73,6 +83,8 @@ public class Controller implements Initializable
                     setActiveData(arff.getData());
                     reader = new BufferedReader(new FileReader(chosen));
                     setActiveCleanData(new ArffLoader.ArffReader(reader).getData());
+                    reader = new BufferedReader(new FileReader(chosen));
+                    setOriginalData(new ArffLoader.ArffReader(reader).getData());
 
                 } catch (Exception e)
                 {
@@ -91,6 +103,13 @@ public class Controller implements Initializable
 
     }
 
+    void setOriginalData(Instances instances)
+    {
+        originalData = instances;
+        originalData.setClassIndex(originalData.numAttributes()-1);
+        refreshOriginalTable();
+    }
+
     void setActiveCleanData(Instances instances)
     {
         activeCleanData = instances;
@@ -100,8 +119,9 @@ public class Controller implements Initializable
          **/
 
         DataCleaner dc = new DataCleaner(activeCleanData);
-        dc.normalizeAllAttributes();
         dc.fillInMissingValues();
+        dc.normalizeAllAttributes();
+
         refreshCleanTable();
     }
 
@@ -109,6 +129,8 @@ public class Controller implements Initializable
     {
         activeData = instances;
         activeData.setClassIndex(activeData.numAttributes() - 1);
+        DataCleaner dc = new DataCleaner(activeData);
+        dc.fillInMissingValues();
         refreshTables();
         refreshLabels();
     }
@@ -136,6 +158,20 @@ public class Controller implements Initializable
             col.setCellValueFactory(new MapValueFactory<>(activeCleanData.attribute(i).name()));
             col.setCellFactory(factory);
             cleanedTable.getColumns().addAll(col);
+        }
+    }
+
+    void refreshOriginalTable()
+    {
+        tableOrigin.getColumns().clear();
+        tableOrigin.setItems(generateDataInMap(originalData));
+        Callback<TableColumn<Map, String>, TableCell<Map, String>> factory = getCellFactoryMap();
+        for (int i = 0; i < originalData.numAttributes(); i++)
+        {
+            TableColumn<Map,String> col = new TableColumn<>(originalData.attribute(i).name());
+            col.setCellValueFactory(new MapValueFactory<>(originalData.attribute(i).name()));
+            col.setCellFactory(factory);
+            tableOrigin.getColumns().addAll(col);
         }
     }
 
@@ -182,10 +218,10 @@ public class Controller implements Initializable
                     if(index >= 0)
                     {
                         Plotter plotter = new Plotter(activeData);
-                        if(activeData.attribute(index).isNominal())
+//                        if(activeData.attribute(index).isNominal())
                             plotter.plotHisto(index);
-                        else
-                            plotter.plotBox(index);
+//                        else
+//                            plotter.plotBox(index);
                     }
                 }
             });

@@ -2,6 +2,7 @@ package Processing;
 
 import weka.core.Instances;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.TreeMap;
 
@@ -76,27 +77,39 @@ public class StatisticsRetriever
 
     public double getMedian(int attributeIndex)
     {
+        double[] values = new double[data.numInstances()];
+        for (int i = 0; i < values.length; i++)
+        {
+            values[i] = data.instance(i).value(attributeIndex);
+        }
+        Arrays.sort(values);
         if(data.numInstances() % 2 == 1)
         {
-            return data.instance(data.numInstances()/2+1).value(attributeIndex);
+            return values[data.numInstances()/2+1];
         }
         else
         {
             int n = data.numInstances();
-            return (data.instance(n/2).value(attributeIndex)+data.instance(n/2+1).value(attributeIndex))/2;
+            return (values[n/2]+values[n/2+1])/2;
         }
     }
 
     public double getQ1(int attributeIndex)
     {
+        double[] values = new double[data.numInstances()];
+        for (int i = 0; i < values.length; i++)
+        {
+            values[i] = data.instance(i).value(attributeIndex);
+        }
+        Arrays.sort(values);
         int n = data.numInstances()/2;
         if(n%2 == 1)
         {
-            return data.instance(n/2+1).value(attributeIndex);
+            return values[(n/2+1)];
         }
         else
         {
-            return (data.instance(n/2).value(attributeIndex)+data.instance(n/2+1).value(attributeIndex))/2;
+            return values[(n/2)]+values[(n/2+1)]/2;
         }
     }
 
@@ -113,19 +126,20 @@ public class StatisticsRetriever
         }
     }
 
-    public double getMode(int attributeIndex)
+    public String getMode(int attributeIndex)
     {
-        TreeMap<Double,Integer> freq = new TreeMap<>();
+        TreeMap<String,Integer> freq = new TreeMap<>();
         for (int i = 0; i < data.numInstances(); i++)
         {
-            Double val = data.instance(i).value(attributeIndex);
+            String val = data.attribute(attributeIndex).isNominal()?
+                    data.instance(i).stringValue(attributeIndex):data.instance(i).value(attributeIndex)+"";
             if(!freq.containsKey(val))
                 freq.put(val,0);
             freq.put(val,freq.get(val)+1);
         }
         int max = 0;
-        double maxKey = -1;
-        for (Double d : freq.keySet())
+        String maxKey = "-";
+        for (String d : freq.keySet())
             if(max < freq.get(d))
             {
                 max = freq.get(d);
@@ -142,10 +156,17 @@ public class StatisticsRetriever
     public  boolean isAttributeSymetric(int attribute_index)
     {
         double mean = this.getMean(attribute_index);
-        double mode = this.getMode(attribute_index);
-        double median = this.getMedian(attribute_index);
-        double error = 1e-2;
-        return (((mean-mode>=3*(mode-median)-error) && (mean-mode<=3*(mode-median)+error)) && data.attribute(attribute_index).isNumeric());
+        try
+        {
+            double mode = Double.parseDouble(this.getMode(attribute_index));
+            double median = this.getMedian(attribute_index);
+            double error = 1e-2;
+            return (((mean-mode>=3*(mode-median)-error) && (mean-mode<=3*(mode-median)+error)) && data.attribute(attribute_index).isNumeric());
+        }catch (NumberFormatException e)
+        {
+
+        }
+        return false;
     }
 
 
