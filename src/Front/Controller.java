@@ -196,7 +196,7 @@ public class Controller implements Initializable
         valuesTable.getColumns().clear();
         valuesTable.setItems(generateDataValuesInMap());
         Callback<TableColumn<Map, String>, TableCell<Map, String>> factory = getCellFactoryMap();
-        String columns[] = {"nom","type","min","max","mediane","Q1","Q3","mode","moyenne","midrange","Symetrique"};
+        String columns[] = {"nom","type","min","max","mediane","Q1","Q3","mode","moyenne","midrange","Symetrique","Mean-Mode=3(Mode-Median)"};
         for (int i = 0; i < columns.length; i++)
         {
             TableColumn<Map,String> col = new TableColumn<>(columns[i]);
@@ -260,7 +260,13 @@ public class Controller implements Initializable
             String type = (a.isNumeric())?"Numerique":"Nominale";
             dataRow.put("type",type);
             StatisticsRetriever retriever = new StatisticsRetriever(activeData);
-            String isSymetric = retriever.isAttributeSymetric(i)?"Oui":"Non";
+
+            int sym = retriever.symetry(i);
+            String symetry = sym==-1?"Négativement":sym==1?"Positivement":sym==0?"Symétrique":"Non";
+
+            String isSymetric = retriever.isSomethingBabali(i)?"Oui":"Non";
+
+//            String symetry = retriever.symetry(i)?"Oui":"Non";
             if(a.isNumeric())
             {
                 dataRow.put("min", String.format("%.2f", retriever.getMin(i)));
@@ -270,7 +276,8 @@ public class Controller implements Initializable
                 dataRow.put("Q3", String.format("%.2f", retriever.getQ3(i)));
                 dataRow.put("moyenne", String.format("%.2f", retriever.getMean(i)));
                 dataRow.put("midrange",String.format("%.2f", retriever.getMidRange(i)));
-                dataRow.put("Symetrique",isSymetric);
+                dataRow.put("Symetrique",symetry);
+                dataRow.put("Mean-Mode=3(Mode-Median)",isSymetric);
             }
             else
             {
@@ -282,6 +289,7 @@ public class Controller implements Initializable
                 dataRow.put("moyenne", "-");
                 dataRow.put("midrange","-");
                 dataRow.put("Symetrique","-");
+                dataRow.put("Mean-Mode=3(Mode-Median)","-");
             }
             dataRow.put("mode",retriever.getMode(i)+"");
             allData.add(dataRow);

@@ -60,7 +60,7 @@ public class Main extends Application {
 //        dc.normalizeAllAttributes();
 //        dc.fillInMissingValues();
 //        System.out.println(data);
-//        System.out.println("new StatisticsRetriever(data).isAttributeSymetric(0) = " + new StatisticsRetriever(data).isAttributeSymetric(0));
+//        System.out.println("new StatisticsRetriever(data).symetry(0) = " + new StatisticsRetriever(data).symetry(0));
 
     }
 }

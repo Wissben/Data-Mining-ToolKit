@@ -24,6 +24,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.TreeMap;
 
 /**
  * Created by ressay on 11/10/18.
@@ -140,18 +141,38 @@ public class Plotter
 //            return;
         final DefaultCategoryDataset dataset =
                 new DefaultCategoryDataset( );
-        HashMap<String,Integer> frequencies = new HashMap<>();
-        for (int i = 0; i < data.numInstances(); i++)
+        if(data.attribute(attributeIndex).isNumeric())
         {
-            String value = data.attribute(attributeIndex).isNominal()?
-                    data.instance(i).stringValue(attributeIndex):data.instance(i).value(attributeIndex)+"";
-            if(!frequencies.containsKey(value))
-                frequencies.put(value,0);
-            frequencies.put(value,
-                    frequencies.get(value)+1);
+
+            TreeMap<Double,Integer> frequencies = new TreeMap<>();
+            for (int i = 0; i < data.numInstances(); i++)
+            {
+                double value = data.instance(i).value(attributeIndex);
+                if(!frequencies.containsKey(value))
+                    frequencies.put(value,0);
+                frequencies.put(value,
+                        frequencies.get(value)+1);
+            }
+            for(Double key : frequencies.keySet())
+                dataset.addValue(frequencies.get(key),key,"frequency");
         }
-        for(String key : frequencies.keySet())
-            dataset.addValue(frequencies.get(key),key,"frequency");
+        if(data.attribute(attributeIndex).isNominal())
+        {
+
+            TreeMap<String,Integer> frequencies = new TreeMap<>();
+            for (int i = 0; i < data.numInstances(); i++)
+            {
+                String value = data.attribute(attributeIndex).isNominal()?
+                        data.instance(i).stringValue(attributeIndex):data.instance(i).value(attributeIndex)+"";
+                if(!frequencies.containsKey(value))
+                    frequencies.put(value,0);
+                frequencies.put(value,
+                        frequencies.get(value)+1);
+            }
+            for(String key : frequencies.keySet())
+                dataset.addValue(frequencies.get(key),key,"frequency");
+        }
+
         JFreeChart chart = ChartFactory.createBarChart(
                 "histogram",
                 "Category",

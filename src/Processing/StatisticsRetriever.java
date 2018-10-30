@@ -149,11 +149,8 @@ public class StatisticsRetriever
     }
 
 
-    /**
-     * Didn't know how to name that shit
-     * @return
-     */
-    public  boolean isAttributeSymetric(int attribute_index)
+
+    public  int symetry(int attribute_index)
     {
         double mean = this.getMean(attribute_index);
         try
@@ -161,16 +158,37 @@ public class StatisticsRetriever
             double mode = Double.parseDouble(this.getMode(attribute_index));
             double median = this.getMedian(attribute_index);
             double error = 1e-2;
-            return (((mean-mode>=3*(mode-median)-error) && (mean-mode<=3*(mode-median)+error)) && data.attribute(attribute_index).isNumeric());
+            if(mean < median && median < mode) return -1;
+            if(mean > median && median > mode ) return 1;
+            if(mean == mode && mode == median) return  0;
+        }catch (NumberFormatException e)
+        {
+
+        }
+        return +10;
+    }
+
+    /**
+     * Didn't know how to name that shit
+     * @return
+     */
+    public boolean isSomethingBabali(int attribute_index)
+    {
+        double mean = this.getMean(attribute_index);
+        try
+        {
+            double mode = Double.parseDouble(this.getMode(attribute_index));
+            double median = this.getMedian(attribute_index);
+            double error = 1e-2;
+            if (((mean-mode>=3*(mode-median)-error) && (mean-mode<=3*(mode-median)+error)) && data.attribute(attribute_index).isNumeric())
+                return true;
         }catch (NumberFormatException e)
         {
 
         }
         return false;
+
     }
-
-
-
 
     public double getMidRange(int attributeIndex)
     {
