@@ -9,6 +9,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Slider;
 import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 import javafx.stage.FileChooser;
 import sun.reflect.generics.tree.Tree;
@@ -38,13 +39,13 @@ public class Algorithm implements Initializable {
     private Slider supMin;
 
     @FXML
-    private Text supMinText;
+    private TextField supMinText;
 
     @FXML
     private Slider confMin;
 
     @FXML
-    private Text confMinText;
+    private TextField confMinText;
 
     @FXML
     private TextArea results;
@@ -60,7 +61,7 @@ public class Algorithm implements Initializable {
         confMin.setMin(0);
         confMin.setMax(100);
 
-        supMin.setValue((double)(supMin.getMax()-supMin.getMin())/2);
+        supMin.setValue((double)(supMin.getMax()+1-supMin.getMin())/2);
         supMinText.setText(Double.toString(supMin.getValue()));
         confMin.setValue((double)(confMin.getMax()-confMin.getMin())/2);
         confMinText.setText(Double.toString(confMin.getValue()));
@@ -78,6 +79,25 @@ public class Algorithm implements Initializable {
             confMinText.setText(Double.toString(newValue.intValue()));
 
 
+        });
+
+        supMinText.textProperty().addListener((observable, oldValue, newValue) ->
+        {
+
+
+            if(Double.valueOf(newValue) >=supMin.getMin() && Double.valueOf(newValue) <= supMin.getMax())
+            {
+                supMin.setValue(Double.valueOf(newValue));
+            }
+        });
+
+
+        confMinText.textProperty().addListener((observable, oldValue, newValue) ->
+        {
+            if(Double.valueOf(newValue) >=confMin.getMin() && Double.valueOf(newValue) <= confMin.getMax())
+            {
+                confMin.setValue(Double.valueOf(newValue));
+            }
         });
 
 
