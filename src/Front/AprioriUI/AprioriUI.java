@@ -4,6 +4,10 @@ import Processing.Apriori.InstanceApriori;
 import Processing.Apriori.InstanceReader;
 import Processing.Apriori.Searcher;
 import Processing.Plotter;
+import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXSlider;
+import com.jfoenix.controls.JFXTextArea;
+import com.jfoenix.controls.JFXTextField;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -27,28 +31,33 @@ public class AprioriUI implements Initializable {
 
     public InstanceApriori currentIntance;
 //    Searcher sr = new Searcher(ia,400,0.75);
-
     File currFile = null;
-    @FXML
-    private Button launch;
+
+
 
     @FXML
-    private Button loadFile;
+    private JFXButton launch;
 
     @FXML
-    private Slider supMin;
+    private JFXButton loadFile;
 
     @FXML
-    private TextField supMinText;
+    private JFXSlider supMin;
 
     @FXML
-    private Slider confMin;
+    private JFXTextField supMinText;
 
     @FXML
-    private TextField confMinText;
+    private JFXSlider confMin;
 
     @FXML
-    private TextArea results;
+    private JFXTextField confMinText;
+
+    @FXML
+    private JFXTextArea transactions;
+
+    @FXML
+    private JFXTextArea results;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle)
@@ -111,6 +120,7 @@ public class AprioriUI implements Initializable {
                 try
                 {
                     currentIntance = InstanceReader.loadInstance(currFile);
+                    transactions.setText(String.valueOf(currentIntance));
 
                 } catch (Exception e)
                 {

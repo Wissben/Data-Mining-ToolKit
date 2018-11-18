@@ -22,6 +22,21 @@ public class InstanceApriori {
         transactions.add(id,tmp);
     }
 
+    @Override
+    public String toString()
+    {
+        String res = "";
+        for (int i = 0; i < transactions.size(); i++) {
+            res+="T_id "+i+" :  ";
+            for(String key : transactions.get(i))
+            {
+                res += key +" , ";
+            }
+            res+="\n";
+        }
+        return res;
+    }
+
     public void printTransactions()
     {
         for(TreeSet<String> key : transactions)

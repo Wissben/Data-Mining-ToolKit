@@ -44,6 +44,7 @@ public class Main extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("AprioriUI/AprioriUI.fxml"));
         primaryStage.setTitle("Hello World");
         primaryStage.setScene(new Scene(root));
+//        root.getStylesheets().add("/home/weiss/CODES/TP-DM/dmtp/styles/slider.css");
         primaryStage.setResizable(false);
         primaryStage.show();
         Platform.setImplicitExit(true);
