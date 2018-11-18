@@ -1,24 +1,22 @@
 package Front;
 
-import Processing.Apriori.InstanceApriori;
-import Processing.Apriori.InstanceReader;
-import Processing.Apriori.Searcher;
-import com.sun.org.apache.xalan.internal.xsltc.compiler.util.StringStack;
+import Front.AprioriUI.AprioriUI;
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-import java.io.File;
 import java.io.IOException;
-import java.util.Arrays;
-import java.util.TreeMap;
-import java.util.TreeSet;
 
 
 //public class Main{
 public class Main extends Application {
+
+
+    private AprioriUI controller;
+
 
     @Override
     public void start(Stage primaryStage) throws Exception{
@@ -43,11 +41,14 @@ public class Main extends Application {
 //            System.out.println();
 //        }
 
-        Parent root = FXMLLoader.load(getClass().getResource("Algorithm.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("AprioriUI/AprioriUI.fxml"));
         primaryStage.setTitle("Hello World");
         primaryStage.setScene(new Scene(root));
         primaryStage.setResizable(false);
         primaryStage.show();
+        Platform.setImplicitExit(true);
+
+
     }
 
 

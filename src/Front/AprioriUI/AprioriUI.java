@@ -1,4 +1,4 @@
-package Front;
+package Front.AprioriUI;
 
 import Processing.Apriori.InstanceApriori;
 import Processing.Apriori.InstanceReader;
@@ -22,7 +22,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.TreeMap;
 
-public class Algorithm implements Initializable {
+public class AprioriUI implements Initializable {
 
 
     public InstanceApriori currentIntance;

@@ -109,8 +109,13 @@ public class Searcher {
 
             for (int i = 0; i < subs.size(); i++) {
                 for (int j = i+1; j < subs.size(); j++) {
-                    if(!subs.get(j).containsAll(subs.get(i)))
+                    TreeSet<String> inters = (TreeSet<String>) subs.get(i).clone();
+                    inters.retainAll(subs.get(j));
+                    if(inters.isEmpty())
                     {
+//                        System.out.println("inters = " + inters);
+//                        System.out.println("subs i = " + subs.get(i));
+//                        System.out.println("subs j = " + subs.get(j));
 
                         TreeSet<String> union = (TreeSet<String>) subs.get(i).clone();
                         union.addAll(subs.get(j));
