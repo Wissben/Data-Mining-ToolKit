@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="492.0" maxWidth="711.0" minHeight="492.0" minWidth="711.0" prefHeight="492.0" prefWidth="711.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Front.Algorithm">
+   <children>
+      <HBox layoutX="11.0" layoutY="13.0" prefHeight="467.0" prefWidth="691.0" spacing="5">
+         <children>
+            <VBox prefHeight="374.0" prefWidth="223.0" spacing="15">
+               <children>
+                  <Button fx:id="launch" mnemonicParsing="false" prefHeight="32.0" prefWidth="100.0" text="Launch" />
+                  <Button fx:id="loadFile" lineSpacing="150.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="102.0" text="Load" textAlignment="CENTER" />
+                  <Slider fx:id="supMin" />
+                  <Text fx:id="supMinText" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="198.28271484375" />
+                  <Slider fx:id="confMin" prefHeight="16.0" prefWidth="135.0" />
+                  <Text fx:id="confMinText" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="198.28271484375" />
+               </children>
+            </VBox>
+            <TextArea fx:id="results" editable="false" prefHeight="449.0" prefWidth="429.0" />
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

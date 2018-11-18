@@ -264,7 +264,7 @@ public class Controller implements Initializable
             int sym = retriever.symetry(i);
             String symetry = sym==-1?"Négativement":sym==1?"Positivement":sym==0?"Symétrique":"Non";
 
-            String isSymetric = retriever.isSomethingBabali(i)?"Oui":"Non";
+            String isSymetric = retriever.isSymetric(i)?"Oui":"Non";
 
 //            String symetry = retriever.symetry(i)?"Oui":"Non";
             if(a.isNumeric())

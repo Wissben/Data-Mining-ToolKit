@@ -112,7 +112,9 @@ public class DataCleaner {
                    freq.put(val,freq.get(val)-1);
                }
             }
+            if(freq.size() > 0)
             return freq.firstKey();
+
         }
         return null;
     }
@@ -135,7 +137,15 @@ public class DataCleaner {
                     }
                     if(instance.attribute(j).isNominal() && instance.isMissing(j))
                     {
-                        instance.setValue(j,this.getMostCommonValueOfSameClass(j,instance.stringValue(data.classIndex())));
+                        String val = this.getMostCommonValueOfSameClass(j,instance.stringValue(data.classIndex()));
+                        if(val != null)
+                        instance.setValue(j,val);
+                        else
+                        {
+                            data.deleteAttributeAt(j);
+                            continue;
+                        }
+
                     }
                 }
 

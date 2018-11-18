@@ -157,7 +157,6 @@ public class StatisticsRetriever
         {
             double mode = Double.parseDouble(this.getMode(attribute_index));
             double median = this.getMedian(attribute_index);
-            double error = 1e-2;
             if(mean < median && median < mode) return -1;
             if(mean > median && median > mode ) return 1;
             if(mean == mode && mode == median) return  0;
@@ -172,7 +171,7 @@ public class StatisticsRetriever
      * Didn't know how to name that shit
      * @return
      */
-    public boolean isSomethingBabali(int attribute_index)
+    public boolean isSymetric(int attribute_index)
     {
         double mean = this.getMean(attribute_index);
         try
