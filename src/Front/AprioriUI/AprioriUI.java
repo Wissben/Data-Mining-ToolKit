@@ -121,6 +121,7 @@ public class AprioriUI implements Initializable {
                 {
                     currentIntance = InstanceReader.loadInstance(currFile);
                     transactions.setText(String.valueOf(currentIntance));
+                    supMin.setMax(currentIntance.transactions.size());
 
                 } catch (Exception e)
                 {

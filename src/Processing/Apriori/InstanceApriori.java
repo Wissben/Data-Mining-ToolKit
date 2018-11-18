@@ -1,15 +1,18 @@
 package Processing.Apriori;
 
+import java.lang.reflect.Array;
 import java.util.*;
 
 public class InstanceApriori {
 
 
     public ArrayList<TreeSet<String>> transactions ;
+    public ArrayList<TreeSet<String>> labeledTransactions;
 
     public InstanceApriori()
     {
         transactions = new ArrayList<>();
+        labeledTransactions = new ArrayList<>();
 
     }
 
@@ -20,6 +23,14 @@ public class InstanceApriori {
             tmp.add(items[i]);
         }
         transactions.add(id,tmp);
+    }
+    public void addLabeledTransaction(int id, String[] items)
+    {
+        TreeSet<String> tmp = new TreeSet<>();
+        for (int i = 0; i < items.length; i++) {
+            tmp.add(items[i]);
+        }
+        labeledTransactions.add(id,tmp);
     }
 
     @Override

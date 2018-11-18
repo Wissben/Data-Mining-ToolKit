@@ -22,7 +22,7 @@ public class Searcher {
     public int getFreqOfItemSet(TreeSet<String> itemset)
     {
         int freq = 0;
-        for (TreeSet<String> key : instance.transactions) {
+        for (TreeSet<String> key : instance.labeledTransactions) {
             if(key.containsAll(itemset))
             {
                 freq++;
@@ -52,7 +52,7 @@ public class Searcher {
         {
 
             TreeSet<String> union = new TreeSet<>();
-            for (TreeSet<String> key : instance.transactions) {
+            for (TreeSet<String> key : instance.labeledTransactions) {
                 union.addAll(key);
             }
             for (String s : union)
