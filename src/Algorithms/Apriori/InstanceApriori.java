@@ -1,6 +1,5 @@
-package Processing.Apriori;
+package Algorithms.Apriori;
 
-import java.lang.reflect.Array;
 import java.util.*;
 
 public class InstanceApriori {

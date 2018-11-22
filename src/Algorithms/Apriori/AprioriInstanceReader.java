@@ -1,19 +1,19 @@
-package Processing.Apriori;
+package Algorithms.Apriori;
 
 import java.io.*;
 
-public class InstanceReader {
+public class AprioriInstanceReader {
 
     File location;
     InstanceApriori instance;
-    public InstanceReader(File path){
+    public AprioriInstanceReader(File path){
         this.instance = new InstanceApriori();
         this.location = path;
     }
 
 
     public static InstanceApriori loadInstance(File path) throws IOException {
-        InstanceReader ir = new InstanceReader(path);
+        AprioriInstanceReader ir = new AprioriInstanceReader(path);
         BufferedReader br = new BufferedReader(new FileReader(ir.location));
         String line = "";
         int id = 0;

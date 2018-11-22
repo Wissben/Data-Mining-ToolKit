@@ -30,6 +30,12 @@ import java.util.*;
 
 public class Controller implements Initializable
 {
+
+    LinkedList<TableColumn<Map,String>> columns = new LinkedList<>();
+
+    Instances originalData,activeData,activeCleanData;
+
+
     @FXML
     private JFXButton loadFile;
 
@@ -45,11 +51,6 @@ public class Controller implements Initializable
     @FXML
     private Button showBox;
 
-
-
-    LinkedList<TableColumn<Map,String>> columns = new LinkedList<>();
-
-    Instances originalData,activeData,activeCleanData;
 
     @FXML
     private Label nbInstances;

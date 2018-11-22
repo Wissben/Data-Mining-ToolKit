@@ -1,6 +1,11 @@
-package Processing.Apriori;
+package Algorithms.Apriori;
+
+import Algorithms.Apriori.InstanceApriori;
 
 import java.util.*;
+
+import static java.util.Map.Entry.comparingByValue;
+import static java.util.stream.Collectors.toMap;
 
 public class Searcher {
 
@@ -123,7 +128,7 @@ public class Searcher {
                         String rule = setToString(subs.get(i));
                         if(conf >= confMin)
                         {
-                            rule+="->"+setToString(subs.get(j));
+                            rule+="--->"+setToString(subs.get(j));
                             res.put(rule,conf);
                         }
 
@@ -131,7 +136,8 @@ public class Searcher {
                         rule = setToString(subs.get(j));
                         if(conf>confMin)
                         {
-                            rule+="->"+setToString(subs.get(i));
+                            rule+="--->"+setToString(subs.get(i));
+
                             res.put(rule,conf);
 
                         }

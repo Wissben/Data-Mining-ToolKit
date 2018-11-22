@@ -1,27 +1,18 @@
 package Front.AprioriUI;
 
-import Processing.Apriori.InstanceApriori;
-import Processing.Apriori.InstanceReader;
-import Processing.Apriori.Searcher;
-import Processing.Plotter;
+import Algorithms.Apriori.InstanceApriori;
+import Algorithms.Apriori.AprioriInstanceReader;
+import Algorithms.Apriori.Searcher;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXSlider;
 import com.jfoenix.controls.JFXTextArea;
 import com.jfoenix.controls.JFXTextField;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.Slider;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
-import javafx.scene.text.Text;
 import javafx.stage.FileChooser;
-import sun.reflect.generics.tree.Tree;
-import weka.core.converters.ArffLoader;
 
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileReader;
 import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.TreeMap;
@@ -119,7 +110,7 @@ public class AprioriUI implements Initializable {
                 BufferedReader reader;
                 try
                 {
-                    currentIntance = InstanceReader.loadInstance(currFile);
+                    currentIntance = AprioriInstanceReader.loadInstance(currFile);
                     transactions.setText(String.valueOf(currentIntance));
                     supMin.setMax(currentIntance.transactions.size());
 

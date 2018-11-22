@@ -4,6 +4,7 @@
 <?import com.jfoenix.controls.JFXSlider?>
 <?import com.jfoenix.controls.JFXTextArea?>
 <?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
@@ -24,8 +25,10 @@
                         <Font name="Roboto Regular" size="13.0" />
                      </font></JFXButton>
                   <JFXSlider fx:id="supMin" stylesheets="@../../styles/slider.css" />
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="15.0" prefWidth="277.0" text="Support minimum" textAlignment="CENTER" />
                   <JFXTextField fx:id="supMinText" alignment="CENTER" />
                   <JFXSlider fx:id="confMin" prefHeight="16.0" prefWidth="135.0" stylesheets="@../../styles/slider.css" />
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="15.0" prefWidth="277.0" text="Confiance minimum" textAlignment="CENTER" />
                   <JFXTextField fx:id="confMinText" alignment="CENTER" />
                   <JFXTextArea fx:id="transactions" prefHeight="211.0" />
                </children>
