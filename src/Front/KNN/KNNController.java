@@ -1,7 +1,6 @@
-package Front.AprioriUI;
+package Front.KNN;
 
 import Algorithms.Apriori.InstanceApriori;
-import Algorithms.Apriori.AprioriInstanceReader;
 import Algorithms.Apriori.Searcher;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXSlider;
@@ -9,15 +8,13 @@ import com.jfoenix.controls.JFXTextArea;
 import com.jfoenix.controls.JFXTextField;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.stage.FileChooser;
 
-import java.io.BufferedReader;
 import java.io.File;
 import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.TreeMap;
 
-public class AprioriUI implements Initializable {
+public class KNNController implements Initializable {
 
 
     public InstanceApriori currentIntance;

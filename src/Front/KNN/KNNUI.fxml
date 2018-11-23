@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="492.0" prefWidth="793.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Front.AprioriUI.AprioriUI">
+   <children>
+      <HBox layoutX="11.0" layoutY="13.0" prefHeight="467.0" prefWidth="772.0" spacing="5">
+         <children>
+            <VBox prefHeight="467.0" prefWidth="298.0" spacing="15">
+               <children>
+                  <JFXButton fx:id="launch" buttonType="RAISED" contentDisplay="CENTER" lineSpacing="150.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="287.0" style="-fx-background-color: #1976d2;" text="Launch" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="Roboto Regular" size="13.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="loadFile" buttonType="RAISED" lineSpacing="150.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="278.0" style="-fx-background-color: #1976d2;" text="Load" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="Roboto Regular" size="13.0" />
+                     </font></JFXButton>
+                  <JFXSlider fx:id="supMin" stylesheets="@../../styles/slider.css" />
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="15.0" prefWidth="277.0" text="Support minimum" textAlignment="CENTER" />
+                  <JFXTextField fx:id="supMinText" alignment="CENTER" />
+                  <JFXSlider fx:id="confMin" prefHeight="16.0" prefWidth="135.0" stylesheets="@../../styles/slider.css" />
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="15.0" prefWidth="277.0" text="Confiance minimum" textAlignment="CENTER" />
+                  <JFXTextField fx:id="confMinText" alignment="CENTER" />
+                  <JFXTextArea fx:id="transactions" prefHeight="211.0" />
+               </children>
+            </VBox>
+            <JFXTextArea fx:id="results" editable="false" />
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

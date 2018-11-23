@@ -13,4 +13,19 @@
 .jfx-slider .slider-value {
     -fx-fill: white;
     -fx-stroke: white;
-} 
+}
+
+
+/*Raised button example */
+.jfx-button {
+    -jfx-button-type: RAISED;
+    -fx-background-color: "1976d2";
+    -fx-text-fill: white;
+}
+
+.jfx-tab-pane .headers-region {
+    -fx-background-color: #1976d2;
+}
+.jfx-tab-pane .tab-header-background {
+    -fx-background-color: #1976d2;
+}

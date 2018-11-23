@@ -7,14 +7,24 @@ import java.util.*;
 
 public class KNNClassifier {
 
-    Instances instances ;
+    public Instances instances ;
+    public Instances trainInstances ;
+    public Instances testInstances ;
+
     TreeMap<String,BitSet> mapAttributeValueToCodification = new TreeMap<>();
 
     int K = 3;
 
-    public KNNClassifier(Instances instances,int K)
+    public KNNClassifier(Instances instances,int K,double ratio)
     {
         this.instances= instances;
+        this.instances.randomize(new java.util.Random(0));
+        int trainSize = (int) Math.round(instances.numInstances() * ratio);
+        int testSize = instances.numInstances() - trainSize;
+        this.trainInstances= new Instances(instances, 0, trainSize);
+        this.testInstances= new Instances(instances, trainSize, testSize);
+
+
         this.K = K;
         for (int i = 0; i < instances.numAttributes(); i++) {
             if(instances.attribute(i).isNominal())
@@ -28,7 +38,7 @@ public class KNNClassifier {
 
             }
         }
-        System.out.println("mapAttributeToPossibleValues = " + mapAttributeValueToCodification);
+//        System.out.println("mapAttributeToPossibleValues = " + mapAttributeValueToCodification);
     }
 
 
@@ -103,6 +113,18 @@ public class KNNClassifier {
     }
 
 
+    public TreeMap<String,String> classifyTestSet(Instances test)
+    {
+        TreeMap<String ,String> res = new TreeMap<>();
+        for (int i = 0; i < test.numInstances(); i++) {
+//            res.put(String.valueOf(test.instance(i)),classify(test.instance(i)));
+            res.put(i+"---("+test.instance(i).stringValue(test.classIndex())+")---",classify(test.instance(i)));
+
+        }
+        return res;
+    }
+
+
     private String getMostFrequentClass(String[] cls)
     {
         TreeMap<String, Integer> map = new TreeMap<>();
@@ -121,7 +143,7 @@ public class KNNClassifier {
         }
         TreeMap<String,Integer> sorted = new TreeMap<>(new ItemComaparator2(map));
         sorted.putAll(map);
-        System.out.println("sorted = " + sorted);
+//        System.out.println("sorted = " + sorted);
         return sorted.firstKey();
     }
 

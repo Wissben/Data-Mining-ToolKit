@@ -1,5 +1,8 @@
 package Front;
 
+import Algorithms.Apriori.AprioriInstanceReader;
+import Algorithms.Apriori.InstanceApriori;
+import Front.AprioriUI.AprioriUI;
 import Processing.DataCleaner;
 import Processing.Plotter;
 import Processing.StatisticsRetriever;
@@ -7,12 +10,17 @@ import com.jfoenix.controls.JFXButton;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.scene.input.MouseButton;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.Pane;
 import javafx.stage.FileChooser;
+import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import javafx.util.StringConverter;
 import weka.core.Attribute;
 import weka.core.Instance;
@@ -25,6 +33,7 @@ import javafx.util.Callback;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
+import java.io.IOException;
 import java.net.URL;
 import java.util.*;
 
@@ -35,6 +44,7 @@ public class Controller implements Initializable
 
     Instances originalData,activeData,activeCleanData;
 
+    File chosen;
 
     @FXML
     private JFXButton loadFile;
@@ -67,13 +77,15 @@ public class Controller implements Initializable
     @FXML
     private TabPane tabPane;
 
+    @FXML
+    private JFXButton launchApriori;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle)
     {
         loadFile.setOnAction(actionEvent -> {
             FileChooser fileChooser = new FileChooser();
-            File chosen = fileChooser.showOpenDialog(null);
+            chosen = fileChooser.showOpenDialog(null);
             if(chosen != null)
             {
                 BufferedReader reader;
@@ -99,6 +111,39 @@ public class Controller implements Initializable
             {
                 Plotter plotter = new Plotter(activeCleanData);
                 plotter.plotBox();
+            }
+        });
+
+        launchApriori.setOnAction(actionEvent->
+        {
+            if(activeData!=null && chosen != null)
+            {
+                FXMLLoader loader = new FXMLLoader(
+                        getClass().getResource(
+                                "AprioriUI/AprioriUI.fxml"
+                        )
+                );
+
+                Stage stage = new Stage(StageStyle.DECORATED);
+                try {
+                    stage.setScene(
+                            new Scene(
+                                  loader.load()
+                            )
+                    );
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
+                AprioriUI controller =
+                        loader.<AprioriUI>getController();
+
+                InstanceApriori currentIntance = AprioriInstanceReader.loadInstance(activeCleanData);
+                controller.currentIntance=currentIntance;
+                controller.currFile=chosen;
+                controller.setup();
+
+                stage.show();
             }
         });
 

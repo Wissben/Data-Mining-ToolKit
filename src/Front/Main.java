@@ -1,5 +1,8 @@
 package Front;
 
+import Algorithms.Apriori.AprioriInstanceReader;
+import Algorithms.Apriori.InstanceApriori;
+import Algorithms.Apriori.Searcher;
 import Algorithms.KNN.KNNClassifier;
 import Front.AprioriUI.AprioriUI;
 import Processing.DataCleaner;
@@ -23,47 +26,62 @@ import java.util.Enumeration;
 
 public class Main{
 //public class Main extends Application {
-
-
+//
+//
 //    private AprioriUI controller;
 //
 //
 //    @Override
 //    public void start(Stage primaryStage) throws Exception{
-
-//        BufferedReader reader =
-//                new BufferedReader(new FileReader("/home/weiss/CODES/TP-DM/dmtp/data/iris.arff"));
-//        ArffLoader.ArffReader arff = new ArffLoader.ArffReader(reader);
-//        Instances data = arff.getData();
-//        data.setClassIndex(data.numAttributes() - 1);
-//        System.out.println(data);
-//        System.out.println("data = " + data.instance(0).attribute(1).enumerateValues());
-
-//        for (int i = 0; i < data.numInstances() ; i++) {
-//            Instance instance = data.instance(i);
-//            for (int j = 0; j < instance.numAttributes(); j++)
-//            {
-//                System.out.print(instance.attribute(j).name()+": "); //get Attribute 0 as String
-//                System.out.print(instance.value(j)+ " * ");
-//            }
-//            System.out.println();
-//        }
-
-//        Parent root = FXMLLoader.load(getClass().getResource("AprioriUI/AprioriUI.fxml"));
+//
+////        BufferedReader reader =
+////                new BufferedReader(new FileReader("/home/weiss/CODES/TP-DM/dmtp/car.arff"));
+////        ArffLoader.ArffReader arff = new ArffLoader.ArffReader(reader);
+////        Instances data = arff.getData();
+////        data.setClassIndex(data.numAttributes() - 1);
+//////        System.out.println(data);
+//////        System.out.println("data = " + data.instance(0).attribute(1).enumerateValues());
+////        InstanceApriori ia = AprioriInstanceReader.loadInstance(data);
+////        Searcher sr = new Searcher(ia,500,075);
+////        sr.search();
+////        System.out.println("sr.rules = " + sr.rules);
+////        System.out.println("sr.Ls = " + sr.Ls);
+////        for (int i = 0; i < data.numInstances() ; i++) {
+////            Instance instance = data.instance(i);
+////            for (int j = 0; j < instance.numAttributes(); j++)
+////            {
+////                System.out.print(instance.attribute(j).name()+": "); //get Attribute 0 as String
+////                System.out.print(instance.value(j)+ " * ");
+////            }
+////            System.out.println();
+//////        }
+//
+//        Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
 //        primaryStage.setTitle("Hello World");
 //        primaryStage.setScene(new Scene(root));
 ////        root.getStylesheets().add("/home/weiss/CODES/TP-DM/dmtp/styles/slider.css");
 //        primaryStage.setResizable(false);
 //        primaryStage.show();
 //        Platform.setImplicitExit(true);
-
-
+//
+//
 //    }
 
 
     public static void main(String[] args) throws IOException {
 //        launch(args);
-
+//        BufferedReader reader =
+//                new BufferedReader(new FileReader("/home/weiss/CODES/TP-DM/dmtp/car.arff"));
+//        ArffLoader.ArffReader arff = new ArffLoader.ArffReader(reader);
+//        Instances data = arff.getData();
+//        data.setClassIndex(data.numAttributes() - 1);
+////        System.out.println(data);
+////        System.out.println("data = " + data.instance(0).attribute(1).enumerateValues());
+//        InstanceApriori ia = AprioriInstanceReader.loadInstance(data);
+//        Searcher sr = new Searcher(ia,200,0.75);
+//        sr.search();
+//        System.out.println("sr.rules = " + sr.rules);
+//        System.out.println("sr.Ls = " + sr.Ls);
         BufferedReader reader =
                 new BufferedReader(new FileReader("/home/weiss/CODES/TP-DM/dmtp/data/breast-cancer.arff"));
         ArffLoader.ArffReader arff = new ArffLoader.ArffReader(reader);
@@ -72,10 +90,11 @@ public class Main{
         DataCleaner dc = new DataCleaner(data);
         dc.normalizeAllAttributes();
         dc.fillInMissingValues();
-        KNNClassifier knn = new KNNClassifier(data,5);
-        System.out.println("data = " + data.instance(45));
-        String cl = knn.classify(data.instance(45));
-        System.out.println("cl = " + cl);
+        KNNClassifier knn = new KNNClassifier(data,5,0.75);
+        System.out.println("knn = "+  knn.classifyTestSet(knn.testInstances));
+//        System.out.println("data = " + data.instance(45));
+//        String cl = knn.classify(data.instance(45));
+//        System.out.println("cl = " + cl);
 
 //        System.out.println(data);
 //        Enumeration a = data.attribute(1).enumerateValues();
