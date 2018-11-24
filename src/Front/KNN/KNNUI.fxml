@@ -1,12 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXSlider?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
-<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="492.0" prefWidth="793.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Front.AprioriUI.AprioriUI">
+
+<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="492.0" prefWidth="793.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Front.KNN.KNNController">
    <children>
       <HBox layoutX="11.0" layoutY="13.0" prefHeight="467.0" prefWidth="772.0" spacing="5">
          <children>
@@ -20,13 +25,26 @@
                      <font>
                         <Font name="Roboto Regular" size="13.0" />
                      </font></JFXButton>
-                  <JFXSlider fx:id="supMin" stylesheets="@../../styles/slider.css" />
-                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="15.0" prefWidth="277.0" text="Support minimum" textAlignment="CENTER" />
-                  <JFXTextField fx:id="supMinText" alignment="CENTER" />
-                  <JFXSlider fx:id="confMin" prefHeight="16.0" prefWidth="135.0" stylesheets="@../../styles/slider.css" />
-                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="15.0" prefWidth="277.0" text="Confiance minimum" textAlignment="CENTER" />
-                  <JFXTextField fx:id="confMinText" alignment="CENTER" />
-                  <JFXTextArea fx:id="transactions" prefHeight="211.0" />
+                  <JFXSlider fx:id="KSlider" blockIncrement="5.0" showTickLabels="true" showTickMarks="true" stylesheets="@../../styles/slider.css">
+                     <cursor>
+                        <Cursor fx:constant="OPEN_HAND" />
+                     </cursor></JFXSlider>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="15.0" prefWidth="277.0" text="Neighbours K" textAlignment="CENTER">
+                     <font>
+                        <Font name="System Bold" size="31.0" />
+                     </font></Label>
+                  <JFXTextField fx:id="KText" alignment="CENTER" />
+                  <JFXSlider fx:id="ratioSlider" blockIncrement="5.0" showTickLabels="true" showTickMarks="true" stylesheets="@../../styles/slider.css">
+                     <cursor>
+                        <Cursor fx:constant="OPEN_HAND" />
+                     </cursor>
+                  </JFXSlider>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="15.0" prefWidth="277.0" text="Ratio Test/Trainig" textAlignment="CENTER">
+                     <font>
+                        <Font name="System Bold" size="31.0" />
+                     </font>
+                  </Label>
+                  <JFXTextField fx:id="ratioText" alignment="CENTER" />
                </children>
             </VBox>
             <JFXTextArea fx:id="results" editable="false" />

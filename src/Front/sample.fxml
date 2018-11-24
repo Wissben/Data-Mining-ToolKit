@@ -10,7 +10,6 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane stylesheets="@../styles/slider.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Front.Controller">
    <children>
       <HBox fx:id="containerHBox" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="630.0" prefWidth="1280.0">
@@ -55,31 +54,32 @@
                       </Tab>
                   </tabs>
               </JFXTabPane>
+              <VBox prefHeight="630.0" prefWidth="126.0" />
               <VBox prefHeight="630.0" prefWidth="227.0">
                   <children>
-                      <HBox prefHeight="44.0" prefWidth="220.0" />
-                      <Label fx:id="nbInstances" prefHeight="21.0" prefWidth="238.0">
-                          <font>
-                              <Font size="12.0" />
-                          </font>
-                      </Label>
-                      <HBox prefHeight="44.0" prefWidth="166.0" />
-                      <Label fx:id="nbAttribut" prefHeight="21.0" prefWidth="234.0">
-                          <font>
-                              <Font size="12.0" />
-                          </font>
-                      </Label>
+                      <HBox prefHeight="127.0" prefWidth="187.0" />
+                    <VBox prefHeight="609.0" prefWidth="154.0" spacing="15">
+                        <children>
+                            <JFXButton fx:id="loadFile" buttonType="RAISED" prefHeight="59.0" prefWidth="193.0" stylesheets="@../styles/slider.css" text="Load file" />
+                            <JFXButton fx:id="showBox" buttonType="RAISED" prefHeight="59.0" prefWidth="189.0" stylesheets="@../styles/slider.css" text="Show Boxplot" />
+                            <JFXButton fx:id="launchApriori" buttonType="RAISED" prefHeight="59.0" prefWidth="207.0" stylesheets="@../styles/slider.css" text="Launch Apriori" />
+                        <JFXButton fx:id="launchKNN" buttonType="RAISED" prefHeight="59.0" prefWidth="211.0" stylesheets="@../styles/slider.css" text="Launch KNN" />
+                            <Label fx:id="nbInstances" prefHeight="21.0" prefWidth="238.0">
+                                <font>
+                                    <Font size="12.0" />
+                                </font>
+                            </Label>
+                            <VBox prefHeight="20.0" prefWidth="139.0" />
+                            <Label fx:id="nbAttribut" prefHeight="21.0" prefWidth="234.0">
+                                <font>
+                                    <Font size="12.0" />
+                                </font>
+                            </Label>
+                        </children>
+                    </VBox>
                   </children>
               </VBox>
-              <VBox prefHeight="609.0" prefWidth="154.0" spacing="15">
-                  <children>
-                      <VBox prefHeight="20.0" prefWidth="139.0" />
-                      <JFXButton fx:id="loadFile" buttonType="RAISED" prefHeight="59.0" prefWidth="149.0" stylesheets="@../styles/slider.css" text="Load file" />
-                      <JFXButton fx:id="showBox" buttonType="RAISED" prefHeight="59.0" prefWidth="149.0" stylesheets="@../styles/slider.css" text="Show Boxplot" />
-                      <JFXButton fx:id="launchApriori" buttonType="RAISED" prefHeight="59.0" prefWidth="149.0" stylesheets="@../styles/slider.css" text="Launch Apriori" />
-                  </children>
-              </VBox>
-              <VBox prefHeight="630.0" prefWidth="44.0" />
+            <VBox prefHeight="630.0" prefWidth="114.0" />
           </children>
           <!--<padding>-->
           <!--<Insets bottom="50.0" left="50.0" right="50.0" top="50.0" />-->

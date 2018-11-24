@@ -10,7 +10,7 @@ public class KNNClassifier {
     public Instances instances ;
     public Instances trainInstances ;
     public Instances testInstances ;
-
+    public double accuracy = 0;
     TreeMap<String,BitSet> mapAttributeValueToCodification = new TreeMap<>();
 
     int K = 3;
@@ -19,7 +19,7 @@ public class KNNClassifier {
     {
         this.instances= instances;
         this.instances.randomize(new java.util.Random(0));
-        int trainSize = (int) Math.round(instances.numInstances() * ratio);
+        int trainSize = (int) Math.round(instances.numInstances() * ratio/100);
         int testSize = instances.numInstances() - trainSize;
         this.trainInstances= new Instances(instances, 0, trainSize);
         this.testInstances= new Instances(instances, trainSize, testSize);
@@ -97,9 +97,9 @@ public class KNNClassifier {
 
         int cpt = 0;
         for (Integer k: sorted.keySet()) {
-            System.out.println(cpt +" : " +instances.instance(k) +" distacnce : "+sorted.get(k));
+//            System.out.println(cpt +" : " +instances.instance(k) +" distacnce : "+sorted.get(k));
             if(cpt>= this.K){
-                System.out.println("cpt = " + cpt);
+//                System.out.println("cpt = " + cpt);
                 break;
             }
             knns[cpt] = instances.instance(k).stringValue(instances.classIndex());
@@ -107,7 +107,7 @@ public class KNNClassifier {
         }
 
         for (int i = 0; i < knns.length; i++) {
-            System.out.println("knns =  "+ i +" " + knns[i]);
+//            System.out.println("knns =  "+ i +" " + knns[i]);
         }
         return getMostFrequentClass(knns);
     }
@@ -116,11 +116,16 @@ public class KNNClassifier {
     public TreeMap<String,String> classifyTestSet(Instances test)
     {
         TreeMap<String ,String> res = new TreeMap<>();
+        int sum = 0;
         for (int i = 0; i < test.numInstances(); i++) {
+            String classReturned = classify(test.instance(i));
 //            res.put(String.valueOf(test.instance(i)),classify(test.instance(i)));
-            res.put(i+"---("+test.instance(i).stringValue(test.classIndex())+")---",classify(test.instance(i)));
+            res.put(i+","+test.instance(i).stringValue(test.classIndex()),classReturned);
+            if(test.instance(i).stringValue(test.classIndex()).toLowerCase().equals(classReturned.toLowerCase()))
+                sum++;
 
         }
+        this.accuracy = test.numInstances()>0?sum*100/test.numInstances():0;
         return res;
     }
 

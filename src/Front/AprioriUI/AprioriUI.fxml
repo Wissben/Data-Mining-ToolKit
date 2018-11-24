@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="492.0" prefWidth="793.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Front.AprioriUI.AprioriUI">
+<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="492.0" prefWidth="793.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Front.AprioriUI.AprioriController">
    <children>
       <HBox layoutX="11.0" layoutY="13.0" prefHeight="467.0" prefWidth="772.0" spacing="5">
          <children>
@@ -24,11 +24,17 @@
                      <font>
                         <Font name="Roboto Regular" size="13.0" />
                      </font></JFXButton>
-                  <JFXSlider fx:id="supMin" stylesheets="@../../styles/slider.css" />
-                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="15.0" prefWidth="277.0" text="Support minimum" textAlignment="CENTER" />
+                  <JFXSlider fx:id="supMin" showTickLabels="true" showTickMarks="true" stylesheets="@../../styles/slider.css" />
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="15.0" prefWidth="277.0" text="Support minimum" textAlignment="CENTER">
+                     <font>
+                        <Font name="System Bold" size="26.0" />
+                     </font></Label>
                   <JFXTextField fx:id="supMinText" alignment="CENTER" />
-                  <JFXSlider fx:id="confMin" prefHeight="16.0" prefWidth="135.0" stylesheets="@../../styles/slider.css" />
-                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="15.0" prefWidth="277.0" text="Confiance minimum" textAlignment="CENTER" />
+                  <JFXSlider fx:id="confMin" prefHeight="16.0" prefWidth="135.0" showTickLabels="true" showTickMarks="true" stylesheets="@../../styles/slider.css" />
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="60.0" prefWidth="277.0" text="Confiance minimum" textAlignment="CENTER">
+                     <font>
+                        <Font name="System Bold" size="26.0" />
+                     </font></Label>
                   <JFXTextField fx:id="confMinText" alignment="CENTER" />
                   <JFXTextArea fx:id="transactions" prefHeight="211.0" />
                </children>

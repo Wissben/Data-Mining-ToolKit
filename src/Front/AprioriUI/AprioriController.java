@@ -17,7 +17,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.TreeMap;
 
-public class AprioriUI implements Initializable {
+public class AprioriController implements Initializable {
 
 
     public InstanceApriori currentIntance;
@@ -54,6 +54,8 @@ public class AprioriUI implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle)
     {
 
+        loadFile.setDisable(true);
+        loadFile.setVisible(false);
 
         supMin.setMin(1);
         supMin.setMax(1000);
@@ -159,9 +161,13 @@ public class AprioriUI implements Initializable {
 
     private String freqSetsToString(TreeMap<String,Integer> res )
     {
-        String s = "";
+        String s = "--------------------------------------------------------------------------------------------------------------\n";
         for (String key: res.keySet()) {
-            s+="{"+key+"} ==> "+res.get(key)+"\n";
+            String[] items = key.split(",");
+            for (String item: items) {
+                s+="\t"+item+"\n";
+            }
+            s+=":  "+res.get(key)+"\n--------------------------------------------------------------------------------------------------------------\n";
         }
         return s;
     }
@@ -169,9 +175,15 @@ public class AprioriUI implements Initializable {
 
     private String assRulesToString(TreeMap<String,Double> res )
     {
-        String s = "";
+        String s = "°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n";
         for (String key: res.keySet()) {
-            s+="{"+key+"} ==> "+res.get(key)+"\n";
+            System.out.println("key = " + key);
+            String[] items = key.split(",");
+            for (int i = 0; i < items.length-1; i++) {
+                s+=items[i]+"\n";
+            }
+
+            s+="\t"+items[items.length-1]+"\n"+res.get(key)+"\n°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n";
         }
         return s;
     }

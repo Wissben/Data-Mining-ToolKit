@@ -2,7 +2,8 @@ package Front;
 
 import Algorithms.Apriori.AprioriInstanceReader;
 import Algorithms.Apriori.InstanceApriori;
-import Front.AprioriUI.AprioriUI;
+import Front.AprioriUI.AprioriController;
+import Front.KNN.KNNController;
 import Processing.DataCleaner;
 import Processing.Plotter;
 import Processing.StatisticsRetriever;
@@ -17,7 +18,6 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.scene.input.MouseButton;
 import javafx.scene.layout.HBox;
-import javafx.scene.layout.Pane;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
@@ -80,6 +80,9 @@ public class Controller implements Initializable
     @FXML
     private JFXButton launchApriori;
 
+    @FXML
+    private JFXButton launchKNN;
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle)
     {
@@ -135,11 +138,42 @@ public class Controller implements Initializable
                     e.printStackTrace();
                 }
 
-                AprioriUI controller =
-                        loader.<AprioriUI>getController();
+                AprioriController controller =
+                        loader.<AprioriController>getController();
 
                 InstanceApriori currentIntance = AprioriInstanceReader.loadInstance(activeCleanData);
                 controller.currentIntance=currentIntance;
+                controller.currFile=chosen;
+                controller.setup();
+
+                stage.show();
+            }
+        });
+
+
+        launchKNN.setOnAction(actionEvent->
+        {
+            if(activeData!=null && chosen != null)
+            {
+                FXMLLoader loader = new FXMLLoader(
+                        getClass().getResource(
+                                "KNN/KNNUI.fxml"
+                        )
+                );
+
+                Stage stage = new Stage(StageStyle.DECORATED);
+                try {
+                    stage.setScene(
+                            new Scene(
+                                    loader.load()
+                            )
+                    );
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                KNNController controller =loader.<KNNController>getController();
+
+                controller.currentIntance=activeCleanData;
                 controller.currFile=chosen;
                 controller.setup();
 

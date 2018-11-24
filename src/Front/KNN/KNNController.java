@@ -2,12 +2,14 @@ package Front.KNN;
 
 import Algorithms.Apriori.InstanceApriori;
 import Algorithms.Apriori.Searcher;
+import Algorithms.KNN.KNNClassifier;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXSlider;
 import com.jfoenix.controls.JFXTextArea;
 import com.jfoenix.controls.JFXTextField;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import weka.core.Instances;
 
 import java.io.File;
 import java.net.URL;
@@ -17,10 +19,9 @@ import java.util.TreeMap;
 public class KNNController implements Initializable {
 
 
-    public InstanceApriori currentIntance;
-//    Searcher sr = new Searcher(ia,400,0.75);
+    public Instances currentIntance;
+    //    Searcher sr = new Searcher(ia,400,0.75);
     public File currFile = null;
-
 
 
     @FXML
@@ -30,70 +31,66 @@ public class KNNController implements Initializable {
     private JFXButton loadFile;
 
     @FXML
-    private JFXSlider supMin;
+    private JFXSlider KSlider;
 
     @FXML
-    private JFXTextField supMinText;
+    private JFXTextField KText;
 
     @FXML
-    private JFXSlider confMin;
+    private JFXSlider ratioSlider;
 
     @FXML
-    private JFXTextField confMinText;
-
-    @FXML
-    private JFXTextArea transactions;
+    private JFXTextField ratioText;
 
     @FXML
     private JFXTextArea results;
 
     @Override
-    public void initialize(URL url, ResourceBundle resourceBundle)
-    {
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+
+        loadFile.setDisable(true);
+        loadFile.setVisible(false);
+
+        KSlider.setMin(1);
+        KSlider.setMax(1000);
+
+        ratioSlider.setMin(0);
+        ratioSlider.setMax(100);
+
+        KSlider.setValue((double) (KSlider.getMax() + 1 - KSlider.getMin()) / 2);
+        KText.setText(Double.toString(KSlider.getValue()));
+        ratioSlider.setValue((double) (ratioSlider.getMax() - ratioSlider.getMin()) / 2);
+        ratioText.setText(Double.toString(ratioSlider.getValue()));
 
 
-        supMin.setMin(1);
-        supMin.setMax(1000);
-
-        confMin.setMin(0);
-        confMin.setMax(100);
-
-        supMin.setValue((double)(supMin.getMax()+1-supMin.getMin())/2);
-        supMinText.setText(Double.toString(supMin.getValue()));
-        confMin.setValue((double)(confMin.getMax()-confMin.getMin())/2);
-        confMinText.setText(Double.toString(confMin.getValue()));
-
-
-        supMin.valueProperty().addListener((observable, oldValue, newValue) -> {
-            supMin.setValue(Math.ceil(newValue.doubleValue()));
-            supMinText.setText(Double.toString(supMin.getValue()));
-
-
-        });
-
-        confMin.valueProperty().addListener((observable, oldValue, newValue) -> {
-            confMin.setValue(Math.ceil(newValue.doubleValue()));
-            confMinText.setText(Double.toString(confMin.getValue()));
+        KSlider.valueProperty().addListener((observable, oldValue, newValue) -> {
+            KSlider.setValue(Math.ceil(newValue.doubleValue()));
+            KText.setText(Double.toString(KSlider.getValue()));
 
 
         });
 
-        supMinText.textProperty().addListener((observable, oldValue, newValue) ->
+        ratioSlider.valueProperty().addListener((observable, oldValue, newValue) -> {
+            ratioSlider.setValue(Math.ceil(newValue.doubleValue()));
+            ratioText.setText(Double.toString(ratioSlider.getValue()));
+
+
+        });
+
+        KText.textProperty().addListener((observable, oldValue, newValue) ->
         {
 
 
-            if(Double.valueOf(newValue) >=supMin.getMin() && Double.valueOf(newValue) <= supMin.getMax())
-            {
-                supMin.setValue(Double.valueOf(newValue));
+            if (Double.valueOf(newValue) >= KSlider.getMin() && Double.valueOf(newValue) <= KSlider.getMax()) {
+                KSlider.setValue(Double.valueOf(newValue));
             }
         });
 
 
-        confMinText.textProperty().addListener((observable, oldValue, newValue) ->
+        ratioText.textProperty().addListener((observable, oldValue, newValue) ->
         {
-            if(Double.valueOf(newValue) >=confMin.getMin() && Double.valueOf(newValue) <= confMin.getMax())
-            {
-                confMin.setValue(Double.valueOf(newValue));
+            if (Double.valueOf(newValue) >= ratioSlider.getMin() && Double.valueOf(newValue) <= ratioSlider.getMax()) {
+                ratioSlider.setValue(Double.valueOf(newValue));
             }
         });
 
@@ -119,26 +116,15 @@ public class KNNController implements Initializable {
 //        });
 
         launch.setOnAction(actionEvent -> {
-            if(currentIntance!=null)
-            {
-                Searcher sr = new Searcher(currentIntance, (int) supMin.getValue(),confMin.getValue()/100);
-                System.out.println("confMin = " + confMin.getValue());
-                sr.search();
-                System.out.println("sr = " + sr);
-                TreeMap<String, Double>  r = sr.rules;
-//                System.out.println("r = " + r);
-                TreeMap<String,Integer> Ls = sr.Ls;
-//                System.out.println("Ls = " + Ls);
-//                results.setText(String.valueOf(Ls));
-//                System.out.println("Ls = " + Ls);
-
-                String res = "Les résultats de l'algorithme Aapriori sur le fichier "+ currFile.getName()+"\n";
-                res+="Le support minimum est : " + supMinText.getText()+"\n";
-                res+="La confiance minimum est : " + confMinText.getText()+"\n";
-                res+="Les itemsets fréquents sont les suivants : \n";
-                res+=freqSetsToString(Ls)+"\n";
-                res+="Les règles d'ass sont : \n";
-                res+=assRulesToString(r)+"\n";
+            if (currentIntance != null) {
+                KNNClassifier knn = new KNNClassifier(currentIntance, (int) KSlider.getValue(), ratioSlider.getValue());
+                TreeMap<String, String> map = knn.classifyTestSet(knn.testInstances);
+                String res = "Les résultats de l'algorithme KNN sur le fichier " + currFile.getName() + "\n";
+                res += "Le nombre de voisins K : " + KText.getText() + "\n";
+                res += "Le ration de division de l'ensemble d'apprentissage est: " + ratioText.getText() + "\n";
+                res += "La précision (accuracy) lors de l'évaluation est     " + knn.accuracy + "%\n";
+                res += "Les instances de test avec leurs classes prédites sont : \n\n\n";
+                res += classificationToString(map) + "\n";
                 results.setText(res);
 
 
@@ -148,29 +134,21 @@ public class KNNController implements Initializable {
     }
 
 
-    public void setup()
-    {
-        transactions.setText(String.valueOf(currentIntance));
-        supMin.setMax(currentIntance.transactions.size());
+    public void setup() {
+        KSlider.setMax(3 * currentIntance.numClasses());
     }
 
-    private String freqSetsToString(TreeMap<String,Integer> res )
-    {
+    private String classificationToString(TreeMap<String, String> res) {
         String s = "";
-        for (String key: res.keySet()) {
-            s+="{"+key+"} ==> "+res.get(key)+"\n";
+
+        for (String key : res.keySet()) {
+            String[] items = key.split(",");
+            s +="Id :"+items[0]+"\n";
+            s+= "Classe prédite : \t\t"+res.get(key)+"\n";
+            s+="Class réelle : \t\t"+items[1]+"\n\n";
         }
         return s;
     }
 
-
-    private String assRulesToString(TreeMap<String,Double> res )
-    {
-        String s = "";
-        for (String key: res.keySet()) {
-            s+="{"+key+"} ==> "+res.get(key)+"\n";
-        }
-        return s;
-    }
 
 }

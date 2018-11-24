@@ -21,6 +21,7 @@
     -jfx-button-type: RAISED;
     -fx-background-color: "1976d2";
     -fx-text-fill: white;
+    -fx-font-weight: bold;
 }
 
 .jfx-tab-pane .headers-region {

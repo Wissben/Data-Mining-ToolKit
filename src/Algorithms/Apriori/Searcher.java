@@ -117,14 +117,14 @@ public class Searcher {
                         double conf = (double) getFreqOfItemSet(union) / (double) getFreqOfItemSet(subs.get(i));
                         String rule = setToString(subs.get(i));
                         if (conf >= confMin) {
-                            rule += "--->" + setToString(subs.get(j));
+                            rule += ",--->" + setToString(subs.get(j));
                             res.put(rule, conf);
                         }
 
                         conf = (double) getFreqOfItemSet(union) / (double) getFreqOfItemSet(subs.get(j));
                         rule = setToString(subs.get(j));
                         if (conf > confMin) {
-                            rule += "--->" + setToString(subs.get(i));
+                            rule += ",--->" + setToString(subs.get(i));
 
                             res.put(rule, conf);
 
