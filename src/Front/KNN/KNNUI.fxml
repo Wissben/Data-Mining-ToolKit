@@ -47,7 +47,7 @@
                   <JFXTextField fx:id="ratioText" alignment="CENTER" />
                </children>
             </VBox>
-            <JFXTextArea fx:id="results" editable="false" />
+            <JFXTextArea fx:id="results" editable="false" stylesheets="@../../styles/scrollbar.css" />
          </children>
       </HBox>
    </children>

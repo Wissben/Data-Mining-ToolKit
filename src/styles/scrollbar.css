@@ -1,0 +1,114 @@
+.jfx-tab-pane .headers-region {
+    -fx-background-color: #1976d2;
+    -fx-font-family: "Product Sans";
+}
+.jfx-tab-pane .tab-header-background {
+    -fx-background-color: #1976d2;
+}
+
+.jfx-tab-pane .tab-label {
+    -fx-text-fill: #FFF;
+    -fx-font-family: "Product Sans";
+    -fx-font-size: 125%;
+}
+.label{
+    -fx-text-fill: #000;
+    -fx-font-family: "Product Sans";
+    -fx-font-size: 125%;
+}
+
+.table-view {
+    -fx-font-family: "Product Sans";
+}
+.table-view .column-header,
+.table-view .column-header .filler,
+.table-view .column-header-background .filler {
+    -fx-background-color: transparent;
+    -fx-stroke: transparent;
+    -fx-size:50;
+    -fx-alignment: CENTER ;
+    -fx-text-alignment: center;
+
+}
+.table-row-cell:filled:hover {
+
+    -fx-size:50;
+    -fx-alignment: CENTER;
+    -fx-text-alignment: center;
+
+
+}
+.table-view:row-selection {
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-fixed-cell-size: 50;
+    -fx-alignment: CENTER;
+    -fx-text-alignment: center;
+
+}
+
+.table-view .table-column{
+    -fx-text-alignment: center;
+    -fx-alignment: CENTER
+
+}
+
+
+
+
+.text-field .scroll-bar:horizontal .track,
+.text-field .scroll-bar:vertical .track,
+.table-view .scroll-bar:horizontal .track,
+.table-view .scroll-bar:vertical .track {
+    -fx-background-color:transparent;
+    -fx-border-color:transparent;
+    -fx-background-radius: 0em;
+    -fx-border-radius:2em;
+}
+
+
+.text-field .scroll-bar:horizontal .increment-button ,
+.text-field .scroll-bar:horizontal .decrement-button,
+.table-view .scroll-bar:horizontal .increment-button,
+.table-view .scroll-bar:horizontal .decrement-button {
+    -fx-background-color:transparent;
+    -fx-background-radius: 0em;
+    -fx-padding:0 0 10 0;
+
+}
+/* The increment and decrement button CSS class of scrollbar */
+
+
+.text-field .scroll-bar:vertical .increment-button ,
+.text-field .scroll-bar:vertical .decrement-button,
+.table-view .scroll-bar:vertical .increment-button ,
+.table-view .scroll-bar:vertical .decrement-button {
+
+    -fx-background-color:transparent;
+    -fx-background-radius: 0em;
+    -fx-padding:10 10 10 10;
+
+}
+
+
+
+.text-field  .scroll-bar .increment-arrow,
+.text-field  .scroll-bar .decrement-arrow,
+.table-view  .scroll-bar .increment-arrow,
+.table-view  .scroll-bar .decrement-arrow
+{
+    -fx-shape: " ";
+    -fx-padding:0;
+}
+
+/* The main scrollbar **thumb** CSS class which we drag every time (movable) */
+
+.text-field .scroll-bar:horizontal .thumb,
+.text-field .scroll-bar:vertical .thumb,
+.table-view .scroll-bar:horizontal .thumb,
+.table-view .scroll-bar:vertical .thumb {
+    -fx-background-color:derive(black,90%);
+    -fx-background-insets: 2, 0, 0;
+    -fx-background-radius: 2em;
+
+}

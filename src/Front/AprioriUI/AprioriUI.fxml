@@ -39,7 +39,7 @@
                   <!--<JFXTextArea fx:id="transactions" prefHeight="211.0" />-->
                </children>
             </VBox>
-            <JFXTextArea fx:id="results" editable="false" />
+            <JFXTextArea fx:id="results" editable="false" stylesheets="@../../styles/scrollbar.css" />
          </children>
       </HBox>
    </children>
