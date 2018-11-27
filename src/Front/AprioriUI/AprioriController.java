@@ -155,7 +155,7 @@ public class AprioriController implements Initializable {
 
     public void setup()
     {
-        transactions.setText(String.valueOf(currentIntance));
+//        transactions.setText(String.valueOf(currentIntance));
         supMin.setMax(currentIntance.transactions.size());
     }
 

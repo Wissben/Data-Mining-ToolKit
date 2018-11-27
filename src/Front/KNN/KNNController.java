@@ -118,7 +118,7 @@ public class KNNController implements Initializable {
         launch.setOnAction(actionEvent -> {
             if (currentIntance != null) {
                 KNNClassifier knn = new KNNClassifier(currentIntance, (int) KSlider.getValue(), ratioSlider.getValue());
-                TreeMap<String, String> map = knn.classifyTestSet(knn.testInstances);
+                TreeMap<Integer, String> map = knn.classifyTestSet(knn.testInstances);
                 String res = "Les résultats de l'algorithme KNN sur le fichier " + currFile.getName() + "\n";
                 res += "Le nombre de voisins K : " + KText.getText() + "\n";
                 res += "Le ration de division de l'ensemble d'apprentissage est: " + ratioText.getText() + "\n";
@@ -138,14 +138,14 @@ public class KNNController implements Initializable {
         KSlider.setMax(3 * currentIntance.numClasses());
     }
 
-    private String classificationToString(TreeMap<String, String> res) {
+    private String classificationToString(TreeMap<Integer, String> res) {
         String s = "";
 
-        for (String key : res.keySet()) {
-            String[] items = key.split(",");
-            s +="Id :"+items[0]+"\n";
-            s+= "Classe prédite : \t\t"+res.get(key)+"\n";
-            s+="Class réelle : \t\t"+items[1]+"\n\n";
+        for (Integer key : res.keySet()) {
+            String[] items = res.get(key).split(",");
+            s +="Id :"+key+"\n";
+            s+= "Classe prédite : \t\t"+items[1]+"\n";
+            s+="Class réelle : \t\t"+items[0]+"\n\n";
         }
         return s;
     }

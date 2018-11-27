@@ -1,0 +1,8 @@
+.jfx-button {
+    -jfx-button-type: RAISED;
+    -fx-background-color: "1976d2";
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-family: "Product Sans";
+    -fx-font-size: 125%;
+}

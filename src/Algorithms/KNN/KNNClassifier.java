@@ -10,7 +10,12 @@ public class KNNClassifier {
     public Instances instances ;
     public Instances trainInstances ;
     public Instances testInstances ;
+
+
+
+
     public double accuracy = 0;
+    private static int q = 3;
     TreeMap<String,BitSet> mapAttributeValueToCodification = new TreeMap<>();
 
     int K = 3;
@@ -23,11 +28,12 @@ public class KNNClassifier {
         int testSize = instances.numInstances() - trainSize;
         this.trainInstances= new Instances(instances, 0, trainSize);
         this.testInstances= new Instances(instances, trainSize, testSize);
-
-
         this.K = K;
+
+
         for (int i = 0; i < instances.numAttributes(); i++) {
             if(instances.attribute(i).isNominal())
+            instances.attribute(0).isRegular();
             {
                 Enumeration a = instances.attribute(i).enumerateValues();
                 int codif = 0 ;
@@ -38,7 +44,6 @@ public class KNNClassifier {
 
             }
         }
-//        System.out.println("mapAttributeToPossibleValues = " + mapAttributeValueToCodification);
     }
 
 
@@ -57,11 +62,12 @@ public class KNNClassifier {
 
     private double distance(Instance A , Instance B)
     {
-        double sum = 0;
+        double sumNumeric = 0;
+        double sumNominal = 0;
         for (int i = 0; i < A.numAttributes(); i++) {
             if(A.attribute(i).isNumeric())
             {
-                sum+=Math.pow(A.value(i)-B.value(i),2);
+                sumNumeric+=Math.pow(A.value(i)-B.value(i),q);
             }
             if(A.attribute(i).isNominal())
             {
@@ -72,10 +78,13 @@ public class KNNClassifier {
 //                System.out.println("key_b = " + key_b);
 //                System.out.println("mapAttributeValueToCodification = " + mapAttributeValueToCodification.get(key_a));
 
-                sum+=Math.pow(hamDistance(mapAttributeValueToCodification.get(key_a),mapAttributeValueToCodification.get(key_b)),2);
+                sumNominal+=Math.pow(hamDistance(mapAttributeValueToCodification.get(key_a),mapAttributeValueToCodification.get(key_b)),2);
             }
         }
-        return Math.sqrt(sum);
+//        sumNumeric = Math.sqrt(sumNumeric);
+//        return (double) (sumNominal+sumNumeric)/instances.numAttributes();
+        return Math.pow(sumNumeric+sumNominal,(double)1/q);
+//        return Math.sqrt(sum);
     }
 
     public String classify(Instance instance)
@@ -97,30 +106,23 @@ public class KNNClassifier {
 
         int cpt = 0;
         for (Integer k: sorted.keySet()) {
-//            System.out.println(cpt +" : " +instances.instance(k) +" distacnce : "+sorted.get(k));
             if(cpt>= this.K){
-//                System.out.println("cpt = " + cpt);
                 break;
             }
             knns[cpt] = instances.instance(k).stringValue(instances.classIndex());
             cpt++;
         }
-
-        for (int i = 0; i < knns.length; i++) {
-//            System.out.println("knns =  "+ i +" " + knns[i]);
-        }
         return getMostFrequentClass(knns);
     }
 
 
-    public TreeMap<String,String> classifyTestSet(Instances test)
+    public TreeMap<Integer,String> classifyTestSet(Instances test)
     {
-        TreeMap<String ,String> res = new TreeMap<>();
+        TreeMap<Integer ,String> res = new TreeMap<>();
         int sum = 0;
         for (int i = 0; i < test.numInstances(); i++) {
             String classReturned = classify(test.instance(i));
-//            res.put(String.valueOf(test.instance(i)),classify(test.instance(i)));
-            res.put(i+","+test.instance(i).stringValue(test.classIndex()),classReturned);
+            res.put(i,test.instance(i).stringValue(test.classIndex())+","+classReturned);
             if(test.instance(i).stringValue(test.classIndex()).toLowerCase().equals(classReturned.toLowerCase()))
                 sum++;
 
@@ -148,7 +150,6 @@ public class KNNClassifier {
         }
         TreeMap<String,Integer> sorted = new TreeMap<>(new ItemComaparator2(map));
         sorted.putAll(map);
-//        System.out.println("sorted = " + sorted);
         return sorted.firstKey();
     }
 
@@ -176,6 +177,8 @@ public class KNNClassifier {
         }
 
     }
+
+
 
 
 }
