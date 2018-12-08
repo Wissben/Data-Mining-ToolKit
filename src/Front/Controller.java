@@ -3,7 +3,6 @@ package Front;
 import Algorithms.Apriori.AprioriInstanceReader;
 import Algorithms.Apriori.InstanceApriori;
 import Front.AprioriUI.AprioriController;
-import Front.KNN.KNNController;
 import Processing.DataCleaner;
 import Processing.Plotter;
 import Processing.StatisticsRetriever;
@@ -17,6 +16,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.scene.input.MouseButton;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
@@ -83,6 +83,14 @@ public class Controller implements Initializable
     @FXML
     private JFXButton launchKNN;
 
+    @FXML
+    private AnchorPane anchorTop;
+
+    @FXML
+    private JFXButton launchDBSCAN;
+
+
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle)
     {
@@ -101,6 +109,8 @@ public class Controller implements Initializable
                     setActiveCleanData(new ArffLoader.ArffReader(reader).getData());
                     reader = new BufferedReader(new FileReader(chosen));
                     setOriginalData(new ArffLoader.ArffReader(reader).getData());
+//                    tabPane.setStyle("");
+
 
                 } catch (Exception e)
                 {
@@ -171,7 +181,39 @@ public class Controller implements Initializable
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
-                KNNController controller =loader.<KNNController>getController();
+                Front.KNN.KNNController controller =loader.<Front.KNN.KNNController>getController();
+
+                controller.currentIntance=activeCleanData;
+                controller.currFile=chosen;
+                controller.setup();
+
+                stage.show();
+            }
+        });
+
+
+
+        launchDBSCAN.setOnAction(actionEvent->
+        {
+            if(activeData!=null && chosen != null)
+            {
+                FXMLLoader loader = new FXMLLoader(
+                        getClass().getResource(
+                                "DBSCAN/DBSCANUi.fxml"
+                        )
+                );
+
+                Stage stage = new Stage(StageStyle.DECORATED);
+                try {
+                    stage.setScene(
+                            new Scene(
+                                    loader.load()
+                            )
+                    );
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                Front.DBSCAN.DBSCANController controller =loader.<Front.DBSCAN.DBSCANController>getController();
 
                 controller.currentIntance=activeCleanData;
                 controller.currFile=chosen;

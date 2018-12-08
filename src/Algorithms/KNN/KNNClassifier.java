@@ -15,7 +15,7 @@ public class KNNClassifier {
 
 
     public double accuracy = 0;
-    private static int q = 3;
+    private static int q = 2;
     TreeMap<String,BitSet> mapAttributeValueToCodification = new TreeMap<>();
 
     int K = 3;
@@ -27,19 +27,24 @@ public class KNNClassifier {
         int trainSize = (int) Math.round(instances.numInstances() * ratio/100);
         int testSize = instances.numInstances() - trainSize;
         this.trainInstances= new Instances(instances, 0, trainSize);
+        this.trainInstances.setClassIndex(this.trainInstances.numAttributes()-1);
         this.testInstances= new Instances(instances, trainSize, testSize);
+        this.testInstances.setClassIndex(this.testInstances.numAttributes()-1);
         this.K = K;
 
 
         for (int i = 0; i < instances.numAttributes(); i++) {
             if(instances.attribute(i).isNominal())
-            instances.attribute(0).isRegular();
             {
                 Enumeration a = instances.attribute(i).enumerateValues();
                 int codif = 0 ;
+                if(a == null)
+                    return;
                 while (a.hasMoreElements())
                 {
-                   mapAttributeValueToCodification.put(instances.attribute(i).name()+" : " +a.nextElement().toString().toLowerCase(),BitSet.valueOf(new long[]{codif++}));
+                   mapAttributeValueToCodification.put(
+                           instances.attribute(i).name()+" : " +a.nextElement().toString().toLowerCase(),
+                           BitSet.valueOf(new long[]{codif++}));
                 }
 
             }
@@ -64,21 +69,22 @@ public class KNNClassifier {
     {
         double sumNumeric = 0;
         double sumNominal = 0;
-        for (int i = 0; i < A.numAttributes(); i++) {
+        for (int i = 0; i < A.numAttributes()-1; i++) {
             if(A.attribute(i).isNumeric())
             {
                 sumNumeric+=Math.pow(A.value(i)-B.value(i),q);
             }
             if(A.attribute(i).isNominal())
             {
+//                System.out.println("A.attribute(i) = " + A.attribute(i));
                 String key_a = instances.attribute(i).name()+" : " + A.stringValue(i).toLowerCase();
                 String key_b = instances.attribute(i).name()+" : " + B.stringValue(i).toLowerCase();
 //                System.out.println("key_a = " + key_a);
 //                System.out.println("mapAttributeValueToCodification = " + mapAttributeValueToCodification.get(key_a));
 //                System.out.println("key_b = " + key_b);
 //                System.out.println("mapAttributeValueToCodification = " + mapAttributeValueToCodification.get(key_a));
-
-                sumNominal+=Math.pow(hamDistance(mapAttributeValueToCodification.get(key_a),mapAttributeValueToCodification.get(key_b)),2);
+                sumNominal+=Math.pow((key_a.equals(key_b))?0:1,q);
+//                sumNominal+=Math.pow(hamDistance(mapAttributeValueToCodification.get(key_a),mapAttributeValueToCodification.get(key_b)),2);
             }
         }
 //        sumNumeric = Math.sqrt(sumNumeric);
@@ -111,6 +117,10 @@ public class KNNClassifier {
             }
             knns[cpt] = instances.instance(k).stringValue(instances.classIndex());
             cpt++;
+        }
+        for (int i = 0; i < knns.length; i++) {
+            if (knns[i] ==  null)
+                System.out.println("i = " + i);
         }
         return getMostFrequentClass(knns);
     }
