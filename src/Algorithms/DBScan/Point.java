@@ -34,6 +34,9 @@ public class Point implements Comparable<Point> {
         {
             res.add((Attribute) a.nextElement());
         }
+
+        System.out.println("res = " + res);
+//          res.remove(res.size()-1);
         return res;
     }
 

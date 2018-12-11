@@ -49,7 +49,7 @@ public class Cluster implements Comparable<Cluster> {
         for (Point p : elements) {
             sum+=Math.pow(Point.distance(p,G,2),2);
         }
-        return sum;
+        return sum/this.elements.size();
     }
 
     public Point getCenterOfCluster() {
@@ -57,10 +57,17 @@ public class Cluster implements Comparable<Cluster> {
             return null;
 
         Instances data = new Instances(this.toString(), elements.get(0).getAttInfos(), elements.size());
+        for (Point p : this.elements) {
+            System.out.println("p.getPoint().numAttributes() = " + p.getPoint().numAttributes());
+            data.add(p.getPoint());
+        }
+//        System.out.println("data = " + data);
+
         StatisticsRetriever sr = new StatisticsRetriever(data);
 
         Point G = new Point(elements.get(0));
-        for (int i = 0; i < G.getPoint().numAttributes(); i++) {
+        System.out.println("G.getPoint().numAttributes() = " + G.getPoint().numAttributes());
+        for (int i = 0; i < G.getPoint().numAttributes()-1; i++) {
             if (G.getPoint().attribute(i).isNumeric()) {
 
                 G.getPoint().attribute(i).setStringValue(String.valueOf(sr.getMean(i)));
