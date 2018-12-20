@@ -90,13 +90,14 @@ public class DBSCANClusterer {
 
         List<Point> startingNeighbors = new ArrayList<>(neighbors);
 //        System.out.println("seeds START = " + neighbors.size());
-//        seeds.remove(point)
+//        startingNeighbors.remove(point);
         int index = 0;
         while (index < startingNeighbors.size()) {
 //            System.out.println("seeds.size() = " + startingNeighbors.size());
             Point current = startingNeighbors.get(index);
             PointStatus pointStatus = visited.get(current.toString());
             if (pointStatus == null) {
+
                 List<Point> currentNeighbors = getDensityReachableNeighbors(current, allPoints);
                 if (currentNeighbors.size() >= minPts) {
                     startingNeighbors = fusion(startingNeighbors, currentNeighbors);
@@ -134,6 +135,7 @@ public class DBSCANClusterer {
             if (point != neighbor && dst <= epsilon) {
                 neighbors.add(neighbor);
             }
+
         }
         return neighbors;
     }
@@ -152,6 +154,8 @@ public class DBSCANClusterer {
     public double getInterClassScore() {
         if (clusters == null)
             return -1;
+
+
 
         Cluster allGs = new Cluster();
         for (Cluster cl : clusters) {

@@ -215,7 +215,7 @@ public class Controller implements Initializable
                 }
                 Front.DBSCAN.DBSCANController controller =loader.<Front.DBSCAN.DBSCANController>getController();
 
-                controller.currentIntance=activeCleanData;
+                controller.currentIntance=activeData;
                 controller.currFile=chosen;
                 controller.setup();
 

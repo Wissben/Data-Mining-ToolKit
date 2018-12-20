@@ -69,6 +69,12 @@ public class DataCleaner {
                     double x = instance.value(j);
                     double xmax = maxs[j];
                     double xmin = mins[j];
+                    if(xmax == xmin)
+                    {
+
+                        instance.setValue(j,0);
+                    }
+                    else
                     instance.setValue(j,(x-xmin)/(xmax-xmin));
                 }
             }
