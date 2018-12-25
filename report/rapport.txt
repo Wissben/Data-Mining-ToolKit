@@ -1,0 +1,11 @@
+RAPPORT DM 
+-- Introduction : 1 page
+-- Apriori: Conception
+			Toutes les structures de données
+			Résultats obtenus pour un dataset nominal
+-- KNN: Conception
+		Résultats obtenus
+-- DBSCAN: Conception
+		   Résultats obtenus
+-- Conclusion: 2(Avec taux d'interêts) pages --> Discussion sur les différents résultats obtenus avec les différents algorithmes de DM
+		  

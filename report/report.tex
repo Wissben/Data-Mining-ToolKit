@@ -1,0 +1,83 @@
+% !TeX program = lualatex
+
+\documentclass[12pt]{report}
+\usepackage[table,xcdraw]{xcolor}
+\usepackage[Glenn]{fncychap}
+\usepackage[T1]{fontenc}
+\usepackage[francais]{babel}
+\usepackage{fontspec}
+\usepackage{wrapfig}
+\usepackage{graphicx}
+\usepackage[a4paper, width=175mm, top=25mm, bottom=25mm]{geometry}
+\usepackage{parskip}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{listings}
+\usepackage{float}
+\usepackage[final]{pdfpages}
+\usepackage{tocbibind}
+\usepackage{tocloft}
+\usepackage{xpatch}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{graphics}
+\usepackage{framed}
+\usepackage{multirow}
+\usepackage{graphicx}
+\usepackage[utf8x]{inputenc}
+\setcounter{secnumdepth}{3} 
+\usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{tabularx}
+\usepackage[ruled,french,onelanguage]{algorithm2e}
+\usepackage{tikz}
+\usepackage{multirow}
+\usepackage[noend]{algpseudocode}
+\usepackage{tabularx}  % for tabularx
+% to make cells in table have decent spacing
+\usepackage{diagbox}
+\usetikzlibrary{arrows, positioning, automata}
+
+\usepackage{array}
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+
+
+\begin{document}
+\includepdf[pages=1]{Page_garde.pdf} 
+\tableofcontents
+
+\pagenumbering{arabic}
+\newpage
+
+
+\chapter{Introduction et problématique}
+
+
+
+\input{apriori/apriori.tex}
+\newpage
+\input{knn/knn.tex}
+\newpage
+\input{dbscan/dbscan.tex}
+\newpage
+
+\chapter{Conclusion}
+	\paragraph{}
+	\section{Bilan récapitulatif}
+		\paragraph{}
+		\paragraph{Partie I}
+		\paragraph{Partie II}
+		\paragraph{Partie III}
+	\section{Critiques}
+		\paragraph{}
+	\section{Perspectives futures}
+		\paragraph{}
+%\input{part2/part2.tex}
+\bibliographystyle{ieeetr}
+\bibliography{ref.bib}
+
+\end{document}}
+

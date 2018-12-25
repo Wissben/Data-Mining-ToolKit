@@ -1,0 +1,86 @@
+\setlist[itemize]{label=\textbullet}
+\chapter{Extraction de motifs fréquents à l'aide de l'algorithme Apriori}
+	\section{Introduction}
+		\paragraph{}
+		Souvent confronté à un ensemble de données qui n'ont vraisemblablement pas une régularité ou des sous structures qui se répètent suivant un certain motif, Une des tâches la plus répandue dans le domaine du Data-Mining est l'extraction de ces dits \textbf{Motifs fréquents}.
+		\par 
+		De façon informelle, un motifs fréquent peut être un item(objet, article ...) une sous-séquences d'items, une sous-structure(sous-graphe, sous-ensemble ...) qui se répète un certain nombre minimum de fois dans la base de données, ce qui lui vaut le nom de motifs \textbf{fréquent}\cite{Han}.
+		\par 
+		Dans ce qui suit nous allons voir deux algorithmes capables tout deux d'extraire de tels motifs, l'algorithme \textbf{Apriori} \cite{Agrawal:1994:FAM:645920.672836} et l'algorithme FP-Growth \cite{Hanfp}
+		
+	\section{Définitions}
+		\paragraph{}
+		Avant d'introduire les deux algorithmes, il faut d'abord définir quelques concepts qui sont intrinsèquement reliés au déroulement de ces deux derniers:
+		\subsection*{Items}
+			\paragraph{}
+			Un item $I_i$ est généralement un attribut associé à un dataset(Taille,Poids,Catégorie...), cet item a un domaine de définition $D_{I_i}$.
+		
+		\subsection*{Transaction}\label{transaction}
+			\paragraph{}
+			Une transaction $T_i$ est généralement une instance du dataset, elle se présente comme un ensemble d'items aux quels une valeur à été attribué : 
+			$T_i = \lbrace t_1,t_2,...,t_n\rbrace$, on lui associe un identifiant unique $id_{D_i}$.
+		
+		\subsection*{Support}
+			\paragraph{}
+			Un support $S$ est un indicateur(une mesure) de combien de fois un ensemble d'item $X$ apparaît dans un dataset $T$, il est définie comme le nombre de transactions $t$ qui contiennent l'itemset $X$ : 
+		
+			\begin{equation*}
+				Support(X) = \frac{|t \in T ; X \subseteq t|}{|T|}
+			\end{equation*}
+		
+	\section{Algorithme}
+		\paragraph{}
+		Apriori est un algorithme proposé par Agrawal et Srikant en 1994 dans \cite{Agrawal:1994:FAM:645920.672836}, son but est l'extraction de motifs fréquents dans une base de données de transactions \ref{transaction}.
+		\par Apriori construit les ensembles d'items candidats à partir d'un ensemble d'items singletons en générant à chaque itérations une extension de ces derniers en ajoutant un item à la fois tout en testant la condition de support minimum ainsi que la condition de sous-motifs fréquent \footnote{Si $M$ est un motif fréquent alors $\forall m_i \in M $ $m_i$ est aussi un item fréquent} pour permettre l'élimination plus rapide des itemsets candidats, l'algorithme s'arrête quand aucune extension ne peut être générée, le pseudo code est le suivant :
+		
+	
+		\begin{algorithm}[H]
+			\caption{Apriori}
+			\SetKwInOut{Input}{Entrée}\SetKwInOut{Output}{Sortie}
+			\SetKwFunction{gen}{GenererCandidats}
+			\SetKwFunction{contains}{Contient}
+			
+			\Input{(T : Ensemble des transactions , $Sup_{min}$ : entier )}
+			\Output{(L : Ensemble des items fréquents)}
+			\textbf{Var :} \\
+			$C_k : $ Itemset des candidats de taille $K$
+			$L_k : $ Itemset des items les plus fréquents de taille $K$
+			
+			
+			\Begin
+			{
+				$L_1$ \gets $\lbrace items les plus fréquent \rbrace$ ;\\
+				\For{($k \gets $ ; $L_k \neq \emptyset $ ; $k \gets k+1$)}
+				{
+					$L_{k+1} \gets $ \gen{$L_k$};\\
+					\ForEach{transaction $t \in T$ }
+					{
+						\For{candidat $c \in C_{k+1}$}
+						{
+							\If{\contains{$t$,$c$}}
+							{
+								$compteur[c] \gets compteur[c]+1$
+							}
+						}
+						
+					}
+					$L_{k+1} \gets \lbrace 	c | c \in C_{k+1} \land compteur[c] \geq Sup_{min}\rbrace$ 	
+				}
+				
+			}
+			\KwRet{$\bigcup\limits_{m} L_m ; m = 0,k $}
+		\end{algorithm}
+	\section{Implémentation}
+		\subsection{Langage de programmation}
+		\subsubsection{Schémas d'exécution}
+		\subsubsection{Structures de données}
+	\section{Interface graphique}
+	
+	\section{Résultats expérimentaux}
+		\subsubsection{Choix du dataset}
+		\subsubsection{Variations des paramètres}
+		\subsubsection{Résultats}
+		\subsubsection{Commentaires}
+		
+	\section{Conclusion}
+	

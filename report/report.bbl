@@ -1,0 +1,18 @@
+\begin{thebibliography}{1}
+
+\bibitem{Han}
+J.~Han, M.~Kamber, and J.~Pei, {\em Data Mining: Concepts and Techniques (The
+  Morgan Kaufmann Series in Data Management Systems)}.
+\newblock Morgan Kaufmann, 2011.
+
+\bibitem{Agrawal:1994:FAM:645920.672836}
+R.~Agrawal and R.~Srikant, ``Fast algorithms for mining association rules in
+  large databases,'' in {\em Proceedings of the 20th International Conference
+  on Very Large Data Bases}, VLDB '94, (San Francisco, CA, USA), pp.~487--499,
+  Morgan Kaufmann Publishers Inc., 1994.
+
+\bibitem{Hanfp}
+J.~Han, J.~Pei, and Y.~Yin, ``Mining frequent patterns without candidate
+  generation,'' {\em {ACM} {SIGMOD} Record}, vol.~29, pp.~1--12, jun 2000.
+
+\end{thebibliography}
