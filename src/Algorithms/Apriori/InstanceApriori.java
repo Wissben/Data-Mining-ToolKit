@@ -1,60 +1,52 @@
-package Algorithms.Apriori;
+package Algorithms.Apriori
 
-import java.util.*;
+import java.util.*
 
-public class InstanceApriori {
+class InstanceApriori {
 
 
-    public ArrayList<TreeSet<String>> transactions ;
-    public ArrayList<TreeSet<String>> labeledTransactions;
+    var transactions: ArrayList<TreeSet<String>>
+    internal var labeledTransactions: ArrayList<TreeSet<String>>
 
-    public InstanceApriori()
-    {
-        transactions = new ArrayList<>();
-        labeledTransactions = new ArrayList<>();
+    init {
+        transactions = ArrayList()
+        labeledTransactions = ArrayList()
 
     }
 
-    public void addTransaction(int id, String[] items)
-    {
-        TreeSet<String> tmp = new TreeSet<>();
-        for (int i = 0; i < items.length; i++) {
-            tmp.add(items[i]);
+    fun addTransaction(id: Int, items: Array<String>) {
+        val tmp = TreeSet<String>()
+        for (i in items.indices) {
+            tmp.add(items[i])
         }
-        transactions.add(id,tmp);
-    }
-    public void addLabeledTransaction(int id, String[] items)
-    {
-        TreeSet<String> tmp = new TreeSet<>();
-        for (int i = 0; i < items.length; i++) {
-            tmp.add(items[i]);
-        }
-        labeledTransactions.add(id,tmp);
+        transactions.add(id, tmp)
     }
 
-    @Override
-    public String toString()
-    {
-        String res = "";
-        for (int i = 0; i < transactions.size(); i++) {
-            res+="T_id "+i+" :  ";
-            for(String key : transactions.get(i))
-            {
-                res += key +" , ";
+    fun addLabeledTransaction(id: Int, items: Array<String>) {
+        val tmp = TreeSet<String>()
+        for (i in items.indices) {
+            tmp.add(items[i])
+        }
+        labeledTransactions.add(id, tmp)
+    }
+
+    override fun toString(): String {
+        var res = ""
+        for (i in transactions.indices) {
+            res += "T_id $i :  "
+            for (key in transactions[i]) {
+                res += "$key , "
             }
-            res+="\n";
+            res += "\n"
         }
-        return res;
+        return res
     }
 
-    public void printTransactions()
-    {
-        for(TreeSet<String> key : transactions)
-        {
-            System.out.println(key);
+    fun printTransactions() {
+        for (key in transactions) {
+            println(key)
         }
     }
-
 
 
 }
