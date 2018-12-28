@@ -1,6 +1,8 @@
 \babel@toc {french}{}
 \contentsline {chapter}{Table des matières}{2}
-\contentsline {chapter}{\numberline {1}Introduction et problématique}{2}
+\contentsline {chapter}{\numberline {1}Problématique et introduction}{2}
+\contentsline {section}{\numberline {1.1}Introduction}{2}
+\contentsline {paragraph}{}{2}
 \contentsline {chapter}{\numberline {2}Extraction de motifs fréquents à l'aide de l'algorithme Apriori}{3}
 \contentsline {section}{\numberline {2.1}Introduction}{3}
 \contentsline {paragraph}{}{3}
@@ -11,14 +13,15 @@
 \contentsline {paragraph}{}{4}
 \contentsline {section}{\numberline {2.3}Algorithme}{4}
 \contentsline {paragraph}{}{4}
-\contentsline {section}{\numberline {2.4}Implémentation}{5}
+\contentsline {section}{\numberline {2.4}Implémentation}{4}
+\contentsline {paragraph}{}{4}
 \contentsline {paragraph}{}{5}
-\contentsline {subsection}{\numberline {2.4.1}InstanceApriori : }{5}
+\contentsline {subsection}{\numberline {2.4.1}InstanceApriori : }{6}
 \contentsline {subsection}{\numberline {2.4.2}AprioriInstanceReader :}{6}
-\contentsline {subsection}{\numberline {2.4.3}Searcher :}{6}
+\contentsline {subsection}{\numberline {2.4.3}Searcher :}{7}
 \contentsline {section}{\numberline {2.5}Interface graphique}{8}
 \contentsline {paragraph}{}{8}
-\contentsline {paragraph}{}{8}
+\contentsline {paragraph}{}{9}
 \contentsline {section}{\numberline {2.6}Résultats expérimentaux}{9}
 \contentsline {subsubsection}{\numberline {2.6.0.1}Choix du dataset}{9}
 \contentsline {paragraph}{}{9}
@@ -26,7 +29,7 @@
 \contentsline {paragraph}{}{9}
 \contentsline {subsubsection}{\numberline {2.6.0.3}Résultats}{9}
 \contentsline {paragraph}{}{9}
-\contentsline {paragraph}{Remarques :}{9}
+\contentsline {paragraph}{Remarques :}{10}
 \contentsline {subsection}{\numberline {2.6.1}Commentaires}{10}
 \contentsline {paragraph}{}{10}
 \contentsline {chapter}{\numberline {3}Classification à l'aide de l'algorithme K plus proches voisins (KNN)}{11}
@@ -52,9 +55,9 @@
 \contentsline {section}{\numberline {3.5}Interface graphique}{16}
 \contentsline {paragraph}{}{16}
 \contentsline {paragraph}{}{16}
-\contentsline {section}{\numberline {3.6}Résultats expérimentaux}{16}
-\contentsline {subsection}{\numberline {3.6.1}Choix du dataset}{16}
-\contentsline {paragraph}{}{16}
+\contentsline {section}{\numberline {3.6}Résultats expérimentaux}{17}
+\contentsline {subsection}{\numberline {3.6.1}Choix du dataset}{17}
+\contentsline {paragraph}{}{17}
 \contentsline {subsubsection}{\numberline {3.6.1.1}Variations des paramètres}{17}
 \contentsline {paragraph}{}{17}
 \contentsline {subsection}{\numberline {3.6.2}Résultats}{17}
@@ -64,12 +67,12 @@
 \contentsline {paragraph}{Commentaires : }{20}
 \contentsline {subsubsection}{\numberline {3.6.2.1}Résultats pour credit-g.arff}{21}
 \contentsline {paragraph}{Commentaires : }{21}
-\contentsline {chapter}{\numberline {4}Clustering à l'aide de l'algorithme Density-based spatial clustering of applications with noise (DBSCAN)}{22}
+\contentsline {chapter}{\numberline {4}Clustering à l'aide de l'algorithme DBSCAN}{22}
 \contentsline {section}{\numberline {4.1}Introduction}{22}
 \contentsline {section}{\numberline {4.2}Définitions}{22}
 \contentsline {paragraph}{}{22}
-\contentsline {subsection}{\numberline {4.2.1}E-voisinage}{23}
-\contentsline {paragraph}{}{23}
+\contentsline {subsection}{\numberline {4.2.1}E-voisinage}{22}
+\contentsline {paragraph}{}{22}
 \contentsline {subsection}{\numberline {4.2.2}Core-point}{23}
 \contentsline {paragraph}{}{23}
 \contentsline {subsection}{\numberline {4.2.3}Point de bord (Border-point)}{23}
@@ -78,8 +81,8 @@
 \contentsline {paragraph}{}{23}
 \contentsline {subsection}{\numberline {4.2.5}Cluster}{23}
 \contentsline {paragraph}{}{23}
-\contentsline {subsection}{\numberline {4.2.6}Centre de gravité}{24}
-\contentsline {paragraph}{}{24}
+\contentsline {subsection}{\numberline {4.2.6}Centre de gravité}{23}
+\contentsline {paragraph}{}{23}
 \contentsline {paragraph}{}{24}
 \contentsline {subsection}{\numberline {4.2.7}Inerties}{25}
 \contentsline {subsubsection}{\numberline {4.2.7.1}Inertie intra-classes}{25}
@@ -95,17 +98,17 @@
 \contentsline {subsection}{\numberline {4.4.2}Cluster}{28}
 \contentsline {paragraph}{}{28}
 \contentsline {subsection}{\numberline {4.4.3}DBSCANClusterer}{29}
-\contentsline {section}{\numberline {4.5}Interface graphique}{30}
-\contentsline {paragraph}{}{30}
+\contentsline {section}{\numberline {4.5}Interface graphique}{31}
+\contentsline {paragraph}{}{31}
 \contentsline {paragraph}{}{31}
 \contentsline {section}{\numberline {4.6}Résultats expérimentaux}{31}
 \contentsline {subsection}{\numberline {4.6.1}Choix du dataset}{31}
 \contentsline {paragraph}{}{31}
-\contentsline {subsection}{\numberline {4.6.2}Variations des paramètres}{31}
-\contentsline {paragraph}{}{31}
+\contentsline {subsection}{\numberline {4.6.2}Variations des paramètres}{32}
+\contentsline {paragraph}{}{32}
 \contentsline {subsection}{\numberline {4.6.3}Résultats}{32}
 \contentsline {paragraph}{}{32}
-\contentsline {paragraph}{Remarques}{32}
+\contentsline {paragraph}{Remarques}{33}
 \contentsline {paragraph}{Commentaires}{33}
 \contentsline {paragraph}{Commentaires}{34}
 \contentsline {chapter}{\numberline {5}Conclusion}{35}
@@ -113,7 +116,8 @@
 \contentsline {section}{\numberline {5.1}Bilan récapitulatif}{35}
 \contentsline {subsection}{\numberline {5.1.1}Partie I}{35}
 \contentsline {paragraph}{}{35}
-\contentsline {paragraph}{Partie II}{36}
-\contentsline {paragraph}{Partie III}{36}
+\contentsline {subsection}{\numberline {5.1.2}Partie II}{36}
 \contentsline {paragraph}{}{36}
-\contentsline {chapter}{Bibliographie}{37}
+\contentsline {paragraph}{Partie III}{36}
+\contentsline {paragraph}{}{37}
+\contentsline {chapter}{Bibliographie}{38}

@@ -2,7 +2,6 @@
 
 \documentclass[12pt]{report}
 \usepackage[table,xcdraw]{xcolor}
-\usepackage[Glenn]{fncychap}
 \usepackage[T1]{fontenc}
 \usepackage[francais]{babel}
 \usepackage{fontspec}
@@ -11,6 +10,7 @@
 \usepackage[a4paper, width=175mm, top=25mm, bottom=25mm]{geometry}
 \usepackage{parskip}
 \usepackage{enumitem}
+\usepackage{titlesec}
 \usepackage{listings}
 \usepackage{float}
 \usepackage[final]{pdfpages}
@@ -68,11 +68,14 @@
 
 \pagenumbering{arabic}
 \newpage
-
-
-\chapter{Introduction et problématique}
-
-
+\chapter{Problématique et introduction}
+\section{Introduction}
+		\paragraph{}
+		Le data-mining est un domaine de l'intelligence artificielle qui se trouve avoir de nombreux domaines d'applications, afin d'explorer quelques aspects de ce dernier, nous allons entamer dans ce projet une analyse critique de trois algorithmes chacun implémentant une technique de data-mining précise.
+		\par 
+		Nous commencerons chaque chapitre avec un introduction qui va poser les bases de la technique étudiée, citer ses motivations, ses ambitions ..., puis suivrons des définitions formelles pour la plus part, dans le but de faciliter la compréhension de certaines notions, et d'utiliser des termes qui seront compris à travers chaque lecteurs. Une description de l'algorithme choisi sera donnée suivit d'un pseudo code pour mieux schématiser les différentes partie de ce dernier.
+		\par La section suivante sera consacrée à la conception et implémentation de chaque algorithme dans le langage Java, en spécifiant les classes utilisées, les relations entre elles, les structures de données qu'elles s'échangent...
+		\par La dernière section sera consacrée à l'analyse des résultats que chaque algorithme à donnée sur un ensemble de benchmarks, et suivant une même méthodologie de variations des paramètres.
 
 \input{apriori/apriori.tex}
 \newpage
@@ -83,13 +86,13 @@
 
 \chapter{Conclusion}
 	\paragraph{}
-	Au terme de ce projet, nous avons donc pu explorer 3 des aspects du data-mining qui sont : l'extraction de motifs fréquents, la classification des données et le clustering. en implémentant à chaque étapes un algorithme rudimentaire du sous domaine en question, arrivé a ce point nous disposons donc de notre propre outillage pour l'exploration et l'exploitation des ensemble de données.
+	Au terme de ce projet, nous avons donc pu explorer 3 des aspects du data-mining qui sont : l'extraction de motifs fréquents, la classification des données et le clustering. en implémentant (dans un langage académique qui est Java) à chaque étapes un algorithme rudimentaire du sous domaine en question , arrivé a ce point nous disposons donc de notre propre outillage pour l'exploration et l'exploitation des ensemble de données.
 	\par 
 	Il reste toute fois à dresser un bilan récapitulatif qui recense dans chaque partie une analyse de l'algorithme utilisé ainsi que des critiques sur ce dernier.
 	\section{Bilan récapitulatif}
 		\subsection{Partie I}
 		\paragraph{}
-		À la fin du chapitre II (voir \ref{apriori}), nous avons pu nous initier à une technique basique d'extraction de motifs fréquents sous forme d'items , et cela depuis un dataset. En implémentant l'algorithme Apriori et en le testant sur un ensemble de benchmark, nous avons pu en tirer les conclusions suivantes : 
+		À la fin du chapitre I (voir \ref{apriori}), nous avons pu nous initier à une technique basique d'extraction de motifs fréquents sous forme d'items , et cela depuis un dataset. En implémentant l'algorithme Apriori et en le testant sur un ensemble de benchmark, nous avons pu en tirer les conclusions suivantes : 
 		\begin{itemize}
 			\item \textbf{Point forts :} 
 			 \begin{itemize}
@@ -104,9 +107,44 @@
 					\item Le calcul du support minimum impose le parcours de la table des items en entier, et cela à chaque itérations de l'algorithme, de plus l'algorithme assume que cette table soit chargée en mémoire de façon permanente, ce qui peu poser problème si sa taille atteint un seuil critique.
 				\end{itemize} 
 		\end{itemize}
-		\paragraph{Partie II}
+		\subsection{Partie II}
+			\paragraph{}
+			À la fin du second chapitre I (voir \ref{knn}), nous avons pu utiliser une méthode de classification différente de celles que nous avons vu en M1 durant le module \textbf{Apprentissage Automatique et Réseaux de Neurones}, l'algorithme KNN est une approche très simpliste au problème de classification, elle présente donc un nombre de points faibles assez dérangeant.
+			\begin{itemize}
+				\item \textbf{Points forts :}
+				\begin{itemize}
+					\item De par sa naïveté, il est très simple a comprendre, surtout si on utilise la notion abstraite de distance et de voisinage pour mieux percevoir l'intuition derrière sa conception.
+					\item Il est aussi simple a implémenter, demandant peu de complexité au niveau des structure de données, c'est surtout la codification des attributs nominales qui pourrait poser problème, mais puisque c'est une étape extrinsèque à l'algorithme (qui peut se faire dans une étape antérieur, durant le pré-traitement des données par exemple), elle n'affecte pas la complexité globale de l'algorithme de beaucoup.
+					\item KNN est un \textbf{lazy-learner}, c.à.d qu'il généralise un concept lors de la phase d'inférence (à l'arrivé d'une nouvelle donnée), ce qui le rend plus souple par rapport au changement dans les données.
+					\item Il est très efficace quand les données a manipuler sont numérique, mais cela dépend aussi du choix de la fonction de distance.
+					  
+				\end{itemize}
+				\item \textbf{Points faibles :}
+				\begin{itemize}
+					\item Il est très sensible au bruit, en effet la présence d'un individus aberant dans le voisinage d'un point peut faire pencher la balance lors du vote à la majorité, si le dernier à voter est un menteur, alors une mauvaise étiquette pourrait être attribuée ç la donnée.
+					\item Du fait qu'il soit un lazy-learner, il doit donc effectuer un très nombre d'opérations de comparaison entre la données et l'échantillon d'apprentissage, ajouté à cela le tri des distances pour l'extraction des K plus proches voisins.
+					\item Sa sensibilité au valeur des paramètres est assez grande, le choix de $K$ peut affecter la prise de décision lors du vote à la majorité, trouver la bonne valeur dépend du dataset, et est donc un problème d'optimisation.
+					\item la normalisation du datset est une étape cruciale si l'on ne veut pas que les distances soient biaisées par des valeurs trop écartées.
+				\end{itemize}
+			\end{itemize}
 		\paragraph{Partie III}
 		\paragraph{}
+			Au terme de ce dernier chapitre (\ref{dbscan}) nous avons pu donc exploré un 3e volet du data-minig, le clustering est un domaine dont les domaines d'applications sont nombreux, il est donc important d'avoir à notre disposition un algorithme de clustering qui soit simple et arbitrairement efficace.
+			DBSCAN offre comme tout algorithme un ensemble de points forts et faibles que nous allons lister : 
+			\begin{itemize}
+				\item \textbf{Point forts : }
+				\begin{itemize}
+					\item  La spécification du nombre de cluster n'est pas recuise, l'algorithme se chargera lui même de trouver les ensembles qui sont assez denses pour être interprété comme cluster.
+					\item Du fait d'avoir limité le nombre de points minimum d'un core-point, il peut detecter les cluster qui sont entourés par une autre cluster et cela donc sans les fusionner, car la frontière qui les sépare sera composée de border-points majoritairement.
+					\item Il permet de filtre le bruit en le classifiant dans une catégorie à part.
+					\end{itemize}
+				\item \textbf{Point faibles : }
+				\begin{itemize}
+					\item  L'algorithme n'est pas déterministe, en effet cela dépend de l'ordre du choix des points a traiter, de ce fait un border-point pourrait se trouver rattaché à un cluster $C_1$ lors d'une exécution, et dans un autre cluster $C_2$ durant une 2e exécution si le border point se trouvent aux frontières des ces deux clusters. Par contre la détection des core-points est déterministe car elle dépend fortement des paramètres (un point dont le voisinage est dense sera utilisé pour trouver les autre core-points qui lui sont proches dans un même ordre.)
+					\item Le choix de la fonction de distance affecte grande le choix des core-point, et peut affecter les performance si le dataset est de haute dimensionnalité (le choix de la distance euclidienne est une contrainte à revoir).
+					\item L'algorithme est très sensible aux paramètres, le choix de ces dernier est souvent fait soit par une expert du domaine, ou bien en utilisant des méthode d'optimisation (méta-heuristiques ou autres.)
+				\end{itemize}
+			\end{itemize}
 %\input{part2/part2.tex}
 \bibliographystyle{ieeetr}
 \bibliography{ref.bib}

@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.0.4 (TeX Live 2017/Debian)  (format=lualatex 2018.12.11)  28 DEC 2018 01:05
+This is LuaTeX, Version 1.0.4 (TeX Live 2017/Debian)  (format=lualatex 2018.12.11)  28 DEC 2018 02:03
  restricted system commands enabled.
 **report.tex
 (./report.tex
@@ -34,7 +34,7 @@ Inserting `luaotfload.aux.set_capheight' at position 3 in `luaotfload.patch_font
 '.
 Inserting `luaotfload.rewrite_fontname' at position 4 in `luaotfload.patch_font'
 .
-luaotfload | main : initialization completed in 0.114 seconds
+luaotfload | main : initialization completed in 0.113 seconds
 Babel <3.18> and hyphenation patterns for 1 language(s) loaded.
 (/usr/share/texlive/texmf-dist/tex/latex/base/report.cls
 Document Class: report 2014/09/29 v1.4h Standard LaTeX document class
@@ -91,17 +91,6 @@ Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
 Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
-)
-(/usr/share/texlive/texmf-dist/tex/latex/fncychap/fncychap.sty
-Package: fncychap 2007/07/30 v1.34 LaTeX package (Revised chapters)
-\RW=\skip46
-\mylen=\skip47
-\myhi=\skip48
-\px=\skip49
-\py=\skip50
-\pyy=\skip51
-\pxx=\skip52
-\backskip=\skip53
 )
 (/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
 Package: fontenc 2017/04/05 v2.0i Standard LaTeX package
@@ -245,12 +234,12 @@ LaTeX Info: Redefining \degres on input line 753.
 \dec@mcc=\count96
 Inserting `frenchb.french_punctuation' at position 1 in `kerning'.
 \c@FBcaption@count=\count97
-\listindentFB=\skip54
-\descindentFB=\skip55
-\labelwidthFB=\skip56
-\leftmarginFB=\skip57
+\listindentFB=\skip46
+\descindentFB=\skip47
+\labelwidthFB=\skip48
+\leftmarginFB=\skip49
 \parindentFFN=\dimen107
-\FBfnindent=\skip58
+\FBfnindent=\skip50
 
 (/usr/share/texlive/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-fr.tex
 UTF-8 French hyphenation patterns
@@ -287,12 +276,12 @@ Package: expl3 2018/02/21 L3 programming layer (code)
 \l_tmpb_dim=\dimen111
 \g_tmpa_dim=\dimen112
 \g_tmpb_dim=\dimen113
-\c_zero_skip=\skip59
-\c_max_skip=\skip60
-\l_tmpa_skip=\skip61
-\l_tmpb_skip=\skip62
-\g_tmpa_skip=\skip63
-\g_tmpb_skip=\skip64
+\c_zero_skip=\skip51
+\c_max_skip=\skip52
+\l_tmpa_skip=\skip53
+\l_tmpb_skip=\skip54
+\g_tmpa_skip=\skip55
+\g_tmpb_skip=\skip56
 \c_zero_muskip=\muskip10
 \c_max_muskip=\muskip11
 \l_tmpa_muskip=\muskip12
@@ -695,31 +684,43 @@ Package: parskip 2001/04/09 non-zero parskip adjustments
 )
 (/usr/share/texlive/texmf-dist/tex/latex/enumitem/enumitem.sty
 Package: enumitem 2011/09/28 v3.5.2 Customized lists
-\labelindent=\skip65
+\labelindent=\skip57
 \enit@outerparindent=\dimen154
 \enit@toks=\toks20
 \enit@inbox=\box43
 \enitdp@description=\count197
 )
+(/usr/share/texlive/texmf-dist/tex/latex/titlesec/titlesec.sty
+Package: titlesec 2016/03/21 v2.10.2 Sectioning titles
+\ttl@box=\box44
+\beforetitleunit=\skip58
+\aftertitleunit=\skip59
+\ttl@plus=\dimen155
+\ttl@minus=\dimen156
+\ttl@toksa=\toks21
+\titlewidth=\dimen157
+\titlewidthlast=\dimen158
+\titlewidthfirst=\dimen159
+)
 (/usr/share/texlive/texmf-dist/tex/latex/listings/listings.sty
 \lst@mode=\count198
-\lst@gtempboxa=\box44
-\lst@token=\toks21
+\lst@gtempboxa=\box45
+\lst@token=\toks22
 \lst@length=\count199
-\lst@currlwidth=\dimen155
+\lst@currlwidth=\dimen160
 \lst@column=\count266
 \lst@pos=\count267
-\lst@lostspace=\dimen156
-\lst@width=\dimen157
+\lst@lostspace=\dimen161
+\lst@width=\dimen162
 \lst@newlines=\count268
 \lst@lineno=\count269
-\lst@maxwidth=\dimen158
+\lst@maxwidth=\dimen163
 
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
 \c@lstnumber=\count270
 \lst@skipnumbers=\count271
-\lst@framebox=\box45
+\lst@framebox=\box46
 )
 (/usr/share/texlive/texmf-dist/tex/latex/listings/listings.cfg
 File: listings.cfg 2015/06/04 1.6 listings configuration
@@ -729,10 +730,10 @@ Package: listings 2015/06/04 1.6 (Carsten Heinz)
 (/usr/share/texlive/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \c@float@type=\count272
-\float@exts=\toks22
-\float@box=\box46
-\@float@everytoks=\toks23
-\@floatcapt=\box47
+\float@exts=\toks23
+\float@box=\box47
+\@float@everytoks=\toks24
+\@floatcapt=\box48
 )
 (/usr/share/texlive/texmf-dist/tex/latex/pdfpages/pdfpages.sty
 Package: pdfpages 2017/10/31 v0.5l Insert pages of external PDF documents (AM)
@@ -744,14 +745,14 @@ Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 Package: calc 2014/10/28 v4.3 Infix arithmetic (KKT,FJ)
 \calc@Acount=\count273
 \calc@Bcount=\count274
-\calc@Adimen=\dimen159
-\calc@Bdimen=\dimen160
-\calc@Askip=\skip66
-\calc@Bskip=\skip67
+\calc@Adimen=\dimen164
+\calc@Bdimen=\dimen165
+\calc@Askip=\skip60
+\calc@Bskip=\skip61
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
 \calc@Ccount=\count275
-\calc@Cskip=\skip68
+\calc@Cskip=\skip62
 )
 (/usr/share/texlive/texmf-dist/tex/latex/eso-pic/eso-pic.sty
 Package: eso-pic 2015/07/21 v2.0g eso-pic (RN)
@@ -765,17 +766,17 @@ Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
 Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
 )))
-\AM@pagewidth=\dimen161
-\AM@pageheight=\dimen162
+\AM@pagewidth=\dimen166
+\AM@pageheight=\dimen167
 
 (/usr/share/texlive/texmf-dist/tex/latex/pdfpages/ppluatex.def
 File: ppluatex.def 2017/10/31 v0.5l Pdfpages driver for LuaTeX (AM)
 )
-\AM@pagebox=\box48
-\AM@global@opts=\toks24
-\AM@toc@title=\toks25
+\AM@pagebox=\box49
+\AM@global@opts=\toks25
+\AM@toc@title=\toks26
 \c@AM@survey=\count276
-\AM@templatesizebox=\box49
+\AM@templatesizebox=\box50
 )
 (/usr/share/texlive/texmf-dist/tex/latex/tocbibind/tocbibind.sty
 Package: tocbibind 2010/10/13 v1.5k extra ToC listings
@@ -787,42 +788,42 @@ Package tocbibind Note: Using chapter style headings, unless overridden.
 ) (/usr/share/texlive/texmf-dist/tex/latex/tocloft/tocloft.sty
 Package: tocloft 2017/08/31 v2.3i parameterised ToC, etc., typesetting
 Package tocloft Info: The document has chapter divisions on input line 51.
-\cftparskip=\skip69
-\cftbeforetoctitleskip=\skip70
-\cftaftertoctitleskip=\skip71
-\cftbeforepartskip=\skip72
-\cftpartnumwidth=\skip73
-\cftpartindent=\skip74
-\cftbeforechapskip=\skip75
-\cftchapindent=\skip76
-\cftchapnumwidth=\skip77
-\cftbeforesecskip=\skip78
-\cftsecindent=\skip79
-\cftsecnumwidth=\skip80
-\cftbeforesubsecskip=\skip81
-\cftsubsecindent=\skip82
-\cftsubsecnumwidth=\skip83
-\cftbeforesubsubsecskip=\skip84
-\cftsubsubsecindent=\skip85
-\cftsubsubsecnumwidth=\skip86
-\cftbeforeparaskip=\skip87
-\cftparaindent=\skip88
-\cftparanumwidth=\skip89
-\cftbeforesubparaskip=\skip90
-\cftsubparaindent=\skip91
-\cftsubparanumwidth=\skip92
-\cftbeforeloftitleskip=\skip93
-\cftafterloftitleskip=\skip94
-\cftbeforefigskip=\skip95
-\cftfigindent=\skip96
-\cftfignumwidth=\skip97
+\cftparskip=\skip63
+\cftbeforetoctitleskip=\skip64
+\cftaftertoctitleskip=\skip65
+\cftbeforepartskip=\skip66
+\cftpartnumwidth=\skip67
+\cftpartindent=\skip68
+\cftbeforechapskip=\skip69
+\cftchapindent=\skip70
+\cftchapnumwidth=\skip71
+\cftbeforesecskip=\skip72
+\cftsecindent=\skip73
+\cftsecnumwidth=\skip74
+\cftbeforesubsecskip=\skip75
+\cftsubsecindent=\skip76
+\cftsubsecnumwidth=\skip77
+\cftbeforesubsubsecskip=\skip78
+\cftsubsubsecindent=\skip79
+\cftsubsubsecnumwidth=\skip80
+\cftbeforeparaskip=\skip81
+\cftparaindent=\skip82
+\cftparanumwidth=\skip83
+\cftbeforesubparaskip=\skip84
+\cftsubparaindent=\skip85
+\cftsubparanumwidth=\skip86
+\cftbeforeloftitleskip=\skip87
+\cftafterloftitleskip=\skip88
+\cftbeforefigskip=\skip89
+\cftfigindent=\skip90
+\cftfignumwidth=\skip91
 \c@lofdepth=\count277
 \c@lotdepth=\count278
-\cftbeforelottitleskip=\skip98
-\cftafterlottitleskip=\skip99
-\cftbeforetabskip=\skip100
-\cfttabindent=\skip101
-\cfttabnumwidth=\skip102
+\cftbeforelottitleskip=\skip92
+\cftafterlottitleskip=\skip93
+\cftbeforetabskip=\skip94
+\cfttabindent=\skip95
+\cfttabnumwidth=\skip96
 
 
 Package tocloft Warning: \@starttoc has already been redefined; tocloft bailing 
@@ -1018,7 +1019,7 @@ Package: etoolbox 2018/02/11 v2.5e e-TeX tools for LaTeX (JAW)
 )
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2017/09/02 v2.17a AMS math features
-\@mathmargin=\skip103
+\@mathmargin=\skip97
 
 For additional information on amsmath, use the `?' option.
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
@@ -1026,12 +1027,12 @@ Package: amstext 2000/06/29 v2.01 AMS text
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
-\@emptytoks=\toks26
-\ex@=\dimen163
+\@emptytoks=\toks27
+\ex@=\dimen168
 ))
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
-\pmbraise@=\dimen164
+\pmbraise@=\dimen169
 )
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 2016/03/08 v2.02 operator names
@@ -1046,9 +1047,9 @@ LaTeX Info: Redefining \overline on input line 375.
 LaTeX Info: Redefining \ldots on input line 472.
 LaTeX Info: Redefining \dots on input line 475.
 LaTeX Info: Redefining \cdots on input line 596.
-\Mathstrutbox@=\box50
-\strutbox@=\box51
-\big@size=\dimen165
+\Mathstrutbox@=\box51
+\strutbox@=\box52
+\big@size=\dimen170
 LaTeX Font Info:    Redeclaring font encoding OML on input line 712.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 713.
 \macc@depth=\count285
@@ -1056,35 +1057,35 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 713.
 \dotsspace@=\muskip16
 \c@parentequation=\count287
 \dspbrk@lvl=\count288
-\tag@help=\toks27
+\tag@help=\toks28
 \row@=\count289
 \column@=\count290
 \maxfields@=\count291
-\andhelp@=\toks28
-\eqnshift@=\dimen166
-\alignsep@=\dimen167
-\tagshift@=\dimen168
-\tagwidth@=\dimen169
-\totwidth@=\dimen170
-\lineht@=\dimen171
-\@envbody=\toks29
-\multlinegap=\skip104
-\multlinetaggap=\skip105
-\mathdisplay@stack=\toks30
+\andhelp@=\toks29
+\eqnshift@=\dimen171
+\alignsep@=\dimen172
+\tagshift@=\dimen173
+\tagwidth@=\dimen174
+\totwidth@=\dimen175
+\lineht@=\dimen176
+\@envbody=\toks30
+\multlinegap=\skip98
+\multlinetaggap=\skip99
+\mathdisplay@stack=\toks31
 LaTeX Info: Redefining \[ on input line 2817.
 LaTeX Info: Redefining \] on input line 2818.
 )
 (/usr/share/texlive/texmf-dist/tex/latex/amscls/amsthm.sty
 Package: amsthm 2017/10/31 v2.20.4
-\thm@style=\toks31
-\thm@bodyfont=\toks32
-\thm@headfont=\toks33
-\thm@notefont=\toks34
-\thm@headpunct=\toks35
-\thm@preskip=\skip106
-\thm@postskip=\skip107
-\thm@headsep=\skip108
-\dth@everypar=\toks36
+\thm@style=\toks32
+\thm@bodyfont=\toks33
+\thm@headfont=\toks34
+\thm@notefont=\toks35
+\thm@headpunct=\toks36
+\thm@preskip=\skip100
+\thm@postskip=\skip101
+\thm@headsep=\skip102
+\dth@everypar=\toks37
 )
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
@@ -1095,23 +1096,23 @@ LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 )
 (/usr/share/texlive/texmf-dist/tex/latex/framed/framed.sty
 Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
-\OuterFrameSep=\skip109
-\fb@frw=\dimen172
-\fb@frh=\dimen173
-\FrameRule=\dimen174
-\FrameSep=\dimen175
+\OuterFrameSep=\skip103
+\fb@frw=\dimen177
+\fb@frh=\dimen178
+\FrameRule=\dimen179
+\FrameSep=\dimen180
 )
 (/usr/share/texlive/texmf-dist/tex/latex/multirow/multirow.sty
 Package: multirow 2016/11/25 v2.2 Span multiple rows of a table
-\multirow@colwidth=\skip110
+\multirow@colwidth=\skip104
 \multirow@cntb=\count292
-\multirow@dima=\skip111
-\bigstrutjot=\dimen176
+\multirow@dima=\skip105
+\bigstrutjot=\dimen181
 )
 (/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
 Package: inputenc 2015/03/17 v1.2c Input encoding file
-\inpenc@prehook=\toks37
-\inpenc@posthook=\toks38
+\inpenc@prehook=\toks38
+\inpenc@posthook=\toks39
 
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
@@ -1127,29 +1128,29 @@ LaTeX Info: Thecontrolsequence`\)'isalreadyrobust on input line 129.
 LaTeX Info: Thecontrolsequence`\['isalreadyrobust on input line 129.
 LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 129.
 \g_MT_multlinerow_int=\count293
-\l_MT_multwidth_dim=\dimen177
-\origjot=\skip112
-\l_MT_shortvdotswithinadjustabove_dim=\dimen178
-\l_MT_shortvdotswithinadjustbelow_dim=\dimen179
-\l_MT_above_intertext_sep=\dimen180
-\l_MT_below_intertext_sep=\dimen181
-\l_MT_above_shortintertext_sep=\dimen182
-\l_MT_below_shortintertext_sep=\dimen183
+\l_MT_multwidth_dim=\dimen182
+\origjot=\skip106
+\l_MT_shortvdotswithinadjustabove_dim=\dimen183
+\l_MT_shortvdotswithinadjustbelow_dim=\dimen184
+\l_MT_above_intertext_sep=\dimen185
+\l_MT_below_intertext_sep=\dimen186
+\l_MT_above_shortintertext_sep=\dimen187
+\l_MT_below_shortintertext_sep=\dimen188
 )
 (/usr/share/texlive/texmf-dist/tex/latex/tools/tabularx.sty
 Package: tabularx 2016/02/03 v2.11 `tabularx' package (DPC)
-\TX@col@width=\dimen184
-\TX@old@table=\dimen185
-\TX@old@col=\dimen186
-\TX@target=\dimen187
-\TX@delta=\dimen188
+\TX@col@width=\dimen189
+\TX@old@table=\dimen190
+\TX@old@col=\dimen191
+\TX@target=\dimen192
+\TX@delta=\dimen193
 \TX@cols=\count294
-\TX@ftn=\toks39
+\TX@ftn=\toks40
 )
 (/usr/share/texlive/texmf-dist/tex/latex/algorithm2e/algorithm2e.sty
 Package: algorithm2e 2017/07/18 v5.2 algorithms environments
 \c@AlgoLine=\count295
-\algocf@hangindent=\skip113
+\algocf@hangindent=\skip107
 
 (/usr/share/texlive/texmf-dist/tex/latex/ifoddpage/ifoddpage.sty
 Package: ifoddpage 2016/04/23 v1.1 Conditionals for odd/even page detection
@@ -1161,53 +1162,53 @@ Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
 (/usr/share/texlive/texmf-dist/tex/latex/relsize/relsize.sty
 Package: relsize 2013/03/29 ver 4.1
 )
-\skiptotal=\skip114
-\skiplinenumber=\skip115
-\skiprule=\skip116
-\skiphlne=\skip117
-\skiptext=\skip118
-\skiplength=\skip119
-\algomargin=\skip120
-\skipalgocfslide=\skip121
-\algowidth=\dimen189
-\inoutsize=\dimen190
-\inoutindent=\dimen191
-\interspacetitleruled=\dimen192
-\interspacealgoruled=\dimen193
-\interspacetitleboxruled=\dimen194
-\algocf@ruledwidth=\skip122
-\algocf@inoutbox=\box52
-\algocf@inputbox=\box53
-\AlCapSkip=\skip123
-\AlCapHSkip=\skip124
-\algoskipindent=\skip125
-\algocf@nlbox=\box54
-\algocf@hangingbox=\box55
-\algocf@untilbox=\box56
-\algocf@skipuntil=\skip126
-\algocf@capbox=\box57
-\algocf@lcaptionbox=\skip127
-\algoheightruledefault=\skip128
-\algoheightrule=\skip129
-\algotitleheightruledefault=\skip130
-\algotitleheightrule=\skip131
+\skiptotal=\skip108
+\skiplinenumber=\skip109
+\skiprule=\skip110
+\skiphlne=\skip111
+\skiptext=\skip112
+\skiplength=\skip113
+\algomargin=\skip114
+\skipalgocfslide=\skip115
+\algowidth=\dimen194
+\inoutsize=\dimen195
+\inoutindent=\dimen196
+\interspacetitleruled=\dimen197
+\interspacealgoruled=\dimen198
+\interspacetitleboxruled=\dimen199
+\algocf@ruledwidth=\skip116
+\algocf@inoutbox=\box53
+\algocf@inputbox=\box54
+\AlCapSkip=\skip117
+\AlCapHSkip=\skip118
+\algoskipindent=\skip119
+\algocf@nlbox=\box55
+\algocf@hangingbox=\box56
+\algocf@untilbox=\box57
+\algocf@skipuntil=\skip120
+\algocf@capbox=\box58
+\algocf@lcaptionbox=\skip121
+\algoheightruledefault=\skip122
+\algoheightrule=\skip123
+\algotitleheightruledefault=\skip124
+\algotitleheightrule=\skip125
 \c@algocfline=\count297
 \c@algocfproc=\count298
 \c@algocf=\count299
-\algocf@algoframe=\box58
-\algocf@algobox=\box59
+\algocf@algoframe=\box59
+\algocf@algobox=\box60
 )
 (/usr/share/texlive/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
 (/usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
 (/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
-\pgfutil@everybye=\toks40
-\pgfutil@tempdima=\dimen195
-\pgfutil@tempdimb=\dimen196
+\pgfutil@everybye=\toks41
+\pgfutil@tempdima=\dimen256
+\pgfutil@tempdimb=\dimen257
 
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-common-lists.t
 ex)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
-\pgfutil@abb=\box60
+\pgfutil@abb=\box61
 (/usr/share/texlive/texmf-dist/tex/latex/ms/everyshi.sty
 Package: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
 ))
@@ -1222,30 +1223,30 @@ Package: pgf 2015/08/07 v3.0.1a (rcs-revision 1.15)
 Package: pgfsys 2014/07/09 v3.0.1a (rcs-revision 1.48)
 
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
-\pgfkeys@pathtoks=\toks41
-\pgfkeys@temptoks=\toks42
+\pgfkeys@pathtoks=\toks42
+\pgfkeys@temptoks=\toks43
 
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeysfiltered.code.t
 ex
-\pgfkeys@tmptoks=\toks43
+\pgfkeys@tmptoks=\toks44
 ))
-\pgf@x=\dimen197
-\pgf@y=\dimen198
-\pgf@xa=\dimen199
-\pgf@ya=\dimen256
-\pgf@xb=\dimen257
-\pgf@yb=\dimen258
-\pgf@xc=\dimen259
-\pgf@yc=\dimen260
+\pgf@x=\dimen258
+\pgf@y=\dimen259
+\pgf@xa=\dimen260
+\pgf@ya=\dimen261
+\pgf@xb=\dimen262
+\pgf@yb=\dimen263
+\pgf@xc=\dimen264
+\pgf@yc=\dimen265
 \w@pgf@writea=\write3
 \r@pgf@reada=\read2
 \c@pgf@counta=\count300
 \c@pgf@countb=\count301
 \c@pgf@countc=\count302
 \c@pgf@countd=\count303
-\t@pgf@toka=\toks44
-\t@pgf@tokb=\toks45
-\t@pgf@tokc=\toks46
+\t@pgf@toka=\toks45
+\t@pgf@tokb=\toks46
+\t@pgf@tokc=\toks47
  (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
 File: pgf.cfg 2008/05/14  (rcs-revision 1.7)
 )
@@ -1275,12 +1276,12 @@ Package: pgfcore 2010/04/11 v3.0.1a (rcs-revision 1.7)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
-\pgfmath@dimen=\dimen261
+\pgfmath@dimen=\dimen266
 \pgfmath@count=\count306
-\pgfmath@box=\box61
-\pgfmath@toks=\toks47
-\pgfmath@stack@operand=\toks48
-\pgfmath@stack@operation=\toks49
+\pgfmath@box=\box62
+\pgfmath@toks=\toks48
+\pgfmath@stack@operand=\toks49
+\pgfmath@stack@operation=\toks50
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code
@@ -1305,52 +1306,52 @@ thmetics.code.tex)))
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.te
 x
 File: pgfcorepoints.code.tex 2013/10/07  (rcs-revision 1.27)
-\pgf@picminx=\dimen262
-\pgf@picmaxx=\dimen263
-\pgf@picminy=\dimen264
-\pgf@picmaxy=\dimen265
-\pgf@pathminx=\dimen266
-\pgf@pathmaxx=\dimen267
-\pgf@pathminy=\dimen268
-\pgf@pathmaxy=\dimen269
-\pgf@xx=\dimen270
-\pgf@xy=\dimen271
-\pgf@yx=\dimen272
-\pgf@yy=\dimen273
-\pgf@zx=\dimen274
-\pgf@zy=\dimen275
+\pgf@picminx=\dimen267
+\pgf@picmaxx=\dimen268
+\pgf@picminy=\dimen269
+\pgf@picmaxy=\dimen270
+\pgf@pathminx=\dimen271
+\pgf@pathmaxx=\dimen272
+\pgf@pathminy=\dimen273
+\pgf@pathmaxy=\dimen274
+\pgf@xx=\dimen275
+\pgf@xy=\dimen276
+\pgf@yx=\dimen277
+\pgf@yy=\dimen278
+\pgf@zx=\dimen279
+\pgf@zy=\dimen280
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconstruct.
 code.tex
 File: pgfcorepathconstruct.code.tex 2013/10/07  (rcs-revision 1.29)
-\pgf@path@lastx=\dimen276
-\pgf@path@lasty=\dimen277
+\pgf@path@lastx=\dimen281
+\pgf@path@lasty=\dimen282
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage.code
 .tex
 File: pgfcorepathusage.code.tex 2014/11/02  (rcs-revision 1.24)
-\pgf@shorten@end@additional=\dimen278
-\pgf@shorten@start@additional=\dimen279
+\pgf@shorten@end@additional=\dimen283
+\pgf@shorten@start@additional=\dimen284
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.code.te
 x
 File: pgfcorescopes.code.tex 2015/05/08  (rcs-revision 1.46)
-\pgfpic=\box62
-\pgf@hbox=\box63
-\pgf@layerbox@main=\box64
+\pgfpic=\box63
+\pgf@hbox=\box64
+\pgf@layerbox@main=\box65
 \pgf@picture@serial@count=\count308
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.c
 ode.tex
 File: pgfcoregraphicstate.code.tex 2014/11/02  (rcs-revision 1.12)
-\pgflinewidth=\dimen280
+\pgflinewidth=\dimen285
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransformation
 s.code.tex
 File: pgfcoretransformations.code.tex 2015/08/07  (rcs-revision 1.20)
-\pgf@pt@x=\dimen281
-\pgf@pt@y=\dimen282
-\pgf@pt@temp=\dimen283
+\pgf@pt@x=\dimen286
+\pgf@pt@y=\dimen287
+\pgf@pt@temp=\dimen288
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
 File: pgfcorequick.code.tex 2008/10/09  (rcs-revision 1.3)
@@ -1366,11 +1367,11 @@ File: pgfcorepathprocessing.code.tex 2013/09/09  (rcs-revision 1.9)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.code.te
 x
 File: pgfcorearrows.code.tex 2015/05/14  (rcs-revision 1.43)
-\pgfarrowsep=\dimen284
+\pgfarrowsep=\dimen289
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
 File: pgfcoreshade.code.tex 2013/07/15  (rcs-revision 1.15)
-\pgf@max=\dimen285
+\pgf@max=\dimen290
 \pgf@sys@shading@range@num=\count309
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
@@ -1379,7 +1380,7 @@ File: pgfcoreimage.code.tex 2013/07/15  (rcs-revision 1.18)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.code.
 tex
 File: pgfcoreexternal.code.tex 2014/07/09  (rcs-revision 1.21)
-\pgfexternal@startupbox=\box65
+\pgfexternal@startupbox=\box66
 ))
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.code.te
 x
@@ -1395,15 +1396,15 @@ File: pgfcorepatterns.code.tex 2013/11/07  (rcs-revision 1.5)
 )))
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.code.tex
 File: pgfmoduleshapes.code.tex 2014/03/21  (rcs-revision 1.35)
-\pgfnodeparttextbox=\box66
+\pgfnodeparttextbox=\box67
 ) (/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.tex
 File: pgfmoduleplot.code.tex 2015/08/03  (rcs-revision 1.13)
 )
 (/usr/share/texlive/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65
 .sty
 Package: pgfcomp-version-0-65 2007/07/03 v3.0.1a (rcs-revision 1.7)
-\pgf@nodesepstart=\dimen286
-\pgf@nodesepend=\dimen287
+\pgf@nodesepstart=\dimen291
+\pgf@nodesepend=\dimen292
 )
 (/usr/share/texlive/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18
 .sty
@@ -1417,10 +1418,10 @@ Package: pgfcomp-version-1-18 2007/07/23 v3.0.1a (rcs-revision 1.1)
 Package: pgffor 2013/12/13 v3.0.1a (rcs-revision 1.25)
 
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)
-\pgffor@iter=\dimen288
-\pgffor@skip=\dimen289
-\pgffor@stack=\toks50
-\pgffor@toks=\toks51
+\pgffor@iter=\dimen293
+\pgffor@skip=\dimen294
+\pgffor@stack=\toks51
+\pgffor@toks=\toks52
 ))
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
 Package: tikz 2015/08/07 v3.0.1a (rcs-revision 1.151)
@@ -1429,18 +1430,18 @@ Package: tikz 2015/08/07 v3.0.1a (rcs-revision 1.151)
 .code.tex
 File: pgflibraryplothandlers.code.tex 2013/08/31 v3.0.1a (rcs-revision 1.20)
 \pgf@plot@mark@count=\count310
-\pgfplotmarksize=\dimen290
+\pgfplotmarksize=\dimen295
 )
-\tikz@lastx=\dimen291
-\tikz@lasty=\dimen292
-\tikz@lastxsaved=\dimen293
-\tikz@lastysaved=\dimen294
-\tikzleveldistance=\dimen295
-\tikzsiblingdistance=\dimen296
-\tikz@figbox=\box67
-\tikz@figbox@bg=\box68
-\tikz@tempbox=\box69
-\tikz@tempbox@bg=\box70
+\tikz@lastx=\dimen296
+\tikz@lasty=\dimen297
+\tikz@lastxsaved=\dimen298
+\tikz@lastysaved=\dimen299
+\tikzleveldistance=\dimen300
+\tikzsiblingdistance=\dimen301
+\tikz@figbox=\box68
+\tikz@figbox@bg=\box69
+\tikz@tempbox=\box70
+\tikz@tempbox@bg=\box71
 \tikztreelevel=\count311
 \tikznumberofchildren=\count312
 \tikznumberofcurrentchild=\count313
@@ -1468,13 +1469,13 @@ Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
 \c@ALG@line=\count319
 \c@ALG@rem=\count320
 \c@ALG@nested=\count321
-\ALG@tlm=\skip132
-\ALG@thistlm=\skip133
+\ALG@tlm=\skip126
+\ALG@thistlm=\skip127
 \c@ALG@Lnr=\count322
 \c@ALG@blocknr=\count323
 \c@ALG@storecount=\count324
 \c@ALG@tmpcounter=\count325
-\ALG@tmplength=\skip134
+\ALG@tmplength=\skip128
 )
 Document Style - pseudocode environments for use with the `algorithmicx' style
 ) (/usr/share/texlive/texmf-dist/tex/latex/diagbox/diagbox.sty
@@ -1492,10 +1493,10 @@ Package pict2e Info: Driver file for pict2e: p2e-luatex.def on input line 121.
 (/usr/share/texlive/texmf-dist/tex/latex/pict2e/p2e-luatex.def
 File: p2e-luatex.def 2016/02/05 v0.1u Driver-dependant file (RN,HjG,JT)
 )
-\pIIe@GRAPH=\toks52
-\@arclen=\dimen297
-\@arcrad=\dimen298
-\@tempdimd=\dimen299
+\pIIe@GRAPH=\toks53
+\@arclen=\dimen302
+\@arcrad=\dimen303
+\@tempdimd=\dimen304
 )
 (/usr/share/texlive/texmf-dist/tex/latex/fp/fp.sty
 Package: fp 1995/04/02
@@ -1545,15 +1546,15 @@ Package: fp-upn 1996/10/21
 (/usr/share/texlive/texmf-dist/tex/latex/fp/fp-eval.sty
 Package: fp-eval 1995/04/03
 ))
-\diagbox@boxa=\box71
-\diagbox@boxb=\box72
-\diagbox@boxm=\box73
-\diagbox@wd=\dimen300
-\diagbox@ht=\dimen301
-\diagbox@insepl=\dimen302
-\diagbox@insepr=\dimen303
-\diagbox@outsepl=\dimen304
-\diagbox@outsepr=\dimen305
+\diagbox@boxa=\box72
+\diagbox@boxb=\box73
+\diagbox@boxm=\box74
+\diagbox@wd=\dimen305
+\diagbox@ht=\dimen306
+\diagbox@insepl=\dimen307
+\diagbox@insepr=\dimen308
+\diagbox@outsepl=\dimen309
+\diagbox@outsepr=\dimen310
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
 zlibraryarrows.code.tex
@@ -1562,7 +1563,7 @@ File: tikzlibraryarrows.code.tex 2008/01/09 v3.0.1a (rcs-revision 1.1)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.code.
 tex
 File: pgflibraryarrows.code.tex 2013/09/23 v3.0.1a (rcs-revision 1.16)
-\arrowsize=\dimen306
+\arrowsize=\dimen311
 ))
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
 zlibrarypositioning.code.tex
@@ -1580,26 +1581,26 @@ File: tikzlibraryshapes.multipart.code.tex 2008/01/09 v3.0.1a (rcs-revision 1.1)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshape
 s.multipart.code.tex
 File: pgflibraryshapes.multipart.code.tex 2010/01/07 v3.0.1a (rcs-revision 1.2)
-\pgfnodepartlowerbox=\box74
-\pgfnodeparttwobox=\box75
-\pgfnodepartthreebox=\box76
-\pgfnodepartfourbox=\box77
-\pgfnodeparttwentybox=\box78
-\pgfnodepartnineteenbox=\box79
-\pgfnodeparteighteenbox=\box80
-\pgfnodepartseventeenbox=\box81
-\pgfnodepartsixteenbox=\box82
-\pgfnodepartfifteenbox=\box83
-\pgfnodepartfourteenbox=\box84
-\pgfnodepartthirteenbox=\box85
-\pgfnodeparttwelvebox=\box86
-\pgfnodepartelevenbox=\box87
-\pgfnodeparttenbox=\box88
-\pgfnodepartninebox=\box89
-\pgfnodeparteightbox=\box90
-\pgfnodepartsevenbox=\box91
-\pgfnodepartsixbox=\box92
-\pgfnodepartfivebox=\box93
+\pgfnodepartlowerbox=\box75
+\pgfnodeparttwobox=\box76
+\pgfnodepartthreebox=\box77
+\pgfnodepartfourbox=\box78
+\pgfnodeparttwentybox=\box79
+\pgfnodepartnineteenbox=\box80
+\pgfnodeparteighteenbox=\box81
+\pgfnodepartseventeenbox=\box82
+\pgfnodepartsixteenbox=\box83
+\pgfnodepartfifteenbox=\box84
+\pgfnodepartfourteenbox=\box85
+\pgfnodepartthirteenbox=\box86
+\pgfnodeparttwelvebox=\box87
+\pgfnodepartelevenbox=\box88
+\pgfnodeparttenbox=\box89
+\pgfnodepartninebox=\box90
+\pgfnodeparteightbox=\box91
+\pgfnodepartsevenbox=\box92
+\pgfnodepartsixbox=\box93
+\pgfnodepartfivebox=\box94
 ))) (./report.aux
 
 LaTeX Warning: Label `my-label' multiply defined.
@@ -1627,16 +1628,16 @@ LaTeX Font Info:    ... okay on input line 65.
  (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count337
-\scratchdimen=\dimen307
-\scratchbox=\box94
+\scratchdimen=\dimen312
+\scratchbox=\box95
 \nofMPsegments=\count338
 \nofMParguments=\count339
-\everyMPshowfont=\toks53
+\everyMPshowfont=\toks54
 \MPscratchCnt=\count340
-\MPscratchDim=\dimen308
+\MPscratchDim=\dimen313
 \MPnumerator=\count341
 \makeMPintoPDFobject=\count342
-\everyMPtoPDFconversion=\toks54
+\everyMPtoPDFconversion=\toks55
 ) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
 
@@ -1665,7 +1666,7 @@ Package: pdftexcmds 2018/01/21 v0.26 Utility functions of pdfTeX for LuaTeX (HO)
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
-\pdftexcmds@toks=\toks55
+\pdftexcmds@toks=\toks56
 )
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 43
 8.
@@ -1779,7 +1780,7 @@ LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 \c@lstlisting=\count343
-\AtBeginShipoutBox=\box95
+\AtBeginShipoutBox=\box96
 (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/pdflscape.sty
 Package: pdflscape 2016/05/14 v0.11 Display of landscape pages in PDF (HO)
 
@@ -1841,9 +1842,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 \openout4 = report.toc
  [1]
 Chapitre 1.
-(load luc: /home/weiss/.texlive2017/texmf-var/luatex-cache/generic/fonts/otl/lms
-ans17-regular.luc)(load luc: /home/weiss/.texlive2017/texmf-var/luatex-cache/gen
-eric/fonts/otl/lmsans10-bold.luc) (./apriori/apriori.tex [2
+(./apriori/apriori.tex [2
 
 ]
 Chapitre 2.
@@ -1857,225 +1856,235 @@ Missing character: There is no é (U+00E9) in font cmmi12!
 Missing character: There is no é (U+00E9) in font cmmi12!
 (load luc: /home/weiss/.texlive2017/texmf-var/luatex-cache/generic/fonts/otl/lmm
 ono12-regular.luc) [4]
-<apriori/images/apriori_schema.png, id=64, 469.755pt x 230.8625pt>
+<apriori/images/uml.png, id=62, 825.0825pt x 622.325pt>
+File: apriori/images/uml.png Graphic file (type png)
+<use apriori/images/uml.png>
+Package luatex.def Info: apriori/images/uml.png  used on input line 87.
+(luatex.def)             Requested size: 373.44241pt x 281.67696pt.
+<apriori/images/apriori_schema.png, id=63, 469.755pt x 230.8625pt>
 File: apriori/images/apriori_schema.png Graphic file (type png)
 <use apriori/images/apriori_schema.png>
-Package luatex.def Info: apriori/images/apriori_schema.png  used on input line 8
-6.
+Package luatex.def Info: apriori/images/apriori_schema.png  used on input line 9
+3.
 (luatex.def)             Requested size: 373.44241pt x 183.52776pt.
-<apriori/images/data_structs/instance/properties.png, id=65, 391.4625pt x 60.225
+<apriori/images/data_structs/instance/properties.png, id=64, 391.4625pt x 60.225
 pt>
 File: apriori/images/data_structs/instance/properties.png Graphic file (type png
 )
 <use apriori/images/data_structs/instance/properties.png>
 Package luatex.def Info: apriori/images/data_structs/instance/properties.png  us
-ed on input line 92.
+ed on input line 99.
 (luatex.def)             Requested size: 373.44241pt x 57.45601pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 89--93
+Underfull \hbox (badness 10000) in paragraph at lines 96--100
 
  []
 
-<apriori/images/data_structs/instance/methods.png, id=66, 435.6275pt x 145.54375
+[5<./apriori/images/uml.png><./apriori/images/apriori_schema.png>]
+<apriori/images/data_structs/instance/methods.png, id=69, 435.6275pt x 145.54375
 pt>
 File: apriori/images/data_structs/instance/methods.png Graphic file (type png)
 <use apriori/images/data_structs/instance/methods.png>
 Package luatex.def Info: apriori/images/data_structs/instance/methods.png  used 
-on input line 99.
+on input line 106.
 (luatex.def)             Requested size: 373.44241pt x 124.76764pt.
-[5<./apriori/images/apriori_schema.png><./apriori/images/data_structs/instance/p
-roperties.png>]
-<apriori/images/data_structs/laoder/properties.png, id=72, 266.9975pt x 58.2175p
+<apriori/images/data_structs/laoder/properties.png, id=70, 266.9975pt x 58.2175p
 t>
 File: apriori/images/data_structs/laoder/properties.png Graphic file (type png)
 <use apriori/images/data_structs/laoder/properties.png>
 Package luatex.def Info: apriori/images/data_structs/laoder/properties.png  used
- on input line 107.
+ on input line 114.
 (luatex.def)             Requested size: 373.44241pt x 81.43552pt.
-<apriori/images/data_structs/laoder/methods.png, id=73, 587.19376pt x 96.36pt>
+ [6<./apriori/images/data_structs/instance/properties.png><./apriori/images/data
+_structs/instance/methods.png><./apriori/images/data_structs/laoder/properties.p
+ng>]
+<apriori/images/data_structs/laoder/methods.png, id=75, 587.19376pt x 96.36pt>
 File: apriori/images/data_structs/laoder/methods.png Graphic file (type png)
 <use apriori/images/data_structs/laoder/methods.png>
 Package luatex.def Info: apriori/images/data_structs/laoder/methods.png  used on
- input line 115.
+ input line 122.
 (luatex.def)             Requested size: 373.44241pt x 61.282pt.
-<apriori/images/data_structs/searcher/props.png, id=74, 430.60875pt x 90.3375pt>
+<apriori/images/data_structs/searcher/props.png, id=76, 430.60875pt x 90.3375pt>
 
 File: apriori/images/data_structs/searcher/props.png Graphic file (type png)
 <use apriori/images/data_structs/searcher/props.png>
 Package luatex.def Info: apriori/images/data_structs/searcher/props.png  used on
- input line 124.
+ input line 131.
 (luatex.def)             Requested size: 373.44241pt x 78.34624pt.
- [6<./apriori/images/data_structs/instance/methods.png><./apriori/images/data_st
-ructs/laoder/properties.png><./apriori/images/data_structs/laoder/methods.png>]
-<apriori/images/data_structs/searcher/search.png, id=78, 484.81125pt x 236.885pt
+<apriori/images/data_structs/searcher/search.png, id=77, 484.81125pt x 236.885pt
 >
 File: apriori/images/data_structs/searcher/search.png Graphic file (type png)
 <use apriori/images/data_structs/searcher/search.png>
 Package luatex.def Info: apriori/images/data_structs/searcher/search.png  used o
-n input line 134.
+n input line 141.
 (luatex.def)             Requested size: 298.75696pt x 145.9816pt.
-<apriori/images/data_structs/searcher/helpers.png, id=79, 676.5275pt x 157.58875
+<apriori/images/data_structs/searcher/helpers.png, id=78, 676.5275pt x 157.58875
 pt>
 File: apriori/images/data_structs/searcher/helpers.png Graphic file (type png)
 <use apriori/images/data_structs/searcher/helpers.png>
 Package luatex.def Info: apriori/images/data_structs/searcher/helpers.png  used 
-on input line 139.
+on input line 146.
 (luatex.def)             Requested size: 373.44241pt x 86.99147pt.
-<apriori/images/data_structs/searcher/printers.png, id=80, 504.88625pt x 131.491
+
+[7<./apriori/images/data_structs/laoder/methods.png><./apriori/images/data_struc
+ts/searcher/props.png><./apriori/images/data_structs/searcher/search.png>]
+<apriori/images/data_structs/searcher/printers.png, id=82, 504.88625pt x 131.491
 26pt>
 File: apriori/images/data_structs/searcher/printers.png Graphic file (type png)
 <use apriori/images/data_structs/searcher/printers.png>
 Package luatex.def Info: apriori/images/data_structs/searcher/printers.png  used
- on input line 152.
+ on input line 159.
 (luatex.def)             Requested size: 373.44241pt x 97.25986pt.
- [7<./apriori/images/data_structs/searcher/props.png><./apriori/images/data_stru
-cts/searcher/search.png><./apriori/images/data_structs/searcher/helpers.png>]
-<apriori/images/apriori.png, id=84, 789.95125pt x 514.92375pt>
+<apriori/images/apriori.png, id=83, 789.95125pt x 514.92375pt>
 File: apriori/images/apriori.png Graphic file (type png)
 <use apriori/images/apriori.png>
-Package luatex.def Info: apriori/images/apriori.png  used on input line 161.
+Package luatex.def Info: apriori/images/apriori.png  used on input line 168.
 (luatex.def)             Requested size: 373.44241pt x 243.42847pt.
- [8<./apriori/images/data_structs/searcher/printers.png><./apriori/images/aprior
-i.png>](load luc: /home/weiss/.texlive2017/texmf-var/luatex-cache/generic/fonts/
-otl/lmroman8-bold.luc)(load luc: /home/weiss/.texlive2017/texmf-var/luatex-cache
-/generic/fonts/otl/lmroman6-bold.luc)(load luc: /home/weiss/.texlive2017/texmf-v
-ar/luatex-cache/generic/fonts/otl/lmromancaps10-regular.luc)
-Underfull \hbox (badness 10000) in paragraph at lines 219--220
+
+[8<./apriori/images/data_structs/searcher/helpers.png><./apriori/images/data_str
+ucts/searcher/printers.png>](load luc: /home/weiss/.texlive2017/texmf-var/luatex
+-cache/generic/fonts/otl/lmroman8-bold.luc)(load luc: /home/weiss/.texlive2017/t
+exmf-var/luatex-cache/generic/fonts/otl/lmroman6-bold.luc)(load luc: /home/weiss
+/.texlive2017/texmf-var/luatex-cache/generic/fonts/otl/lmromancaps10-regular.luc
+) [9<./apriori/images/apriori.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 226--227
 
  []
 
-[9]) [10] (./knn/knn.tex
+) [10] (./knn/knn.tex
 Chapitre 3.
 [11
 
 ] [12] [13]
-<knn/images/uml.png, id=105, 640.3925pt x 490.83376pt>
+<knn/images/uml.png, id=104, 640.3925pt x 490.83376pt>
 File: knn/images/uml.png Graphic file (type png)
 <use knn/images/uml.png>
 Package luatex.def Info: knn/images/uml.png  used on input line 103.
 (luatex.def)             Requested size: 373.44241pt x 286.2341pt.
- [14<./knn/images/uml.png>]
-<knn/images/props.png, id=110, 294.09875pt x 83.31125pt>
+ [14]
+<knn/images/props.png, id=109, 294.09875pt x 83.31125pt>
 File: knn/images/props.png Graphic file (type png)
 <use knn/images/props.png>
 Package luatex.def Info: knn/images/props.png  used on input line 117.
 (luatex.def)             Requested size: 373.44241pt x 105.78883pt.
-<knn/images/meths.png, id=111, 508.90125pt x 137.51375pt>
+<knn/images/meths.png, id=110, 508.90125pt x 137.51375pt>
 File: knn/images/meths.png Graphic file (type png)
 <use knn/images/meths.png>
 Package luatex.def Info: knn/images/meths.png  used on input line 126.
 (luatex.def)             Requested size: 373.44241pt x 100.91507pt.
-<knn/images/app.png, id=112, 791.95876pt x 513.92pt>
+ [15<./knn/images/uml.png><./knn/images/props.png>]
+<knn/images/app.png, id=114, 791.95876pt x 513.92pt>
 File: knn/images/app.png Graphic file (type png)
 <use knn/images/app.png>
 Package luatex.def Info: knn/images/app.png  used on input line 140.
 (luatex.def)             Requested size: 373.44241pt x 242.33444pt.
- [15<./knn/images/props.png><./knn/images/meths.png>] [16<./knn/images/app.png>] [17]
-<knn/images/graph_car.png, id=122, 490.80066pt x 272.40231pt>
+ [16<./knn/images/meths.png><./knn/images/app.png>] [17]
+<knn/images/graph_car.png, id=121, 490.80066pt x 272.40231pt>
 File: knn/images/graph_car.png Graphic file (type png)
 <use knn/images/graph_car.png>
 Package luatex.def Info: knn/images/graph_car.png  used on input line 208.
 (luatex.def)             Requested size: 373.44241pt x 207.27313pt.
  [18]
-<knn/images/graph_iris.png, id=126, 424.08989pt x 239.04692pt>
+<knn/images/graph_iris.png, id=125, 424.08989pt x 239.04692pt>
 File: knn/images/graph_iris.png Graphic file (type png)
 <use knn/images/graph_iris.png>
 Package luatex.def Info: knn/images/graph_iris.png  used on input line 246.
 (luatex.def)             Requested size: 373.44241pt x 210.51147pt.
- [19<./knn/images/graph_car.png>]
-<knn/images/graph_credit.png, id=132, 444.73846pt x 262.07802pt>
+ [19<./knn/images/graph_car.png>] [20<./knn/images/graph_iris.png>]
+<knn/images/graph_credit.png, id=135, 444.73846pt x 262.07802pt>
 File: knn/images/graph_credit.png Graphic file (type png)
 <use knn/images/graph_credit.png>
 Package luatex.def Info: knn/images/graph_credit.png  used on input line 274.
 (luatex.def)             Requested size: 373.44241pt x 220.07204pt.
- [20<./knn/images/graph_iris.png>]) [21<./knn/images/graph_credit.png>]
+) [21<./knn/images/graph_credit.png>]
 (./dbscan/dbscan.tex
 Chapitre 4.
 [22
 
 ] [23]
-<dbscan/images/clusters.png, id=147, 403.5075pt x 318.18875pt>
+<dbscan/images/clusters.png, id=146, 403.5075pt x 318.18875pt>
 File: dbscan/images/clusters.png Graphic file (type png)
 <use dbscan/images/clusters.png>
 Package luatex.def Info: dbscan/images/clusters.png  used on input line 66.
 (luatex.def)             Requested size: 298.75696pt x 235.58707pt.
  [24<./dbscan/images/clusters.png>] [25]
-<dbscan/images/uml.png, id=156, 1027.84pt x 629.35126pt>
+<dbscan/images/uml.png, id=155, 1027.84pt x 629.35126pt>
 File: dbscan/images/uml.png Graphic file (type png)
 <use dbscan/images/uml.png>
 Package luatex.def Info: dbscan/images/uml.png  used on input line 158.
 (luatex.def)             Requested size: 497.92322pt x 304.87967pt.
  [26]
-<dbscan/images/point/props.png, id=160, 193.72375pt x 39.14626pt>
+<dbscan/images/point/props.png, id=159, 193.72375pt x 39.14626pt>
 File: dbscan/images/point/props.png Graphic file (type png)
 <use dbscan/images/point/props.png>
 Package luatex.def Info: dbscan/images/point/props.png  used on input line 174.
 (luatex.def)             Requested size: 373.44241pt x 75.46396pt.
-<dbscan/images/point/meths.png, id=161, 610.28pt x 208.78pt>
+<dbscan/images/point/meths.png, id=160, 610.28pt x 208.78pt>
 File: dbscan/images/point/meths.png Graphic file (type png)
 <use dbscan/images/point/meths.png>
 Package luatex.def Info: dbscan/images/point/meths.png  used on input line 181.
 (luatex.def)             Requested size: 373.44241pt x 127.76018pt.
  [27<./dbscan/images/uml.png><./dbscan/images/point/props.png>]
-<dbscan/images/cluster/all.png, id=165, 339.2675pt x 158.5925pt>
+<dbscan/images/cluster/all.png, id=164, 339.2675pt x 158.5925pt>
 File: dbscan/images/cluster/all.png Graphic file (type png)
 <use dbscan/images/cluster/all.png>
 Package luatex.def Info: dbscan/images/cluster/all.png  used on input line 196.
 (luatex.def)             Requested size: 373.44241pt x 174.57567pt.
-<dbscan/images/dbscan/props.png, id=166, 508.90125pt x 165.61874pt>
+<dbscan/images/dbscan/props.png, id=165, 508.90125pt x 165.61874pt>
 File: dbscan/images/dbscan/props.png Graphic file (type png)
 <use dbscan/images/dbscan/props.png>
 Package luatex.def Info: dbscan/images/dbscan/props.png  used on input line 215.
 
 (luatex.def)             Requested size: 373.44241pt x 121.54004pt.
  [28<./dbscan/images/point/meths.png><./dbscan/images/cluster/all.png>]
-<dbscan/images/dbscan/start.png, id=170, 712.6625pt x 247.92625pt>
+<dbscan/images/dbscan/start.png, id=169, 712.6625pt x 247.92625pt>
 File: dbscan/images/dbscan/start.png Graphic file (type png)
 <use dbscan/images/dbscan/start.png>
 Package luatex.def Info: dbscan/images/dbscan/start.png  used on input line 227.
 
 (luatex.def)             Requested size: 373.44241pt x 129.91354pt.
-<dbscan/images/dbscan/expand.png, id=171, 678.535pt x 379.4175pt>
+<dbscan/images/dbscan/expand.png, id=170, 678.535pt x 379.4175pt>
 File: dbscan/images/dbscan/expand.png Graphic file (type png)
 <use dbscan/images/dbscan/expand.png>
 Package luatex.def Info: dbscan/images/dbscan/expand.png  used on input line 232
 .
 (luatex.def)             Requested size: 373.44241pt x 208.81342pt.
- [29<./dbscan/images/dbscan/props.png><./dbscan/images/dbscan/start.png><./dbsca
-n/images/dbscan/expand.png>]
-<dbscan/images/dbscan/neighborhood.png, id=176, 656.4525pt x 189.70876pt>
+ [29<./dbscan/images/dbscan/props.png><./dbscan/images/dbscan/start.png>]
+<dbscan/images/dbscan/neighborhood.png, id=175, 656.4525pt x 189.70876pt>
 File: dbscan/images/dbscan/neighborhood.png Graphic file (type png)
 <use dbscan/images/dbscan/neighborhood.png>
 Package luatex.def Info: dbscan/images/dbscan/neighborhood.png  used on input li
 ne 237.
 (luatex.def)             Requested size: 373.44241pt x 107.9209pt.
-<dbscan/images/dbscan/score.png, id=177, 419.5675pt x 363.3575pt>
+<dbscan/images/dbscan/score.png, id=176, 419.5675pt x 363.3575pt>
 File: dbscan/images/dbscan/score.png Graphic file (type png)
 <use dbscan/images/dbscan/score.png>
 Package luatex.def Info: dbscan/images/dbscan/score.png  used on input line 242.
 
 (luatex.def)             Requested size: 273.85928pt x 237.17201pt.
-<dbscan/images/app.png, id=178, 788.9475pt x 514.92375pt>
+ [30<./dbscan/images/dbscan/expand.png><./dbscan/images/dbscan/neighborhood.png>
+<./dbscan/images/dbscan/score.png>]
+<dbscan/images/app.png, id=180, 788.9475pt x 514.92375pt>
 File: dbscan/images/app.png Graphic file (type png)
 <use dbscan/images/app.png>
 Package luatex.def Info: dbscan/images/app.png  used on input line 256.
 (luatex.def)             Requested size: 373.44241pt x 243.7349pt.
- [30<./dbscan/images/dbscan/neighborhood.png><./dbscan/images/dbscan/score.png>] [31<./dbscan/images/app.png>]
+ [31<./dbscan/images/app.png>]
 Overfull \hbox (17.65833pt too wide) in paragraph at lines 295--298
 \TU/lmr/m/n/12 gran-deur, une preuve sera pré-sen-tée dans (REEEEEEEEEEEEEEEE
 EEEEEEEEEEEEEEEEFFFF).
  []
 
-
+[32]
 Overfull \hbox (29.73282pt too wide) in paragraph at lines 307--335
  [][] 
  []
 
-[32] [33]) [34]
+[33]) [34]
 Chapitre 5.
 [35
 
-] (./report.bbl [36]) [37
+] [36] (./report.bbl [37]) [38
 
 ] (./report.aux)
 
@@ -2084,38 +2093,36 @@ LaTeX Warning: There were multiply-defined labels.
 )
 
 Here is how much of LuaTeX's memory you used:
- 32304 strings out of 494480
- 381515,953878 words of node,token memory allocated
- 294618 words of node memory still in use:
-   7 hlist, 2 vlist, 2 rule, 344 glue, 1 kern, 1 penalty, 42666 glyph, 15198 att
-ribute, 116 glue_spec, 2533 attribute_list, 1 write nodes
-   avail lists: 1:2,2:4992,3:157,4:35,5:401,6:828,7:1857,8:694,9:420,10:16,11:21
-3
- 35046 multiletter control sequences out of 65536+600000
- 81 fonts using 10488663 bytes
- 55i,22n,70p,1192b,630s stack positions out of 5000i,500n,10000p,200000b,100000s
+ 32508 strings out of 494480
+ 381523,953878 words of node,token memory allocated
+ 321135 words of node memory still in use:
+   7 hlist, 2 vlist, 2 rule, 362 glue, 1 kern, 1 penalty, 46933 glyph, 15534 att
+ribute, 117 glue_spec, 2589 attribute_list, 1 write nodes
+   avail lists: 1:5,2:4782,3:160,4:52,5:412,6:1292,7:1873,8:698,9:414,10:16,11:2
+75
+ 35248 multiletter control sequences out of 65536+600000
+ 77 fonts using 9961847 bytes
+ 55i,22n,70p,1192b,626s stack positions out of 5000i,500n,10000p,200000b,100000s
 </usr/share/texmf/fonts/opentype/public/lm/lmromancaps10-regular.otf></usr/share
 /texmf/fonts/opentype/public/lm/lmroman10-regular.otf></usr/share/texmf/fonts/op
 entype/public/lm/lmmono12-regular.otf></usr/share/texmf/fonts/opentype/public/lm
 /lmroman12-italic.otf></usr/share/texmf/fonts/opentype/public/lm/lmroman8-regula
-r.otf></usr/share/texmf/fonts/opentype/public/lm/lmroman17-regular.otf></usr/sha
-re/texmf/fonts/opentype/public/lm/lmsans17-regular.otf></usr/share/texmf/fonts/o
-pentype/public/lm/lmroman12-regular.otf></usr/share/texmf/fonts/opentype/public/
-lm/lmroman12-bold.otf></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmm
-i10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb
-></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/s
-hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/tex
-live/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/typ
-e1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
-nts/symbols/msbm10.pfb>
-Output written on report.pdf (39 pages, 900216 bytes).
+r.otf></usr/share/texmf/fonts/opentype/public/lm/lmroman12-regular.otf></usr/sha
+re/texmf/fonts/opentype/public/lm/lmroman12-bold.otf></usr/share/texlive/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+mi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb>
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/sha
+re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on report.pdf (40 pages, 955724 bytes).
 
-PDF statistics: 294 PDF objects out of 1000 (max. 8388607)
- 170 compressed objects within 2 object streams
+PDF statistics: 284 PDF objects out of 1000 (max. 8388607)
+ 164 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 131072)
  16 words of extra memory for PDF output out of 10000 (max. 100000000)
 
