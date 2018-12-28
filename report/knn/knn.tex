@@ -1,4 +1,4 @@
-\chapter{Classification à l'aide de l'algorithme K plus proches voisins (KNN)}
+\chapter{Classification à l'aide de l'algorithme K plus proches voisins (KNN)}\label{knn}
 	\section{Introduction}
 		\paragraph{}
 		Un des principaux problème auquel nous devons faire face quand nous exploitant des données réelles est l'inférence d'une étiquette pour une nouvelle donnée non rencontrée avant, c'est la définition d'un problème de classification, et il a beaucoup de domaine d'application (détection de fraude, détection d'intrusion, évaluation de la qualité d'un produit ...). L'un des nombreux algorithmes mis au point pour résoudre ce type de problème est l'algorithme des K plus proches voisins ou K-Nearest-Neighbors (KNN).
@@ -8,7 +8,7 @@
 	\section{Définitions}
 		\paragraph{}
 		Avant de détailler le fonctionnement de l'algorithme nous allons introduire quelques notions pour mieux comprendre son fonctionnement
-		\subsection{Point}
+		\subsection{Point}\label{point}
 			\paragraph{}
 			Un point $P$ est une instance du dataset, c.à.d un ensemble $P_att$ de valeur d'attributs, plus formellement, un point est est l'extrémité d'un vecteur : \[\vec{V} = a_1.\vec{v_1} + a_2.\vec{v_2} + ... + a_n.\vec{v_n} \]
 			où : 
@@ -28,7 +28,7 @@
 				\text{La distance euclidienen 2-distance est la suivante : } \\
 				D_2(X,Y) = \sqrt{\sum_{i=1}^{n} (x_i - y_i)^2} \\
 			\end{gather*}
-			\par
+			\par\label{nomdist}
 			Il reste donc à définir la sémantique de l'opérateur $-$ qui lui introduit la distance élémentaire entre deux valeur d'un même attribut, dans le cas numérique cette opérateur est l'opérateur arithmétique classique de la soustraction, pour les valeurs nominales nous avons choisis une interprétation simple pour faciliter l'exploitation de l'algorithme par la suite qui est la suivante : 
 			\[ 
 				x_{nom} - y_{nom} = 
@@ -38,7 +38,7 @@
 				\end{cases}
 			\] 
 			\par Elle représente la distance de Hamming simplifiée au cas d'une variable a valeur binaires seulement.
-		\subsection{Voisinage}
+		\subsection{Voisinage}\label{neighborhood}
 			\paragraph{}
 			Le concept de voisinage d'un certain point $P$ est une notion très importante en classification et clustering, elle désigne l'ensemble de points $V$ qui sont similaires à un certain degré à $P$, plus particulièrement si $\forall v \in V$ on à $D_p(P,v)=minDst$ où $minDst$ est la plus petite distance entre deux points, alors $V$ est l'ensemble des voisins directes de $P$.
 		\subsection{Classification}
@@ -128,13 +128,13 @@
 			\begin{itemize}
 				\item \textbf{classify} c'est la méthode principale qui prend une instance en entrée et retourne sa classe prédite en sortie.
 				\item \textbf{classifyTestSet} c'est une méthode qui fait appel à \textbf{classify} sur un ensemble de test dont les classes sont connues, et calcule la précision de la classification effectuée
-				\item la méthode de calcul d'une distance \ref{distance} entre deux points ( instances ) données
+				\item \textbf{distance} la méthode de calcul d'une distance \ref{distance} entre deux points ( instances ) données
 				\item \textbf{getMostFrequentClass} elle extrait d'un ensemble de classes, celle qui est la plus fréquente en terme d'apparition.
 			\end{itemize}
 		\end{itemize}
 	\section{Interface graphique}
 		\paragraph{}
-		De manière équivalente à ce que nous avons fait pour le module précédent (\ref{apriori}) Nous avons intégré à l'interface graphique principale l'algorithme \textbf{KNN}, voici l'interface choisie suivit de quelques explications : 
+		De manière équivalente à ce que nous avons fait pour le module précédent (\ref{apriori}) Nous avons intégré à l'interface graphique principale l'algorithme \textbf{KNN}, voici l'interface choisie suivie de quelques explications : 
 		\begin{figure}[H]
 			\centering
 			\includegraphics[width=0.75\linewidth]{knn/images/app.png}
@@ -277,4 +277,4 @@
 		\paragraph{Commentaires : }
 		De manière analogue au dataset précédent, du point de vue intrinsèque au choix de $K$, laa précision peu diminuer dans le cas où le taux d'apprentissage augmente, on peut le voir pour la courbe en \textcolor{blue}{bleu} où la précision a diminué d'un facteur de 0.04
 		\par Il est aussi a noté que la classification à pris un temps assez considérable pour(peut être du à la présence d'attributs nominales ? )
-	\section{Conclusion}
+	

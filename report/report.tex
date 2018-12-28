@@ -11,7 +11,6 @@
 \usepackage[a4paper, width=175mm, top=25mm, bottom=25mm]{geometry}
 \usepackage{parskip}
 \usepackage{enumitem}
-\usepackage{titlesec}
 \usepackage{listings}
 \usepackage{float}
 \usepackage[final]{pdfpages}
@@ -84,14 +83,29 @@
 
 \chapter{Conclusion}
 	\paragraph{}
+	Au terme de ce projet, nous avons donc pu explorer 3 des aspects du data-mining qui sont : l'extraction de motifs fréquents, la classification des données et le clustering. en implémentant à chaque étapes un algorithme rudimentaire du sous domaine en question, arrivé a ce point nous disposons donc de notre propre outillage pour l'exploration et l'exploitation des ensemble de données.
+	\par 
+	Il reste toute fois à dresser un bilan récapitulatif qui recense dans chaque partie une analyse de l'algorithme utilisé ainsi que des critiques sur ce dernier.
 	\section{Bilan récapitulatif}
+		\subsection{Partie I}
 		\paragraph{}
-		\paragraph{Partie I}
+		À la fin du chapitre II (voir \ref{apriori}), nous avons pu nous initier à une technique basique d'extraction de motifs fréquents sous forme d'items , et cela depuis un dataset. En implémentant l'algorithme Apriori et en le testant sur un ensemble de benchmark, nous avons pu en tirer les conclusions suivantes : 
+		\begin{itemize}
+			\item \textbf{Point forts :} 
+			 \begin{itemize}
+				\item Il est très facile à implémenter, omettant les amélioration des structures de données en terme de temps d'accès (ce qui a poussé à utiliser des structures plus développés que de simple vecteur(tableaux)), la facilité de l'implémentation d'Apriori est une facteur non négligeable quand nous sommes amenés à développer une solution rapidement.
+				\item Il est très simple a comprendre, de par sa nativité et son approche qu'on peut qualifier de \textbf{directe}, dans le sens où aucune tentative d'optimisation des opérations n'est effectuée. Il suffit généralement de dérouler un petit exemple à la main pour comprendre comment l'intuition de sa conception à été trouvée. 
+				\item Mise à part le dataset choisi pour nos tests, nous avons aussi eu l'occasion de le tester sur un large ensemble d'items, sa complexité temporelle quasi polynomiale donnait d'assez bon résultats lors de la mise à l'échelle, c'est aussi dû au choix de paramètre de façon intelligente qui a permis cela (prendre un support minimum relatif à la taille du dataset par exemple et non pas une constante non adaptée à chaque dataset, de même pour la confiance minimum). 
+			\end{itemize}
+			\item \textbf{Point faibles : }
+				\begin{itemize}
+					\item  La génération des candidats à chaque itération est une opération très coûteuse en temps, effectuant des opérations de jointures qui, si elles ne sont pas optimisées, peuvent alourdir le processus dans le cas d'un large dataset.
+					\item L'extraction des règle d'association impose le calcul de l'ensemble des sous-ensembles de chaque itemset, c'est aussi une opération très coûteuse en temps.
+					\item Le calcul du support minimum impose le parcours de la table des items en entier, et cela à chaque itérations de l'algorithme, de plus l'algorithme assume que cette table soit chargée en mémoire de façon permanente, ce qui peu poser problème si sa taille atteint un seuil critique.
+				\end{itemize} 
+		\end{itemize}
 		\paragraph{Partie II}
 		\paragraph{Partie III}
-	\section{Critiques}
-		\paragraph{}
-	\section{Perspectives futures}
 		\paragraph{}
 %\input{part2/part2.tex}
 \bibliographystyle{ieeetr}
