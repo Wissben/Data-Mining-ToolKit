@@ -16,21 +16,18 @@
 \contentsline {section}{\numberline {2.4}Implémentation}{4}
 \contentsline {paragraph}{}{4}
 \contentsline {paragraph}{}{5}
-\contentsline {subsection}{\numberline {2.4.1}InstanceApriori : }{6}
-\contentsline {subsection}{\numberline {2.4.2}AprioriInstanceReader :}{6}
-\contentsline {subsection}{\numberline {2.4.3}Searcher :}{7}
 \contentsline {section}{\numberline {2.5}Interface graphique}{8}
 \contentsline {paragraph}{}{8}
 \contentsline {paragraph}{}{9}
 \contentsline {section}{\numberline {2.6}Résultats expérimentaux}{9}
-\contentsline {subsubsection}{\numberline {2.6.0.1}Choix du dataset}{9}
+\contentsline {subsection}{\numberline {2.6.1}Choix du dataset}{9}
 \contentsline {paragraph}{}{9}
-\contentsline {subsubsection}{\numberline {2.6.0.2}Variations des paramètres}{9}
+\contentsline {subsection}{\numberline {2.6.2}Variations des paramètres}{9}
 \contentsline {paragraph}{}{9}
-\contentsline {subsubsection}{\numberline {2.6.0.3}Résultats}{9}
+\contentsline {subsection}{\numberline {2.6.3}Résultats}{9}
 \contentsline {paragraph}{}{9}
 \contentsline {paragraph}{Remarques :}{10}
-\contentsline {subsection}{\numberline {2.6.1}Commentaires}{10}
+\contentsline {paragraph}{Commentaires}{10}
 \contentsline {paragraph}{}{10}
 \contentsline {chapter}{\numberline {3}Classification à l'aide de l'algorithme K plus proches voisins (KNN)}{11}
 \contentsline {section}{\numberline {3.1}Introduction}{11}
@@ -51,21 +48,20 @@
 \contentsline {paragraph}{}{13}
 \contentsline {section}{\numberline {3.4}Implémentation}{14}
 \contentsline {paragraph}{}{14}
-\contentsline {subsection}{\numberline {3.4.1}KNNClassifier}{15}
 \contentsline {section}{\numberline {3.5}Interface graphique}{16}
 \contentsline {paragraph}{}{16}
 \contentsline {paragraph}{}{16}
 \contentsline {section}{\numberline {3.6}Résultats expérimentaux}{17}
 \contentsline {subsection}{\numberline {3.6.1}Choix du dataset}{17}
 \contentsline {paragraph}{}{17}
-\contentsline {subsubsection}{\numberline {3.6.1.1}Variations des paramètres}{17}
+\contentsline {subsection}{\numberline {3.6.2}Variations des paramètres}{17}
 \contentsline {paragraph}{}{17}
-\contentsline {subsection}{\numberline {3.6.2}Résultats}{17}
+\contentsline {subsection}{\numberline {3.6.3}Résultats}{17}
 \contentsline {paragraph}{}{17}
 \contentsline {paragraph}{}{18}
 \contentsline {paragraph}{Commentaires}{19}
 \contentsline {paragraph}{Commentaires : }{20}
-\contentsline {subsubsection}{\numberline {3.6.2.1}Résultats pour credit-g.arff}{21}
+\contentsline {subsubsection}{\numberline {3.6.3.1}Résultats pour credit-g.arff}{21}
 \contentsline {paragraph}{Commentaires : }{21}
 \contentsline {chapter}{\numberline {4}Clustering à l'aide de l'algorithme DBSCAN}{22}
 \contentsline {section}{\numberline {4.1}Introduction}{22}
@@ -93,11 +89,8 @@
 \contentsline {paragraph}{}{25}
 \contentsline {section}{\numberline {4.4}Implémentation}{26}
 \contentsline {paragraph}{}{26}
-\contentsline {subsection}{\numberline {4.4.1}Point}{27}
 \contentsline {paragraph}{}{27}
-\contentsline {subsection}{\numberline {4.4.2}Cluster}{28}
 \contentsline {paragraph}{}{28}
-\contentsline {subsection}{\numberline {4.4.3}DBSCANClusterer}{29}
 \contentsline {section}{\numberline {4.5}Interface graphique}{31}
 \contentsline {paragraph}{}{31}
 \contentsline {paragraph}{}{31}

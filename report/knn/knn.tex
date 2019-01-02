@@ -108,7 +108,7 @@
 			
 			\item La classe \textbf{KNNClassifier} qui contiendra les méthodes et attributs nécessaire pour l'exécution de l'algorithme. 
 		\end{itemize}
-		\subsection{KNNClassifier} 
+		\subsection*{KNNClassifier} 
 		Il est maintenant temps de détailler le contenu de la classe \textbf{KNNClassifier} : 
 		\begin{itemize}
 			\item Les attributs sont les suivants : 
@@ -156,7 +156,7 @@
 				\item Dataset hybride nous avons choisis le dataset \textbf{credit-g.arff}
 			\end{itemize}
 			\par la taille des datasets est un critère important à prendre en compte, plus la taille est grande plus le temps d'inférence (étiquetage d'une nouvelle instance) pourrait être grand, car il faudra donc parcourir toutes les instances dans l'échantillon d'apprentissage, néanmoins, si nous posons $N$ comme le nombre de ces instances, et $K$ le nombre d'attributs pour chaque instances, il faudra donc parcourir les $K$ attributs de chacune des $N$ instances puis insérer la distances $D$ dans une structure de hachage en $O(log(M))$ où $M$ est le nombre de voisins, ce qui nous donne donc une complexité temporelle $O(N*K*Log(M))$ ce qui reste assez raisonnable a plus grande échelle.
-		\subsubsection{Variations des paramètres}
+		\subsection{Variations des paramètres}
 			\paragraph{}
 			Pour ce qui est des paramètres, nous avons décidé de faire varier le nombre de voisins $K$ ans l'intervalle $\left[ \text{3 , 2*\textbf{NombreDeClasses}+1}\right]$ avec un pas $step = 2$ (pour s'assurer que les valeurs restent impairs).
 			\par 

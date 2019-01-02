@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.0.4 (TeX Live 2017/Debian)  (format=lualatex 2018.12.11)  28 DEC 2018 02:03
+This is LuaTeX, Version 1.0.4 (TeX Live 2017/Debian)  (format=lualatex 2018.12.11)  2 JAN 2019 01:20
  restricted system commands enabled.
 **report.tex
 (./report.tex
@@ -34,7 +34,7 @@ Inserting `luaotfload.aux.set_capheight' at position 3 in `luaotfload.patch_font
 '.
 Inserting `luaotfload.rewrite_fontname' at position 4 in `luaotfload.patch_font'
 .
-luaotfload | main : initialization completed in 0.113 seconds
+luaotfload | main : initialization completed in 0.117 seconds
 Babel <3.18> and hyphenation patterns for 1 language(s) loaded.
 (/usr/share/texlive/texmf-dist/tex/latex/base/report.cls
 Document Class: report 2014/09/29 v1.4h Standard LaTeX document class
@@ -2094,11 +2094,11 @@ LaTeX Warning: There were multiply-defined labels.
 
 Here is how much of LuaTeX's memory you used:
  32508 strings out of 494480
- 381523,953878 words of node,token memory allocated
- 321135 words of node memory still in use:
-   7 hlist, 2 vlist, 2 rule, 362 glue, 1 kern, 1 penalty, 46933 glyph, 15534 att
-ribute, 117 glue_spec, 2589 attribute_list, 1 write nodes
-   avail lists: 1:5,2:4782,3:160,4:52,5:412,6:1292,7:1873,8:698,9:414,10:16,11:2
+ 381530,953878 words of node,token memory allocated
+ 320167 words of node memory still in use:
+   7 hlist, 2 vlist, 2 rule, 356 glue, 1 kern, 1 penalty, 46823 glyph, 15420 att
+ribute, 117 glue_spec, 2570 attribute_list, 1 write nodes
+   avail lists: 1:3,2:4782,3:158,4:52,5:412,6:1292,7:1873,8:698,9:414,10:16,11:2
 75
  35248 multiletter control sequences out of 65536+600000
  77 fonts using 9961847 bytes
@@ -2119,7 +2119,7 @@ mi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb>
 re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texl
 ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on report.pdf (40 pages, 955724 bytes).
+Output written on report.pdf (40 pages, 955333 bytes).
 
 PDF statistics: 284 PDF objects out of 1000 (max. 8388607)
  164 compressed objects within 2 object streams

@@ -93,7 +93,7 @@
 				\includegraphics[width=0.75\linewidth]{apriori/images/apriori_schema.png}
 			\end{figure}
 		
-			\subsection{InstanceApriori : } c'est la classe qui va contenir l'ensemble des transactions ainsi que les méthodes manipulant, les attributs sont les suivants : \\
+			\subsection*{InstanceApriori : } c'est la classe qui va contenir l'ensemble des transactions ainsi que les méthodes manipulant, les attributs sont les suivants : \\
 			\begin{figure}[H]
 				\centering
 				\includegraphics[width=0.75\linewidth]{apriori/images/data_structs/instance/properties.png}
@@ -107,7 +107,7 @@
 			\end{figure}
 			\par, les deux premières méthodes \textbf{addTransaction} et \textbf{addLabeledTransaction} font respectivement office d'interface pour ajouter une transaction à l'un des deux attributs (pour assurer une transparence d'utilisation de la classe). Les deux autres méthodes sont des méthodes d'affichage pour un éventuel débogage de l'application.
 			
-			\subsection{AprioriInstanceReader :} \label{loader} c'est la classe qui va construire une objet de la classe \textbf{InstanceApriori} à partir d'un fichier d'extension \textbf{.arff}, ou bien à partir d'un objet de la classe \textbf{weka.Instances} classe déjà existant.
+			\subsection*{AprioriInstanceReader :} \label{loader} c'est la classe qui va construire une objet de la classe \textbf{InstanceApriori} à partir d'un fichier d'extension \textbf{.arff}, ou bien à partir d'un objet de la classe \textbf{weka.Instances} classe déjà existant.
 			\par Les attributs sont les suivants : 
 			\begin{figure}[H]
 				\centering
@@ -122,7 +122,7 @@
 				\includegraphics[width=0.75\linewidth]{apriori/images/data_structs/laoder/methods.png}
 			\end{figure}
 			
-			\subsection{Searcher :} 
+			\subsection*{Searcher :} 
 			Cette classe est celle qui va contenir à la fois les données en entré (Instance et ses méta-donnés), les hyper paramètres ainsi que le résultat de l'algorithme (Itemsets fréquents et règles d'association).
 			\par
 			Les attributs sont les suivants 
@@ -175,15 +175,15 @@
 		\end{itemize}
 		
 	\section{Résultats expérimentaux}
-		\subsubsection{Choix du dataset}
+		\subsection{Choix du dataset}
 			\paragraph{}
 			Pour tester le comportement de notre implémentation de l'algorithme apriori, nous avons choisi de le tester sur un dataset purement nominal (\textbf{car.arff}).
-		\subsubsection{Variations des paramètres}
+		\subsection{Variations des paramètres}
 			\paragraph{}
 			Nous avons choisi de faire varier les deux paramètres qui sont supMin et confMin de façon automatique, la plage du premier est l'intervalle $\left[ \text{0.1*\textbf{nombreInstance} , \textbf{nombreInstance}} \right]$ avec un pas $step = \frac{ nombreInstance}{10}$.
 			\par 
 			La plage du 2e est l'intervalle suivant : $\left[ 0.5 , 1\right]$ avec un pas $step = 0.1$
-		\subsubsection{Résultats}
+		\subsection{Résultats}
 			\paragraph{}
 			Les résultats sont récapitulé dans le tableau suivant : 
 			% Please add the following required packages to your document preamble:
@@ -221,7 +221,7 @@
 				\label{my-label}
 			\end{table}
 			\paragraph{Remarques :} Les valeurs en vert désignent un stagnation des valeurs \textbf{nombre itemset freq} et \textbf{nombre de règle d'ass}
-		\subsection{Commentaires}
+		\paragraph{Commentaires}
 			\paragraph{}
 			D'après le tableau, il est notable que le paramètre qui influe le plus sur le temps d'exécutions est le \textbf{support minimum}, c'est facilement remarquable si on prend une valeur fixe pour ce dernier en faisant varier l'autre paramètre \textbf{Confiance minimum}, par exemple : \\
 			\[
